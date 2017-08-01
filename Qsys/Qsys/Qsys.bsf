@@ -1,0 +1,210 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 400 480)
+	(text "Qsys" (rect 185 -1 207 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 464 20 476)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 160 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "interface_address[24..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "interface_address[24..0]" (rect 4 101 148 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 160 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "interface_byteenable_n[1..0]" (rect 0 0 112 12)(font "Arial" (font_size 8)))
+		(text "interface_byteenable_n[1..0]" (rect 4 117 172 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 160 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "interface_chipselect" (rect 0 0 77 12)(font "Arial" (font_size 8)))
+		(text "interface_chipselect" (rect 4 133 124 144)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 160 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "interface_writedata[15..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "interface_writedata[15..0]" (rect 4 149 160 160)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 160 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "interface_read_n" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "interface_read_n" (rect 4 165 100 176)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 160 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "interface_write_n" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "interface_write_n" (rect 4 181 106 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 160 192)(line_width 1))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 269 82 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 160 280)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(output)
+		(text "interface_readdata[15..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "interface_readdata[15..0]" (rect 4 197 154 208)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 160 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(output)
+		(text "interface_readdatavalid" (rect 0 0 92 12)(font "Arial" (font_size 8)))
+		(text "interface_readdatavalid" (rect 4 213 142 224)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 160 224)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(output)
+		(text "interface_waitrequest" (rect 0 0 83 12)(font "Arial" (font_size 8)))
+		(text "interface_waitrequest" (rect 4 229 130 240)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 160 240)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "wires_addr[12..0]" (rect 0 0 67 12)(font "Arial" (font_size 8)))
+		(text "wires_addr[12..0]" (rect 4 309 106 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 160 320)(line_width 3))
+	)
+	(port
+		(pt 0 336)
+		(output)
+		(text "wires_ba[1..0]" (rect 0 0 54 12)(font "Arial" (font_size 8)))
+		(text "wires_ba[1..0]" (rect 4 325 88 336)(font "Arial" (font_size 8)))
+		(line (pt 0 336)(pt 160 336)(line_width 3))
+	)
+	(port
+		(pt 0 352)
+		(output)
+		(text "wires_cas_n" (rect 0 0 50 12)(font "Arial" (font_size 8)))
+		(text "wires_cas_n" (rect 4 341 70 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 160 352)(line_width 1))
+	)
+	(port
+		(pt 0 368)
+		(output)
+		(text "wires_cke" (rect 0 0 40 12)(font "Arial" (font_size 8)))
+		(text "wires_cke" (rect 4 357 58 368)(font "Arial" (font_size 8)))
+		(line (pt 0 368)(pt 160 368)(line_width 1))
+	)
+	(port
+		(pt 0 384)
+		(output)
+		(text "wires_cs_n" (rect 0 0 46 12)(font "Arial" (font_size 8)))
+		(text "wires_cs_n" (rect 4 373 64 384)(font "Arial" (font_size 8)))
+		(line (pt 0 384)(pt 160 384)(line_width 1))
+	)
+	(port
+		(pt 0 416)
+		(output)
+		(text "wires_dqm[1..0]" (rect 0 0 62 12)(font "Arial" (font_size 8)))
+		(text "wires_dqm[1..0]" (rect 4 405 94 416)(font "Arial" (font_size 8)))
+		(line (pt 0 416)(pt 160 416)(line_width 3))
+	)
+	(port
+		(pt 0 432)
+		(output)
+		(text "wires_ras_n" (rect 0 0 49 12)(font "Arial" (font_size 8)))
+		(text "wires_ras_n" (rect 4 421 70 432)(font "Arial" (font_size 8)))
+		(line (pt 0 432)(pt 160 432)(line_width 1))
+	)
+	(port
+		(pt 0 448)
+		(output)
+		(text "wires_we_n" (rect 0 0 47 12)(font "Arial" (font_size 8)))
+		(text "wires_we_n" (rect 4 437 64 448)(font "Arial" (font_size 8)))
+		(line (pt 0 448)(pt 160 448)(line_width 1))
+	)
+	(port
+		(pt 0 400)
+		(bidir)
+		(text "wires_dq[15..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "wires_dq[15..0]" (rect 4 389 94 400)(font "Arial" (font_size 8)))
+		(line (pt 0 400)(pt 160 400)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 145 43 308 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 165 67 348 144)(font "Arial" (color 0 0 0)))
+		(text "interface" (rect 110 83 274 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "address" (rect 165 107 372 224)(font "Arial" (color 0 0 0)))
+		(text "byteenable_n" (rect 165 123 402 256)(font "Arial" (color 0 0 0)))
+		(text "chipselect" (rect 165 139 390 288)(font "Arial" (color 0 0 0)))
+		(text "writedata" (rect 165 155 384 320)(font "Arial" (color 0 0 0)))
+		(text "read_n" (rect 165 171 366 352)(font "Arial" (color 0 0 0)))
+		(text "write_n" (rect 165 187 372 384)(font "Arial" (color 0 0 0)))
+		(text "readdata" (rect 165 203 378 416)(font "Arial" (color 0 0 0)))
+		(text "readdatavalid" (rect 165 219 408 448)(font "Arial" (color 0 0 0)))
+		(text "waitrequest" (rect 165 235 396 480)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 131 251 292 515)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 165 275 372 560)(font "Arial" (color 0 0 0)))
+		(text "wires" (rect 129 291 288 595)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "addr" (rect 165 315 354 640)(font "Arial" (color 0 0 0)))
+		(text "ba" (rect 165 331 342 672)(font "Arial" (color 0 0 0)))
+		(text "cas_n" (rect 165 347 360 704)(font "Arial" (color 0 0 0)))
+		(text "cke" (rect 165 363 348 736)(font "Arial" (color 0 0 0)))
+		(text "cs_n" (rect 165 379 354 768)(font "Arial" (color 0 0 0)))
+		(text "dq" (rect 165 395 342 800)(font "Arial" (color 0 0 0)))
+		(text "dqm" (rect 165 411 348 832)(font "Arial" (color 0 0 0)))
+		(text "ras_n" (rect 165 427 360 864)(font "Arial" (color 0 0 0)))
+		(text "we_n" (rect 165 443 354 896)(font "Arial" (color 0 0 0)))
+		(text " Qsys " (rect 374 464 784 938)(font "Arial" ))
+		(line (pt 160 32)(pt 240 32)(line_width 1))
+		(line (pt 240 32)(pt 240 464)(line_width 1))
+		(line (pt 160 464)(pt 240 464)(line_width 1))
+		(line (pt 160 32)(pt 160 464)(line_width 1))
+		(line (pt 161 52)(pt 161 76)(line_width 1))
+		(line (pt 162 52)(pt 162 76)(line_width 1))
+		(line (pt 161 92)(pt 161 244)(line_width 1))
+		(line (pt 162 92)(pt 162 244)(line_width 1))
+		(line (pt 161 260)(pt 161 284)(line_width 1))
+		(line (pt 162 260)(pt 162 284)(line_width 1))
+		(line (pt 161 300)(pt 161 452)(line_width 1))
+		(line (pt 162 300)(pt 162 452)(line_width 1))
+		(line (pt 0 0)(pt 400 0)(line_width 1))
+		(line (pt 400 0)(pt 400 480)(line_width 1))
+		(line (pt 0 480)(pt 400 480)(line_width 1))
+		(line (pt 0 0)(pt 0 480)(line_width 1))
+	)
+)

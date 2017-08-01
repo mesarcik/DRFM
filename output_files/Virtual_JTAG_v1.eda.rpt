@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Virtual_JTAG_v1
-Fri Jul 28 16:24:59 2017
+Tue Aug  1 15:01:09 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Fri Jul 28 16:24:59 2017 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Tue Aug  1 15:01:09 2017 ;
 ; Revision Name             ; Virtual_JTAG_v1                                      ;
 ; Top-level Entity Name     ; Virtual_JTAG_v1                                      ;
 ; Family                    ; MAX 10                                               ;
@@ -48,14 +48,17 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Fri Jul 28 16:24:59 2017
+    Info: Processing started: Tue Aug  1 15:01:09 2017
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off Virtual_JTAG_v1 -c Virtual_JTAG_v1
+Warning (20013): Ignored 19 assignments for entity "Qsys" -- entity does not exist in design
+Warning (20013): Ignored 34 assignments for entity "Qsys_new_sdram_controller_0" -- entity does not exist in design
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 494 megabytes
-    Info: Processing ended: Fri Jul 28 16:25:00 2017
-    Info: Elapsed time: 00:00:01
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 1063 megabytes
+    Info: Processing ended: Tue Aug  1 15:01:09 2017
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
