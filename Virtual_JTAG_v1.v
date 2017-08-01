@@ -60,7 +60,7 @@ module Virtual_JTAG_v1 (
 	//
 
 	reg DR0;
-	reg [31:0] DR1;
+	reg [48:0] DR1;
 	
 
 	always @ (posedge tck or posedge aclr) begin //Because asynchronously clear as there will be multiple drivers
@@ -73,7 +73,7 @@ module Virtual_JTAG_v1 (
 				
 			if (virtual_state_sdr) begin  // JTAG shift state.
 				if (&ir_in)begin //Data is availiable to be taken out.
-					DR1 <= {DR0, DR1[31:1]}; // Collect the data and shift.
+					DR1 <= {DR0, DR1[48:1]}; // Collect the data and shift.
 				end
 			end
 		end
@@ -101,9 +101,9 @@ module Virtual_JTAG_v1 (
 			state <= 4'b_0010; // SCALE	
 			LED <= DR1 [29:20];
 		end 
-		else if(  DR1[31]) begin 
+		else if(  DR1[48]) begin 
 		state <= 4'b_0100; // LOAD	
-		// LED <= DR1 [31:24];
+		LED <= DR1 [47:31];
 		end 
 		else state <= 4'b_0000; //Waiting state
 		

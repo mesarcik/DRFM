@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Virtual_JTAG_v1
-Tue Aug  1 15:00:30 2017
+Tue Aug  1 15:25:52 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -26,9 +26,8 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  18. Port Connectivity Checks: "PLL:my_PLL"
  19. Virtual JTAG Settings
  20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -55,15 +54,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug  1 15:00:30 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug  1 15:25:52 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Virtual_JTAG_v1                             ;
 ; Top-level Entity Name              ; Virtual_JTAG_v1                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 217                                         ;
+; Total logic elements               ; 234                                         ;
 ;     Total combinational functions  ; 167                                         ;
-;     Dedicated logic registers      ; 109                                         ;
-; Total registers                    ; 109                                         ;
+;     Dedicated logic registers      ; 126                                         ;
+; Total registers                    ; 126                                         ;
 ; Total pins                         ; 108                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -215,7 +214,7 @@ agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 217                      ;
+; Estimated Total logic elements              ; 234                      ;
 ;                                             ;                          ;
 ; Total combinational functions               ; 167                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
@@ -227,8 +226,8 @@ agreement for further details.
 ;     -- normal mode                          ; 159                      ;
 ;     -- arithmetic mode                      ; 8                        ;
 ;                                             ;                          ;
-; Total registers                             ; 109                      ;
-;     -- Dedicated logic registers            ; 109                      ;
+; Total registers                             ; 126                      ;
+;     -- Dedicated logic registers            ; 126                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 108                      ;
@@ -239,9 +238,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
-; Maximum fan-out                             ; 130                      ;
-; Total fan-out                               ; 1078                     ;
-; Average fan-out                             ; 2.08                     ;
+; Maximum fan-out                             ; 147                      ;
+; Total fan-out                               ; 1146                     ;
+; Average fan-out                             ; 2.14                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -250,7 +249,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                         ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |Virtual_JTAG_v1                                                                                                                        ; 167 (33)            ; 109 (33)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 108  ; 0            ; 0          ; |Virtual_JTAG_v1                                                                                                                                                                                                                                                                                                                                            ; Virtual_JTAG_v1                   ; work         ;
+; |Virtual_JTAG_v1                                                                                                                        ; 167 (33)            ; 126 (50)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 108  ; 0            ; 0          ; |Virtual_JTAG_v1                                                                                                                                                                                                                                                                                                                                            ; Virtual_JTAG_v1                   ; work         ;
 ;    |PLL:my_PLL|                                                                                                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Virtual_JTAG_v1|PLL:my_PLL                                                                                                                                                                                                                                                                                                                                 ; PLL                               ; work         ;
 ;       |altpll:altpll_component|                                                                                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Virtual_JTAG_v1|PLL:my_PLL|altpll:altpll_component                                                                                                                                                                                                                                                                                                         ; altpll                            ; work         ;
 ;          |PLL_altpll:auto_generated|                                                                                                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Virtual_JTAG_v1|PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated                                                                                                                                                                                                                                                                               ; PLL_altpll                        ; work         ;
@@ -307,12 +306,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 109   ;
+; Total registers                              ; 126   ;
 ; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 9     ;
-; Number of registers using Asynchronous Clear ; 56    ;
+; Number of registers using Asynchronous Clear ; 73    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 79    ;
+; Number of registers using Clock Enable       ; 96    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -328,21 +327,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |Virtual_JTAG_v1|LED[9]                                                                                                                                                                                                                                                                                                                                                   ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |Virtual_JTAG_v1|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS0[0]                                                                                                                                                                                                                                                                                                            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Virtual_JTAG_v1|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS5[5]                                                                                                                                                                                                                                                                                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[2]                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[3]                    ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[4] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]              ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[1]                      ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[1]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |Virtual_JTAG_v1|LED[9]                                        ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |Virtual_JTAG_v1|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS0[0] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Virtual_JTAG_v1|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS5[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -819,9 +812,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 133                         ;
-; cycloneiii_ff         ; 33                          ;
+; cycloneiii_ff         ; 50                          ;
 ;     CLR               ; 1                           ;
-;     ENA CLR           ; 32                          ;
+;     ENA CLR           ; 49                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
 ; cycloneiii_lcell_comb ; 48                          ;
 ;     normal            ; 48                          ;
@@ -833,47 +826,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.76                        ;
+; Average LUT depth     ; 1.54                        ;
 +-----------------------+-----------------------------+
 
 
-+------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
-+-----------------------+------------------------------------------+
-; Type                  ; Count                                    ;
-+-----------------------+------------------------------------------+
-; boundary_port         ; 89                                       ;
-; cycloneiii_ff         ; 76                                       ;
-;     CLR               ; 6                                        ;
-;     ENA               ; 16                                       ;
-;     ENA CLR           ; 17                                       ;
-;     ENA SCLR          ; 5                                        ;
-;     ENA SLD           ; 9                                        ;
-;     SCLR              ; 7                                        ;
-;     plain             ; 16                                       ;
-; cycloneiii_lcell_comb ; 122                                      ;
-;     arith             ; 8                                        ;
-;         2 data inputs ; 8                                        ;
-;     normal            ; 114                                      ;
-;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 6                                        ;
-;         2 data inputs ; 25                                       ;
-;         3 data inputs ; 25                                       ;
-;         4 data inputs ; 57                                       ;
-;                       ;                                          ;
-; Max LUT depth         ; 4.00                                     ;
-; Average LUT depth     ; 1.97                                     ;
-+-----------------------+------------------------------------------+
-
-
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; sld_hub:auto_hub ; 00:00:01     ;
-; Top              ; 00:00:01     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -882,7 +845,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Aug  1 14:59:31 2017
+    Info: Processing started: Tue Aug  1 15:24:55 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Virtual_JTAG_v1 -c Virtual_JTAG_v1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1024,7 +987,7 @@ Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "vJTA
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "vJTAG:vJTAG_inst|sld_virtual_jtag:virtual_jtag_0|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: /opt/intelFPGA_lite/16.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
 Info (12128): Elaborating entity "Seven_Seg_Driver" for hierarchy "Seven_Seg_Driver:Seven_Seg_Driver_inst" File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/Virtual_JTAG_v1.v Line: 59
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2017.08.01.15:00:13 Progress: Loading sld27be4727/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2017.08.01.15:25:36 Progress: Loading sld27be4727/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1111,9 +1074,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OP_DRAM_Row_Address_Strobe" is stuck at GND File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/Virtual_JTAG_v1.v Line: 21
     Warning (13410): Pin "OP_DRAM_Write_Enable" is stuck at GND File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/Virtual_JTAG_v1.v Line: 22
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (13000): Registers with preset signals will power-up high File: /opt/intelFPGA_lite/16.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Warning (20013): Ignored 19 assignments for entity "Qsys" -- entity does not exist in design
 Warning (20013): Ignored 34 assignments for entity "Qsys_new_sdram_controller_0" -- entity does not exist in design
 Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
@@ -1130,16 +1090,16 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]" File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/Virtual_JTAG_v1.v Line: 2
     Warning (15610): No output dependent on input pin "SW[7]" File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/Virtual_JTAG_v1.v Line: 2
     Warning (15610): No output dependent on input pin "reset" File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/Virtual_JTAG_v1.v Line: 5
-Info (21057): Implemented 335 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 352 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 83 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 221 logic cells
+    Info (21061): Implemented 238 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 101 warnings
-    Info: Peak virtual memory: 1057 megabytes
-    Info: Processing ended: Tue Aug  1 15:00:30 2017
-    Info: Elapsed time: 00:00:59
-    Info: Total CPU time (on all processors): 00:01:47
+    Info: Peak virtual memory: 1051 megabytes
+    Info: Processing ended: Tue Aug  1 15:25:52 2017
+    Info: Elapsed time: 00:00:57
+    Info: Total CPU time (on all processors): 00:01:51
 
 

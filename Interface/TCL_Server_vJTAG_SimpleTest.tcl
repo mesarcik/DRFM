@@ -56,7 +56,7 @@ proc set_LEDs {send_data} {
 	puts "Writing - $send_data"
 	device_virtual_ir_shift -instance_index 0 -ir_value 1 -no_captured_ir_value
 	#set tdi [device_virtual_dr_shift -dr_value $send_data -instance_index 0  -length 7] #Use this if you want to read back the tdi while you shift in the new value
-	device_virtual_dr_shift -dr_value $send_data -instance_index 0  -length 32 -no_captured_dr_value
+	device_virtual_dr_shift -dr_value $send_data -instance_index 0  -length 49 -no_captured_dr_value
 
 	# Set IR back to 0, which is bypass mode
 	device_virtual_ir_shift -instance_index 0 -ir_value 0 -no_captured_ir_value
@@ -121,7 +121,7 @@ proc IncomingData {sock} {
 	set data_len [string length $line]
 	if {$data_len != "0"} then {
 		#Extract the First Bit
-		set line [string range $line 0 32] 
+		set line [string range $line 0 49] 
 		#Send the vJTAG Commands to Update the LED
 		set_LEDs $line
 	}

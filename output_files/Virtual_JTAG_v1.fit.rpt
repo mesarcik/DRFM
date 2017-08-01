@@ -1,5 +1,5 @@
 Fitter report for Virtual_JTAG_v1
-Tue Aug  1 15:00:49 2017
+Tue Aug  1 15:26:24 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -72,17 +72,17 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Aug  1 15:00:49 2017       ;
+; Fitter Status                      ; Successful - Tue Aug  1 15:26:24 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Virtual_JTAG_v1                             ;
 ; Top-level Entity Name              ; Virtual_JTAG_v1                             ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 196 / 49,760 ( < 1 % )                      ;
+; Total logic elements               ; 212 / 49,760 ( < 1 % )                      ;
 ;     Total combinational functions  ; 168 / 49,760 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 109 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 109                                         ;
+;     Dedicated logic registers      ; 126 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 126                                         ;
 ; Total pins                         ; 108 / 360 ( 30 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
@@ -158,12 +158,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.07        ;
+; Average used               ; 1.08        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   7.2%      ;
+;     Processor 2            ;   8.3%      ;
 +----------------------------+-------------+
 
 
@@ -188,8 +188,8 @@ agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 533 ) ; 0.00 % ( 0 / 533 )         ; 0.00 % ( 0 / 533 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 533 ) ; 0.00 % ( 0 / 533 )         ; 0.00 % ( 0 / 533 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 550 ) ; 0.00 % ( 0 / 550 )         ; 0.00 % ( 0 / 550 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 550 ) ; 0.00 % ( 0 / 550 )         ; 0.00 % ( 0 / 550 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -213,7 +213,7 @@ agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 325 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 342 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; sld_hub:auto_hub               ; 0.00 % ( 0 / 198 )    ; N/A                     ; Post-Synthesis    ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
@@ -230,29 +230,29 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 196 / 49,760 ( < 1 % ) ;
-;     -- Combinational with no register       ; 87                     ;
-;     -- Register only                        ; 28                     ;
-;     -- Combinational with a register        ; 81                     ;
+; Total logic elements                        ; 212 / 49,760 ( < 1 % ) ;
+;     -- Combinational with no register       ; 86                     ;
+;     -- Register only                        ; 44                     ;
+;     -- Combinational with a register        ; 82                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
 ;     -- 4 input functions                    ; 75                     ;
 ;     -- 3 input functions                    ; 47                     ;
 ;     -- <=2 input functions                  ; 46                     ;
-;     -- Register only                        ; 28                     ;
+;     -- Register only                        ; 44                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
 ;     -- normal mode                          ; 160                    ;
 ;     -- arithmetic mode                      ; 8                      ;
 ;                                             ;                        ;
-; Total registers*                            ; 109 / 51,509 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 109 / 49,760 ( < 1 % ) ;
+; Total registers*                            ; 126 / 51,509 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 126 / 49,760 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 27 / 3,110 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 29 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 108 / 360 ( 30 % )     ;
-;     -- Clock pins                           ; 2 / 8 ( 25 % )         ;
+;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
 ;     -- Dedicated input pins                 ; 1 / 1 ( 100 % )        ;
 ;                                             ;                        ;
 ; M9Ks                                        ; 0 / 182 ( 0 % )        ;
@@ -270,11 +270,11 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%     ;
-; Peak interconnect usage (total/H/V)         ; 1.2% / 1.2% / 1.2%     ;
-; Maximum fan-out                             ; 106                    ;
-; Highest non-global fan-out                  ; 35                     ;
-; Total fan-out                               ; 1121                   ;
-; Average fan-out                             ; 2.02                   ;
+; Peak interconnect usage (total/H/V)         ; 1.6% / 1.4% / 1.9%     ;
+; Maximum fan-out                             ; 123                    ;
+; Highest non-global fan-out                  ; 50                     ;
+; Total fan-out                               ; 1200                   ;
+; Average fan-out                             ; 2.06                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -287,26 +287,26 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 +---------------------------------------------+----------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                   ; Low                            ;
 ;                                             ;                      ;                       ;                                ;
-; Total logic elements                        ; 60 / 49760 ( < 1 % ) ; 136 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 27                   ; 60                    ; 0                              ;
-;     -- Register only                        ; 14                   ; 14                    ; 0                              ;
-;     -- Combinational with a register        ; 19                   ; 62                    ; 0                              ;
+; Total logic elements                        ; 76 / 49760 ( < 1 % ) ; 136 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 26                   ; 60                    ; 0                              ;
+;     -- Register only                        ; 30                   ; 14                    ; 0                              ;
+;     -- Combinational with a register        ; 20                   ; 62                    ; 0                              ;
 ;                                             ;                      ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                       ;                                ;
 ;     -- 4 input functions                    ; 18                   ; 57                    ; 0                              ;
 ;     -- 3 input functions                    ; 22                   ; 25                    ; 0                              ;
 ;     -- <=2 input functions                  ; 6                    ; 40                    ; 0                              ;
-;     -- Register only                        ; 14                   ; 14                    ; 0                              ;
+;     -- Register only                        ; 30                   ; 14                    ; 0                              ;
 ;                                             ;                      ;                       ;                                ;
 ; Logic elements by mode                      ;                      ;                       ;                                ;
 ;     -- normal mode                          ; 46                   ; 114                   ; 0                              ;
 ;     -- arithmetic mode                      ; 0                    ; 8                     ; 0                              ;
 ;                                             ;                      ;                       ;                                ;
-; Total registers                             ; 33                   ; 76                    ; 0                              ;
-;     -- Dedicated logic registers            ; 33 / 49760 ( < 1 % ) ; 76 / 49760 ( < 1 % )  ; 0 / 49760 ( 0 % )              ;
+; Total registers                             ; 50                   ; 76                    ; 0                              ;
+;     -- Dedicated logic registers            ; 50 / 49760 ( < 1 % ) ; 76 / 49760 ( < 1 % )  ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                     ; 0                              ;
 ;                                             ;                      ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 16 / 3110 ( < 1 % )  ; 12 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 17 / 3110 ( < 1 % )  ; 12 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                      ;                       ;                                ;
 ; Virtual pins                                ; 0                    ; 0                     ; 0                              ;
 ; I/O pins                                    ; 108                  ; 0                     ; 0                              ;
@@ -320,17 +320,17 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; Analog-to-Digital Converter                 ; 2 / 2 ( 100 % )      ; 0 / 2 ( 0 % )         ; 0 / 2 ( 0 % )                  ;
 ;                                             ;                      ;                       ;                                ;
 ; Connections                                 ;                      ;                       ;                                ;
-;     -- Input Connections                    ; 57                   ; 110                   ; 1                              ;
-;     -- Registered Input Connections         ; 34                   ; 85                    ; 0                              ;
-;     -- Output Connections                   ; 161                  ; 6                     ; 1                              ;
+;     -- Input Connections                    ; 74                   ; 110                   ; 1                              ;
+;     -- Registered Input Connections         ; 51                   ; 84                    ; 0                              ;
+;     -- Output Connections                   ; 178                  ; 6                     ; 1                              ;
 ;     -- Registered Output Connections        ; 0                    ; 6                     ; 0                              ;
 ;                                             ;                      ;                       ;                                ;
 ; Internal Connections                        ;                      ;                       ;                                ;
-;     -- Total Connections                    ; 609                  ; 637                   ; 8                              ;
-;     -- Registered Connections               ; 135                  ; 420                   ; 0                              ;
+;     -- Total Connections                    ; 687                  ; 638                   ; 8                              ;
+;     -- Registered Connections               ; 152                  ; 419                   ; 0                              ;
 ;                                             ;                      ;                       ;                                ;
 ; External Connections                        ;                      ;                       ;                                ;
-;     -- Top                                  ; 100                  ; 116                   ; 2                              ;
+;     -- Top                                  ; 134                  ; 116                   ; 2                              ;
 ;     -- sld_hub:auto_hub                     ; 116                  ; 0                     ; 0                              ;
 ;     -- hard_block:auto_generated_inst       ; 2                    ; 0                     ; 0                              ;
 ;                                             ;                      ;                       ;                                ;
@@ -368,8 +368,8 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; SW[5] ; B12   ; 7        ; 49           ; 54           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; 0         ;
 ; SW[6] ; A13   ; 7        ; 54           ; 54           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; 0         ;
 ; SW[7] ; A14   ; 7        ; 58           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; 0         ;
-; aclr  ; C10   ; 7        ; 51           ; 54           ; 28           ; 33                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; 0         ;
-; reset ; V10   ; 3        ; 31           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; aclr  ; C10   ; 7        ; 51           ; 54           ; 28           ; 50                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; 0         ;
+; reset ; C4    ; 8        ; 24           ; 39           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
 +-------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -511,12 +511,12 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; 1A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ;
 ; 1B       ; 4 / 24 ( 17 % )  ; 2.5V          ; --           ;
 ; 2        ; 0 / 36 ( 0 % )   ; 2.5V          ; --           ;
-; 3        ; 2 / 48 ( 4 % )   ; 2.5V          ; --           ;
+; 3        ; 1 / 48 ( 2 % )   ; 3.3V          ; --           ;
 ; 4        ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ;
 ; 5        ; 30 / 40 ( 75 % ) ; 3.3V          ; --           ;
 ; 6        ; 39 / 60 ( 65 % ) ; 3.3V          ; --           ;
 ; 7        ; 36 / 52 ( 69 % ) ; 3.3V          ; --           ;
-; 8        ; 5 / 36 ( 14 % )  ; 2.5V          ; --           ;
+; 8        ; 6 / 36 ( 17 % )  ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -616,7 +616,7 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; C1       ; 33         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Row I/O    ;                 ; --       ; --           ;
 ; C2       ; 499        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C3       ; 497        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; C4       ; 487        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; C4       ; 487        ; 8        ; reset                                ; input  ; 2.5 V                 ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C5       ; 489        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C6       ; 477        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C7       ; 467        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -907,9 +907,9 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; T6       ; 122        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T7       ;            ;          ; VCCD_PLL1                            ; power  ;                       ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; T8       ;            ;          ; GND                                  ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; T9       ;            ; 3        ; VCCIO3                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
-; T10      ;            ; 3        ; VCCIO3                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
-; T11      ;            ; 3        ; VCCIO3                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
+; T9       ;            ; 3        ; VCCIO3                               ; power  ;                       ; 3.3V    ; --         ;                 ; --       ; --           ;
+; T10      ;            ; 3        ; VCCIO3                               ; power  ;                       ; 3.3V    ; --         ;                 ; --       ; --           ;
+; T11      ;            ; 3        ; VCCIO3                               ; power  ;                       ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T12      ;            ; 4        ; VCCIO4                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; T13      ;            ; 4        ; VCCIO4                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; T14      ;            ;          ; GND                                  ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
@@ -928,8 +928,8 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; U5       ; 94         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; U6       ; 128        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; U7       ; 130        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; U8       ;            ; 3        ; VCCIO3                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
-; U9       ;            ; 3        ; VCCIO3                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
+; U8       ;            ; 3        ; VCCIO3                               ; power  ;                       ; 3.3V    ; --         ;                 ; --       ; --           ;
+; U9       ;            ; 3        ; VCCIO3                               ; power  ;                       ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; U10      ;            ;          ; GND                                  ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; U11      ;            ; 4        ; VCCIO4                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; U12      ;            ; 4        ; VCCIO4                               ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -952,7 +952,7 @@ The pin-out file can be found in /home/misha/Google Drive/Masters/EEE5132Z -- FP
 ; V7       ; 136        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; V8       ; 138        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; V9       ; 160        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; V10      ; 162        ; 3        ; reset                                ; input  ; 2.5 V                 ;         ; Column I/O ; N               ; no       ; Off          ;
+; V10      ; 162        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; V11      ; 172        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; V12      ; 174        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; V13      ; 192        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP      ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -1176,19 +1176,19 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                         ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |Virtual_JTAG_v1                                                                                                                        ; 196 (48)    ; 109 (33)                  ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 108  ; 0            ; 87 (15)      ; 28 (14)           ; 81 (19)          ; 0          ; |Virtual_JTAG_v1                                                                                                                                                                                                                                                                                                                                            ; Virtual_JTAG_v1                   ; work         ;
+; |Virtual_JTAG_v1                                                                                                                        ; 212 (65)    ; 126 (50)                  ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 108  ; 0            ; 86 (15)      ; 44 (30)           ; 82 (19)          ; 0          ; |Virtual_JTAG_v1                                                                                                                                                                                                                                                                                                                                            ; Virtual_JTAG_v1                   ; work         ;
 ;    |PLL:my_PLL|                                                                                                                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |Virtual_JTAG_v1|PLL:my_PLL                                                                                                                                                                                                                                                                                                                                 ; PLL                               ; work         ;
 ;       |altpll:altpll_component|                                                                                                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |Virtual_JTAG_v1|PLL:my_PLL|altpll:altpll_component                                                                                                                                                                                                                                                                                                         ; altpll                            ; work         ;
 ;          |PLL_altpll:auto_generated|                                                                                                    ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |Virtual_JTAG_v1|PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated                                                                                                                                                                                                                                                                               ; PLL_altpll                        ; work         ;
-;    |Seven_Seg_Driver:Seven_Seg_Driver_inst|                                                                                             ; 12 (12)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0          ; |Virtual_JTAG_v1|Seven_Seg_Driver:Seven_Seg_Driver_inst                                                                                                                                                                                                                                                                                                     ; Seven_Seg_Driver                  ; work         ;
+;    |Seven_Seg_Driver:Seven_Seg_Driver_inst|                                                                                             ; 12 (12)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 1 (1)            ; 0          ; |Virtual_JTAG_v1|Seven_Seg_Driver:Seven_Seg_Driver_inst                                                                                                                                                                                                                                                                                                     ; Seven_Seg_Driver                  ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 136 (1)     ; 76 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 60 (1)       ; 14 (0)            ; 62 (0)           ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 135 (0)     ; 76 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (0)       ; 14 (0)            ; 62 (0)           ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 135 (0)     ; 76 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (0)       ; 14 (0)            ; 62 (0)           ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
 ;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 135 (6)     ; 76 (5)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (1)       ; 14 (3)            ; 62 (0)           ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
 ;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 131 (0)     ; 71 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 58 (0)       ; 11 (0)            ; 62 (0)           ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
-;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 131 (92)    ; 71 (43)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 58 (47)      ; 11 (10)           ; 62 (36)          ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 131 (92)    ; 71 (43)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 58 (47)      ; 11 (11)           ; 62 (36)          ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
 ;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 19 (19)     ; 9 (9)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 9 (9)            ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
-;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 20 (20)     ; 19 (19)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 18 (18)          ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 20 (20)     ; 19 (19)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 19 (19)          ; 0          ; |Virtual_JTAG_v1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1344,9 +1344,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - DR1[11]      ; 0                 ; 6       ;
 ;      - DR1[20]      ; 0                 ; 6       ;
 ;      - DR1[30]      ; 0                 ; 6       ;
-;      - DR1[31]      ; 0                 ; 6       ;
+;      - DR1[48]      ; 0                 ; 6       ;
 ;      - DR0          ; 0                 ; 6       ;
 ;      - DR1[21]      ; 0                 ; 6       ;
+;      - DR1[31]      ; 0                 ; 6       ;
 ;      - DR1[1]       ; 0                 ; 6       ;
 ;      - DR1[12]      ; 0                 ; 6       ;
 ;      - DR1[22]      ; 0                 ; 6       ;
@@ -1372,6 +1373,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - DR1[19]      ; 0                 ; 6       ;
 ;      - DR1[29]      ; 0                 ; 6       ;
 ;      - DR1[9]       ; 0                 ; 6       ;
+;      - DR1[32]      ; 0                 ; 6       ;
+;      - DR1[33]      ; 0                 ; 6       ;
+;      - DR1[34]      ; 0                 ; 6       ;
+;      - DR1[35]      ; 0                 ; 6       ;
+;      - DR1[36]      ; 0                 ; 6       ;
+;      - DR1[37]      ; 0                 ; 6       ;
+;      - DR1[38]      ; 0                 ; 6       ;
+;      - DR1[39]      ; 0                 ; 6       ;
+;      - DR1[40]      ; 0                 ; 6       ;
+;      - DR1[41]      ; 0                 ; 6       ;
+;      - DR1[42]      ; 0                 ; 6       ;
+;      - DR1[43]      ; 0                 ; 6       ;
+;      - DR1[44]      ; 0                 ; 6       ;
+;      - DR1[45]      ; 0                 ; 6       ;
+;      - DR1[46]      ; 0                 ; 6       ;
+;      - DR1[47]      ; 0                 ; 6       ;
 ; CLK                 ;                   ;         ;
 +---------------------+-------------------+---------+
 
@@ -1382,29 +1399,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                                                                                                                                                                                                                                                                                        ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLK                                                                                                                                                                                                                                                                                                                                                         ; PIN_P11            ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; DR1[10]~0                                                                                                                                                                                                                                                                                                                                                   ; LCCOMB_X51_Y43_N0  ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Seven_Seg_Driver:Seven_Seg_Driver_inst|Equal0~0                                                                                                                                                                                                                                                                                                             ; LCCOMB_X62_Y44_N30 ; 10      ; Latch enable ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; aclr                                                                                                                                                                                                                                                                                                                                                        ; PIN_C10            ; 33      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; DR1[10]~0                                                                                                                                                                                                                                                                                                                                                   ; LCCOMB_X50_Y45_N0  ; 49      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Seven_Seg_Driver:Seven_Seg_Driver_inst|Equal0~0                                                                                                                                                                                                                                                                                                             ; LCCOMB_X52_Y41_N30 ; 10      ; Latch enable ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; aclr                                                                                                                                                                                                                                                                                                                                                        ; PIN_C10            ; 50      ; Async. clear ; no     ; --                   ; --               ; --                        ;
 ; altera_internal_jtag~TCKUTAP                                                                                                                                                                                                                                                                                                                                ; JTAG_X43_Y40_N0    ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; altera_internal_jtag~TCKUTAP                                                                                                                                                                                                                                                                                                                                ; JTAG_X43_Y40_N0    ; 106     ; Clock        ; yes    ; Global Clock         ; GCLK12           ; --                        ;
+; altera_internal_jtag~TCKUTAP                                                                                                                                                                                                                                                                                                                                ; JTAG_X43_Y40_N0    ; 123     ; Clock        ; yes    ; Global Clock         ; GCLK12           ; --                        ;
 ; altera_internal_jtag~TMSUTAP                                                                                                                                                                                                                                                                                                                                ; JTAG_X43_Y40_N0    ; 23      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|clr_reg                                    ; FF_X50_Y43_N23     ; 11      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_proc~0                         ; LCCOMB_X49_Y43_N0  ; 4       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_info_reg_ena                           ; LCCOMB_X49_Y42_N2  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_info_reg_ena~0                         ; LCCOMB_X51_Y43_N6  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg[0]~1            ; LCCOMB_X51_Y43_N28 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[2]~15                             ; LCCOMB_X49_Y43_N20 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]~14              ; LCCOMB_X49_Y43_N26 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]~19              ; LCCOMB_X45_Y43_N26 ; 5       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|reset_ena_reg_proc~0                       ; LCCOMB_X49_Y42_N22 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[1]~14      ; LCCOMB_X49_Y42_N30 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[4]~22 ; LCCOMB_X50_Y42_N20 ; 5       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[4]~23 ; LCCOMB_X50_Y42_N14 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm|state[0]         ; FF_X47_Y42_N29     ; 15      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm|state[11]        ; FF_X45_Y42_N17     ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|virtual_ir_dr_scan_proc~0                  ; LCCOMB_X45_Y42_N12 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|virtual_ir_scan_reg                        ; FF_X46_Y42_N25     ; 22      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|sldfabric_ident_writedata[0]~0                                                                                                      ; LCCOMB_X51_Y43_N8  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|clr_reg                                    ; FF_X49_Y45_N1      ; 11      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_proc~0                         ; LCCOMB_X46_Y45_N4  ; 4       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_info_reg_ena                           ; LCCOMB_X46_Y45_N24 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_info_reg_ena~0                         ; LCCOMB_X49_Y44_N18 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg[0]~1            ; LCCOMB_X49_Y44_N4  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[2]~15                             ; LCCOMB_X50_Y44_N10 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]~14              ; LCCOMB_X46_Y45_N8  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]~19              ; LCCOMB_X46_Y45_N20 ; 5       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|reset_ena_reg_proc~0                       ; LCCOMB_X50_Y44_N8  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[1]~14      ; LCCOMB_X46_Y45_N26 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[4]~22 ; LCCOMB_X47_Y45_N14 ; 5       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[4]~23 ; LCCOMB_X46_Y45_N6  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm|state[0]         ; FF_X49_Y45_N3      ; 15      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm|state[11]        ; FF_X49_Y45_N19     ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|virtual_ir_dr_scan_proc~0                  ; LCCOMB_X49_Y45_N16 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|virtual_ir_scan_reg                        ; FF_X49_Y42_N17     ; 22      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|sldfabric_ident_writedata[0]~0                                                                                                      ; LCCOMB_X49_Y44_N2  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1414,8 +1431,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                          ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1              ; 1       ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
-; Seven_Seg_Driver:Seven_Seg_Driver_inst|Equal0~0                               ; LCCOMB_X62_Y44_N30 ; 10      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
-; altera_internal_jtag~TCKUTAP                                                  ; JTAG_X43_Y40_N0    ; 106     ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
+; Seven_Seg_Driver:Seven_Seg_Driver_inst|Equal0~0                               ; LCCOMB_X52_Y41_N30 ; 10      ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
+; altera_internal_jtag~TCKUTAP                                                  ; JTAG_X43_Y40_N0    ; 123     ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
 +-------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1424,38 +1441,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 240 / 148,641 ( < 1 % ) ;
+; Block interconnects   ; 242 / 148,641 ( < 1 % ) ;
 ; C16 interconnects     ; 13 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 127 / 106,704 ( < 1 % ) ;
-; Direct links          ; 56 / 148,641 ( < 1 % )  ;
+; C4 interconnects      ; 139 / 106,704 ( < 1 % ) ;
+; Direct links          ; 44 / 148,641 ( < 1 % )  ;
 ; Global clocks         ; 3 / 20 ( 15 % )         ;
-; Local interconnects   ; 129 / 49,760 ( < 1 % )  ;
+; Local interconnects   ; 141 / 49,760 ( < 1 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )         ;
-; R24 interconnects     ; 15 / 5,406 ( < 1 % )    ;
-; R4 interconnects      ; 137 / 147,764 ( < 1 % ) ;
+; R24 interconnects     ; 17 / 5,406 ( < 1 % )    ;
+; R4 interconnects      ; 149 / 147,764 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 7.26) ; Number of LABs  (Total = 27) ;
+; Number of Logic Elements  (Average = 7.31) ; Number of LABs  (Total = 29) ;
 +--------------------------------------------+------------------------------+
 ; 1                                          ; 10                           ;
-; 2                                          ; 3                            ;
+; 2                                          ; 4                            ;
 ; 3                                          ; 0                            ;
 ; 4                                          ; 1                            ;
-; 5                                          ; 1                            ;
-; 6                                          ; 0                            ;
-; 7                                          ; 1                            ;
+; 5                                          ; 0                            ;
+; 6                                          ; 1                            ;
+; 7                                          ; 0                            ;
 ; 8                                          ; 0                            ;
-; 9                                          ; 0                            ;
+; 9                                          ; 1                            ;
 ; 10                                         ; 0                            ;
 ; 11                                         ; 0                            ;
-; 12                                         ; 0                            ;
+; 12                                         ; 2                            ;
 ; 13                                         ; 2                            ;
-; 14                                         ; 3                            ;
-; 15                                         ; 0                            ;
+; 14                                         ; 1                            ;
+; 15                                         ; 1                            ;
 ; 16                                         ; 6                            ;
 +--------------------------------------------+------------------------------+
 
@@ -1463,52 +1480,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.22) ; Number of LABs  (Total = 27) ;
+; LAB-wide Signals  (Average = 1.52) ; Number of LABs  (Total = 29) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 6                            ;
-; 1 Clock                            ; 13                           ;
-; 1 Clock enable                     ; 6                            ;
-; 1 Sync. clear                      ; 2                            ;
-; 1 Sync. load                       ; 1                            ;
-; 2 Clock enables                    ; 3                            ;
-; 2 Clocks                           ; 2                            ;
+; 1 Async. clear                     ; 10                           ;
+; 1 Clock                            ; 17                           ;
+; 1 Clock enable                     ; 10                           ;
+; 1 Sync. clear                      ; 1                            ;
+; 1 Sync. load                       ; 2                            ;
+; 2 Clock enables                    ; 4                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 10.96) ; Number of LABs  (Total = 27) ;
+; Number of Signals Sourced  (Average = 11.17) ; Number of LABs  (Total = 29) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 1                            ;
-; 1                                            ; 9                            ;
-; 2                                            ; 2                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 1                            ;
+; 1                                            ; 8                            ;
+; 2                                            ; 4                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
+; 6                                            ; 1                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 2                            ;
+; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
+; 10                                           ; 1                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 1                            ;
+; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
-; 15                                           ; 0                            ;
+; 15                                           ; 3                            ;
 ; 16                                           ; 0                            ;
-; 17                                           ; 1                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 2                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 1                            ;
 ; 21                                           ; 2                            ;
-; 22                                           ; 0                            ;
+; 22                                           ; 1                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 2                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 0                            ;
-; 27                                           ; 1                            ;
-; 28                                           ; 0                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 2                            ;
+; 26                                           ; 1                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 1                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 0                            ;
@@ -1519,53 +1535,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 4.11) ; Number of LABs  (Total = 27) ;
+; Number of Signals Sourced Out  (Average = 3.93) ; Number of LABs  (Total = 29) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 1                            ;
-; 1                                               ; 11                           ;
+; 1                                               ; 12                           ;
 ; 2                                               ; 5                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 1                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 2                            ;
+; 5                                               ; 0                            ;
 ; 6                                               ; 0                            ;
-; 7                                               ; 1                            ;
+; 7                                               ; 3                            ;
 ; 8                                               ; 0                            ;
 ; 9                                               ; 2                            ;
 ; 10                                              ; 1                            ;
-; 11                                              ; 0                            ;
-; 12                                              ; 0                            ;
-; 13                                              ; 1                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 2                            ;
+; 11                                              ; 1                            ;
+; 12                                              ; 2                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 5.93) ; Number of LABs  (Total = 27) ;
+; Number of Distinct Inputs  (Average = 5.90) ; Number of LABs  (Total = 29) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
-; 2                                           ; 6                            ;
-; 3                                           ; 4                            ;
-; 4                                           ; 1                            ;
+; 2                                           ; 5                            ;
+; 3                                           ; 3                            ;
+; 4                                           ; 3                            ;
 ; 5                                           ; 1                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 2                            ;
+; 6                                           ; 2                            ;
+; 7                                           ; 3                            ;
 ; 8                                           ; 1                            ;
 ; 9                                           ; 1                            ;
-; 10                                          ; 1                            ;
+; 10                                          ; 2                            ;
 ; 11                                          ; 0                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 0                            ;
-; 14                                          ; 1                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 0                            ;
 ; 15                                          ; 0                            ;
 ; 16                                          ; 1                            ;
 ; 17                                          ; 0                            ;
-; 18                                          ; 1                            ;
-; 19                                          ; 0                            ;
-; 20                                          ; 1                            ;
+; 18                                          ; 2                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1782,14 +1793,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+----------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                  ;
-+---------------------+----------------------+-------------------+
-; Source Clock(s)     ; Destination Clock(s) ; Delay Added in ns ;
-+---------------------+----------------------+-------------------+
-; I/O                 ; altera_reserved_tck  ; 4.2               ;
-; altera_reserved_tck ; altera_reserved_tck  ; 1.9               ;
-+---------------------+----------------------+-------------------+
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary              ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+; I/O             ; altera_reserved_tck  ; 2.2               ;
++-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
@@ -1799,12 +1809,11 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------+----------------------+-------------------+
 ; Source Register     ; Destination Register ; Delay Added in ns ;
 +---------------------+----------------------+-------------------+
-; altera_reserved_tck ; DR1[10]              ; 2.086             ;
-; DR1[10]             ; DR1[9]               ; 0.722             ;
-; DR1[20]             ; DR1[19]              ; 0.713             ;
-; DR1[30]             ; DR1[29]              ; 0.499             ;
+; altera_reserved_tck ; DR1[20]              ; 2.152             ;
+; DR1[20]             ; DR1[19]              ; 0.365             ;
+; DR1[30]             ; DR1[29]              ; 0.172             ;
 +---------------------+----------------------+-------------------+
-Note: This table only shows the top 4 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 3 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1905,20 +1914,20 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X56_Y44 to location X66_Y54
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X45_Y44 to location X55_Y54
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.24 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:06
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 25 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at C11 File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/Virtual_JTAG_v1.v Line: 2
@@ -1966,9 +1975,9 @@ Warning (169064): Following 16 pins have no output enable or a GND or VCC output
 Info (144001): Generated suppressed messages file /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/JTAG_Communicator/DRFM/output_files/Virtual_JTAG_v1.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 21 warnings
     Info: Peak virtual memory: 1306 megabytes
-    Info: Processing ended: Tue Aug  1 15:00:51 2017
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Processing ended: Tue Aug  1 15:26:24 2017
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +----------------------------+

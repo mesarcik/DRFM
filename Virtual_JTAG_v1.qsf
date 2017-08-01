@@ -341,6 +341,13 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SS5[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SS5[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SS5[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SS5[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
 set_global_assignment -name QIP_FILE Qsys/Qsys/synthesis/Qsys.qip
 set_global_assignment -name VERILOG_FILE Seven_Seg_Driver.v
 set_global_assignment -name VERILOG_FILE vJtag/vJTAG/synthesis/vJTAG.v -library vJTAG
@@ -350,11 +357,4 @@ set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name SIGNALTAP_FILE output_files/stp1.stp
 set_global_assignment -name QIP_FILE PLL/PLL.qip
 set_global_assignment -name QIP_FILE RAM/RAM.qip
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

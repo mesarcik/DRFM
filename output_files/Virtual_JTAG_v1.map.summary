@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Aug  1 15:00:30 2017
+Analysis & Synthesis Status : Successful - Tue Aug  1 15:25:52 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : Virtual_JTAG_v1
 Top-level Entity Name : Virtual_JTAG_v1
 Family : MAX 10
-Total logic elements : 217
+Total logic elements : 234
     Total combinational functions : 167
-    Dedicated logic registers : 109
-Total registers : 109
+    Dedicated logic registers : 126
+Total registers : 126
 Total pins : 108
 Total virtual pins : 0
 Total memory bits : 0

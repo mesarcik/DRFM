@@ -16,8 +16,6 @@ host = 'localhost'
 port = 2540
 size = 4294967296 
 
-fsm = ['00000000000000000000000000000000','00000000000000000000010000000000','00000000000100000000000000000000','01000000000000000000000000000000','10000000000000000000000000000000']
-
 
 class Window(QtGui.QMainWindow):
     
@@ -27,7 +25,7 @@ class Window(QtGui.QMainWindow):
         #Atrributes
         self.display     = QtGui.QWidget(self)
         self.layout      = QtGui.QGridLayout()
-        self.state       = 1
+        self.state       = 0
         self.tcl         = False
 
         self.doppler_val = 0

@@ -12,7 +12,7 @@ import signal
 size = 4294967296 
 
 
-fsm = ['00000000000000000000000000000000','00000000000000000000001000000000','00000000000010000000000000000000','00100000000000000000000000000000','01000000000000000000000000000000']
+fsm = ['0000000000000000000000000000000000000000000000000','0000000000000000000000000000000000000001000000000','0000000000000000000000000000010000000000000000000','0000000000000000000100000000000000000000000000000','0100000000000000000000000000000000000000000000000']
 
 
 class Com_Thread(QtCore.QThread):
@@ -27,10 +27,10 @@ class Com_Thread(QtCore.QThread):
 
         self.conn               = self.Open()
 
-#00000000000000000000001000000000 delay
-#00000000000010000000000000000000 doppler
-#00100000000000000000000000000000 scale
-#01000000000000000000000000000000 load
+#0000000000000000000000000000000000000001000000000 delay
+#0000000000000000000000000000010000000000000000000 doppler
+#0000000000000000000100000000000000000000000000000 scale
+#0100000000000000000000000000000000000000000000000 load
 
 
     def Open(self):
@@ -40,7 +40,13 @@ class Com_Thread(QtCore.QThread):
 
     def run(self):
         while True:
-            data = bin(int(fsm[self.state_no],2) | 2**(10*(self.state_no-1)) *self.vals[self.state_no]).split('0b')[1].zfill(32)
+            if (self.state_no == 0):
+                data = fsm[self.state_no]
+            elif (self.state_no != 4):
+                data = bin(int(fsm[self.state_no],2) | 2**(10*(self.state_no-1)) *self.vals[self.state_no]).split('0b')[1].zfill(49)
+            else:
+                data = bin(int(fsm[self.state_no],2) | 2**(31) *65535).split('0b')[1].zfill(49)
+
             print(data)
             # print(fsm[self.state_no])
             self.conn.send(data + '\n') 
