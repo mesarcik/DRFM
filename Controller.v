@@ -142,7 +142,7 @@ reg MasterSelect;
 always @(posedge M100CLK) MasterSelect <= SW[1];
 
  always @ (*) begin
-  if(SW[2]) begin
+  // if(SW[2]) begin
     if (MasterSelect) begin
      Avalon_ChipEnable   <=  Write_ChipEnable;
      Avalon_Address    <=  Write_Address;
@@ -175,13 +175,13 @@ always @(posedge M100CLK) MasterSelect <= SW[1];
      Write_ReadData      <=  0;
      Write_ReadDataValid <=  0;
     end
-  end
+  // end
  end
 
 assign Read_Address = Address_counter;
 
  always @(posedge M100CLK) begin
-  if(SW[2]) begin
+  // if(SW[2]) begin
 
      if(!lock) begin
       wraddress <= 0;
@@ -204,6 +204,6 @@ assign Read_Address = Address_counter;
       rdaddress <= rdaddress + 1'b_1;
      end
     end
-  end
+  // end
  end
 endmodule

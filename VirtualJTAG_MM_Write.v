@@ -198,10 +198,14 @@ end
 //------------------------------------------------------------------------------
 
 always @ (*) begin
-    if (&Instruction) // If data is vailiable
-      TDO <= DR1[0]; //give it new data 
-      else 
-      TDO <= DR0; // tell it there is adata on device.
+    if(!LOAD) begin
+      if (&Instruction)begin // If data is vailiable
+        TDO <= DR1[0]; //give it new data 
+      end
+      else begin 
+        TDO <= DR0; // tell it there is adata on device.
+      end
+    end
   end
 
 //------------------------------------------------------------------------------
