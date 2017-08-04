@@ -21,7 +21,7 @@
 module VirtualJTAG_MM_Write(
  input Clk, Reset,
 
- output reg   Busy,
+ input LOAD,
 
  // All these signals use positive logic
  output       Avalon_ChipEnable,
@@ -34,7 +34,22 @@ module VirtualJTAG_MM_Write(
 
  input  [15:0]Avalon_ReadData,
  input        Avalon_ReadDataValid,
- output       Avalon_Read
+ output       Avalon_Read,
+
+ 
+ output [7:0] SS0,
+ output [7:0] SS1,
+ output [7:0] SS2,
+ output [7:0] SS3,
+ output [7:0] SS4,
+ output [7:0] SS5,
+
+ output[9:0]  LED,
+
+ output reg       TDO
+
+
+
 );
 
 assign Avalon_ChipEnable = 1'b_1;
@@ -42,19 +57,19 @@ assign Avalon_ByteEnable = 2'b11;
 assign Avalon_Read       = 1'b_0;
 //------------------------------------------------------------------------------
 
-reg  TDO;
+// reg  TDO;
 wire TCK;
-wire TDI;
+reg TDI;
 
-wire [7:0]Instruction;
+reg   Instruction; // this has been changed -- might have to be [7:0]
 wire      Capture;
 wire      Shift;
-wire      Update;
+reg      Update;
 
 sld_virtual_jtag #(
  .sld_auto_instance_index("NO"),
  .sld_instance_index     (0),
- .sld_ir_width           (8)
+ .sld_ir_width           (1)
 
 )virtual_jtag_0(
  .tck              (TCK),
@@ -68,7 +83,9 @@ sld_virtual_jtag #(
 );
 //------------------------------------------------------------------------------
 
-reg [12:0]WrAddress;
+reg [12:0] WrAddress;
+reg        DR0;
+reg [63:0] DR1;
 
 altsyncram #(
  // General parameters
@@ -127,7 +144,11 @@ altsyncram #(
  .wren_b        (1'b0)
 );
 //------------------------------------------------------------------------------
-
+// Seven Segment Interface Initialization
+    reg [3:0] state;
+    Seven_Seg_Driver Seven_Seg_Driver_inst (state,SS0,SS1,SS2,SS3,SS4,SS5);
+  //
+//------------------------------------------------------------------------------
 reg JTAG_Reset;
 reg JTAG_Busy;
 
@@ -135,28 +156,54 @@ always @(posedge TCK) begin
  JTAG_Reset <= Reset;
 
  if(JTAG_Reset) begin
-  TDO       <= 0;
+  // TDO       <= 0;
   WrAddress <= 0;
   JTAG_Busy <= 0;
+
+
   
  end else begin
-  case(1'b1)
-   Capture: begin
-    WrAddress <= 0;
-    JTAG_Busy <= 1'b1;
-   end
+  if(LOAD) begin // IN LOAD STATE
+    // state <= 4'b_0100;
+    case(1'b1)
+     Capture: begin
+      WrAddress <= 0;
+      JTAG_Busy <= 1'b1;
+     end
 
-   Shift: begin
-    WrAddress <= WrAddress + 1'b1;
-   end
+     Shift: begin
+      WrAddress <= WrAddress + 1'b1;
+      // LED <= WrAddress;
+     end
 
-   Update: begin
-    JTAG_Busy <= 1'b0;
-   end
-   default:;
-  endcase
+     Update: begin
+      JTAG_Busy <= 1'b0;
+     end
+     default:;
+    endcase
+  end
+  else begin
+      DR0 <= TDI; // Check if there is data on the device.
+        
+      if (Shift) begin  // JTAG shift state.
+        if (&Instruction)begin //Data is availiable to be taken out.
+          DR1 <= {DR0, DR1[48:1]}; // Collect the data and shift.
+        end
+      end
+    end
+
  end
 end
+
+//------------------------------------------------------------------------------
+
+always @ (*) begin
+    if (&Instruction) // If data is vailiable
+      TDO <= DR1[0]; //give it new data 
+      else 
+      TDO <= DR0; // tell it there is adata on device.
+  end
+
 //------------------------------------------------------------------------------
 
 reg       Local_Reset;
@@ -165,36 +212,60 @@ reg [12:0]WrAddress_Sync;
 reg       Capture_Sync;
 
 always @(posedge Clk) begin
- Local_Reset  <=  Reset;
- TCK_Sync     <= {TCK_Sync[0], TCK};
- Capture_Sync <=  Capture;
-//------------------------------------------------------------------------------
+  if(LOAD) begin
+     state <= 4'b_0100; // LOAD
+     Local_Reset  <=  Reset;
+     TCK_Sync     <= {TCK_Sync[0], TCK};
+     Capture_Sync <=  Capture;
 
- if(Local_Reset || Capture_Sync) begin
-  Avalon_Address <= 0;
-  Avalon_Write   <= 0;
-  WrAddress_Sync <= 0;
-//------------------------------------------------------------------------------
+     if(Local_Reset || Capture_Sync) begin
+      Avalon_Address <= 0;
+      Avalon_Write   <= 0;
+      WrAddress_Sync <= 0;
+     end else begin
+      if(TCK_Sync == 2'b10) begin
+        WrAddress_Sync <= WrAddress;
+        LED <=Avalon_Address [24:15];
+         // assign LED[9:1] = Avalon_Address [24:16]
+      end
 
- end else begin
-  if(TCK_Sync == 2'b10) WrAddress_Sync <= WrAddress;
+      if(~Avalon_Write) begin // Idle
+       if(WrAddress_Sync[12:4] != Avalon_Address[8:0]) begin
+        // Busy         <= 1'b1;
+        Avalon_Write <= 1'b1;
 
-  if(~Avalon_Write) begin // Idle
-   if(WrAddress_Sync[12:4] != Avalon_Address[8:0]) begin
-    Busy         <= 1'b1;
-    Avalon_Write <= 1'b1;
+       end else begin
+        // Busy <= JTAG_Busy;
+       end
 
-   end else begin
-    Busy <= JTAG_Busy;
-   end
-
-  end else begin // Writing
-   if(~Avalon_WaitRequest) begin
-    Avalon_Address <= Avalon_Address + 1'b1;
-    Avalon_Write   <= 0;
-   end
+      end else begin // Writing
+       if(~Avalon_WaitRequest) begin
+        Avalon_Address <= Avalon_Address + 1'b1;
+        Avalon_Write   <= 0;
+       end
+      end
+     end
+  end 
+  else begin
+      // Check the incomming data to see if we need to do anything.
+      if(DR1[10])begin 
+        state <= 4'b_0001; // DELAY
+        LED <= DR1[9:0];
+      end
+      else if(DR1[20] ) begin
+        state <= 4'b_1000; // DOPPLER
+        LED <= DR1[19:10];    
+      end 
+      else if(  DR1[30]) begin
+        state <= 4'b_0010; // SCALE 
+        LED <= DR1 [29:20];
+      end 
+      else if(  DR1[48]) begin 
+       
+      LED <= DR1 [47:31];
+      end 
+      else state <= 4'b_0000; //Waiting state
   end
- end
 end
 //------------------------------------------------------------------------------
 

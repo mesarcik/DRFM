@@ -1,5 +1,5 @@
 module Virtual_JTAG_v1 (
-	input [7:1] 	 	SW,
+	input [7:0] 	 	SW,
 	input 				aclr,
 	input 				CLK,
 	input			 	reset,
@@ -23,9 +23,12 @@ module Virtual_JTAG_v1 (
 	output wire         SDRAM_Clock,             //          .we_n
 // Other
 	output[9:0] 		LED, 
-	output reg 		 	tdo
+	output reg 		 	tdo,
+	output 				out
 
 );
+
+	reg[7:0] PWM_Counter   =    8'b_0000_0000;
 
 	
 	// PLL Initialiation
@@ -36,79 +39,52 @@ module Virtual_JTAG_v1 (
 		PLL my_PLL (CLK,M100CLK,SDRAM_Clock,Clock_780,lock);
 	//
 	
+	// Controller Initialization
+		reg request;
+		reg [7:0] data_out;
 
-	// Virtual JTAG Initialisation
-		reg 					ir_in;
-		reg						virtual_state_sdr;
-		reg 					virtual_state_udr;
-		reg						tdi;
-		reg 					tck;
-		reg 					ir_out;
+		Controller my_Controller(
+		 M100CLK,
+		 lock,
+		 request,
+		 SW, //data from fifo-q 
+		 // LED,
 
-		wire					virtual_state_cdr;
-		wire					virtual_state_e1d;
-		wire					virtual_state_pdr;
-		wire					virtual_state_e2d;
-		wire					virtual_state_cir;
-		wire					virtual_state_uir;
-		vJTAG vJTAG_inst (tdi,tdo,ir_in,ir_out,virtual_state_cdr,virtual_state_sdr,virtual_state_e1dr,virtual_state_pdr,virtual_state_e2dr,virtual_state_udr,virtual_state_cir,virtual_state_uir,tck);
+		 OP_DRAM_ADDR,                  //     wires.addr
+		 OP_DRAM_Bank_Address,                 //          .ba
+		 OP_DRAM_Column_Address_Strobe,         //          .cas_n
+		 OP_DRAM_Clock_Enable,           //          .cke
+		 OP_DRAM_Chip_Select,             //          .cs_n
+		 BP_DRAM_Data,                  //          .dq
+		 OP_DRAM_Data_Mask,                 //          .dqm upper and lower PIN_V22 & PIN_J21
+		 OP_DRAM_Row_Address_Strobe,            //          .ras_n
+		 OP_DRAM_Write_Enable,             //          .we_n
+		 data_out,
+		 SS0,
+		 SS1,
+		 SS2,
+		 SS3,
+		 SS4,
+		 SS5,
+		 LED,
+		 TDO
+		 );
 	//
+
+	always @(posedge M100CLK) begin
+	  if (!SW[1]) begin
+	   if(!PWM_Counter) request <=1;
+	   if(|PWM_Counter) request <=0;
+
+	   PWM_Counter <= PWM_Counter + 1'b_1;
+	   if(&PWM_Counter)PWM_Counter <= 8'b_0000_0000;
+	     
+	   if(PWM_Counter > data_out) out <= 1'b_0;
+	   else out <= 1'b_1;
+	  end
+	end
+
 	
-	// Seven Segment Interface Initialization
-		reg [3:0] state;
-		Seven_Seg_Driver Seven_Seg_Driver_inst (state,SS0,SS1,SS2,SS3,SS4,SS5);
-	//
-
-	reg DR0;
-	reg [48:0] DR1;
-	
-
-	always @ (posedge tck or posedge aclr) begin //Because asynchronously clear as there will be multiple drivers
-		if (aclr)begin
-			DR0 <= 1'b0;
-			DR1 <= 0;
-		end 
-		else begin
-			DR0 <= tdi; // Check if there is data on the device.
-				
-			if (virtual_state_sdr) begin  // JTAG shift state.
-				if (&ir_in)begin //Data is availiable to be taken out.
-					DR1 <= {DR0, DR1[48:1]}; // Collect the data and shift.
-				end
-			end
-		end
-	end
-		
-
-	always @ (*) begin
-		if (&ir_in) // If data is vailiable
-			tdo <= DR1[0]; //give it new data 
-	    else 
-			tdo <= DR0;	// tell it there is adata on device.
-	end
-
-	always @(virtual_state_udr) begin
-		// Check the incomming data to see if we need to do anything.
-		if(DR1[10])begin 
-			state <= 4'b_0001; // DELAY
-			LED <= DR1[9:0];
-		end
-		else if(DR1[20] ) begin
-			state <= 4'b_1000; // DOPPLER
-			LED <= DR1[19:10];		
-		end 
-		else if(  DR1[30]) begin
-			state <= 4'b_0010; // SCALE	
-			LED <= DR1 [29:20];
-		end 
-		else if(  DR1[48]) begin 
-		state <= 4'b_0100; // LOAD	
-		LED <= DR1 [47:31];
-		end 
-		else state <= 4'b_0000; //Waiting state
-		
-
-	end
 
 
 endmodule // Virtual_JTAG_v1

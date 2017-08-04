@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Virtual_JTAG_v1
-Tue Aug  1 15:26:46 2017
+Fri Aug  4 14:51:11 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -95,12 +95,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.29        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   6.3%      ;
+;     Processor 2            ;  28.8%      ;
 +----------------------------+-------------+
 
 
@@ -109,7 +109,7 @@ agreement for further details.
 +------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                              ; Status ; Read at                  ;
 +------------------------------------------------------------+--------+--------------------------+
-; Qsys/Qsys/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Tue Aug  1 15:26:39 2017 ;
+; Qsys/Qsys/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Fri Aug  4 14:51:07 2017 ;
 +------------------------------------------------------------+--------+--------------------------+
 
 
@@ -127,7 +127,7 @@ agreement for further details.
 +-----------+-----------------+---------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
 +-----------+-----------------+---------------------+------+
-; 139.9 MHz ; 139.9 MHz       ; altera_reserved_tck ;      ;
+; 71.79 MHz ; 71.79 MHz       ; altera_reserved_tck ;      ;
 +-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -137,17 +137,17 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 46.426 ; 0.000         ;
+; altera_reserved_tck ; 43.035 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
-+----------------------------------------------+
-; Slow 1200mV 85C Model Hold Summary           ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; altera_reserved_tck ; -0.152 ; -0.272        ;
-+---------------------+--------+---------------+
++---------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.340 ; 0.000         ;
++---------------------+-------+---------------+
 
 
 +----------------------------------------------+
@@ -155,7 +155,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 97.805 ; 0.000         ;
+; altera_reserved_tck ; 95.447 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -164,7 +164,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.921 ; 0.000         ;
+; altera_reserved_tck ; 1.361 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -173,7 +173,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; altera_reserved_tck ; 49.622 ; 0.000              ;
+; altera_reserved_tck ; 49.516 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -181,21 +181,21 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Slow 1200mV 85C Model Metastability Summary ;
 -----------------------------------------------
 The design MTBF is not calculated because there are no specified synchronizers in the design.
-Number of Synchronizer Chains Found: 1
-Shortest Synchronizer Chain: 5 Registers
+Number of Synchronizer Chains Found: 2
+Shortest Synchronizer Chain: 4 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 344.639 ns
+Worst Case Available Settling Time: 341.148 ns
 
 
 
 
-+-----------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                         ;
-+------------+-----------------+---------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
-+------------+-----------------+---------------------+------+
-; 152.35 MHz ; 152.35 MHz      ; altera_reserved_tck ;      ;
-+------------+-----------------+---------------------+------+
++----------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                        ;
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 78.08 MHz ; 78.08 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -204,17 +204,17 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 46.718 ; 0.000         ;
+; altera_reserved_tck ; 43.596 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
-+----------------------------------------------+
-; Slow 1200mV 0C Model Hold Summary            ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; altera_reserved_tck ; -0.095 ; -0.187        ;
-+---------------------+--------+---------------+
++---------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.305 ; 0.000         ;
++---------------------+-------+---------------+
 
 
 +----------------------------------------------+
@@ -222,7 +222,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 98.010 ; 0.000         ;
+; altera_reserved_tck ; 95.878 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -231,7 +231,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.842 ; 0.000         ;
+; altera_reserved_tck ; 1.256 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -240,7 +240,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; altera_reserved_tck ; 49.650 ; 0.000             ;
+; altera_reserved_tck ; 49.537 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -248,10 +248,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Slow 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
 The design MTBF is not calculated because there are no specified synchronizers in the design.
-Number of Synchronizer Chains Found: 1
-Shortest Synchronizer Chain: 5 Registers
+Number of Synchronizer Chains Found: 2
+Shortest Synchronizer Chain: 4 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 345.103 ns
+Worst Case Available Settling Time: 341.876 ns
 
 
 
@@ -261,17 +261,17 @@ Worst Case Available Settling Time: 345.103 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 48.714 ; 0.000         ;
+; altera_reserved_tck ; 47.254 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
-+----------------------------------------------+
-; Fast 1200mV 0C Model Hold Summary            ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; altera_reserved_tck ; -0.285 ; -0.582        ;
-+---------------------+--------+---------------+
++---------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.147 ; 0.000         ;
++---------------------+-------+---------------+
 
 
 +----------------------------------------------+
@@ -279,7 +279,7 @@ Worst Case Available Settling Time: 345.103 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 98.962 ; 0.000         ;
+; altera_reserved_tck ; 97.704 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -288,7 +288,7 @@ Worst Case Available Settling Time: 345.103 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.414 ; 0.000         ;
+; altera_reserved_tck ; 0.581 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -297,7 +297,7 @@ Worst Case Available Settling Time: 345.103 ns
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; altera_reserved_tck ; 49.419 ; 0.000             ;
+; altera_reserved_tck ; 49.378 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -305,24 +305,24 @@ Worst Case Available Settling Time: 345.103 ns
 ; Fast 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
 The design MTBF is not calculated because there are no specified synchronizers in the design.
-Number of Synchronizer Chains Found: 1
-Shortest Synchronizer Chain: 5 Registers
+Number of Synchronizer Chains Found: 2
+Shortest Synchronizer Chain: 4 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 348.055 ns
+Worst Case Available Settling Time: 346.482 ns
 
 
 
 
-+-----------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                               ;
-+----------------------+--------+--------+----------+---------+---------------------+
-; Clock                ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+----------------------+--------+--------+----------+---------+---------------------+
-; Worst-case Slack     ; 46.426 ; -0.285 ; 97.805   ; 0.414   ; 49.419              ;
-;  altera_reserved_tck ; 46.426 ; -0.285 ; 97.805   ; 0.414   ; 49.419              ;
-; Design-wide TNS      ; 0.0    ; -0.582 ; 0.0      ; 0.0     ; 0.0                 ;
-;  altera_reserved_tck ; 0.000  ; -0.582 ; 0.000    ; 0.000   ; 0.000               ;
-+----------------------+--------+--------+----------+---------+---------------------+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack     ; 43.035 ; 0.147 ; 95.447   ; 0.581   ; 49.378              ;
+;  altera_reserved_tck ; 43.035 ; 0.147 ; 95.447   ; 0.581   ; 49.378              ;
+; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++----------------------+--------+-------+----------+---------+---------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -412,6 +412,7 @@ Worst Case Available Settling Time: 348.055 ns
 ; LED[8]                        ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; LED[9]                        ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; tdo                           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; out                           ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; BP_DRAM_Data[0]               ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; 6.0p F ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; BP_DRAM_Data[1]               ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; 6.0p F ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; BP_DRAM_Data[2]               ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; 6.0p F ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
@@ -437,13 +438,13 @@ Worst Case Available Settling Time: 348.055 ns
 +---------------------+-----------------------+-----------------+-----------------+
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
-; SW[1]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[2]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[3]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[4]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[5]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[6]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[7]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; aclr                ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; reset               ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; BP_DRAM_Data[0]     ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; BP_DRAM_Data[1]     ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
@@ -461,8 +462,9 @@ Worst Case Available Settling Time: 348.055 ns
 ; BP_DRAM_Data[13]    ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; BP_DRAM_Data[14]    ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; BP_DRAM_Data[15]    ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; aclr                ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[1]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; CLK                 ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[0]               ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; altera_reserved_tms ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; altera_reserved_tck ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; altera_reserved_tdi ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -560,6 +562,7 @@ Worst Case Available Settling Time: 348.055 ns
 ; LED[8]                        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
 ; LED[9]                        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
 ; tdo                           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; out                           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
 ; BP_DRAM_Data[0]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[1]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00187 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00187 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[2]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
@@ -667,6 +670,7 @@ Worst Case Available Settling Time: 348.055 ns
 ; LED[8]                        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
 ; LED[9]                        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
 ; tdo                           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; out                           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
 ; BP_DRAM_Data[0]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000252 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000252 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[1]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000244 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000244 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[2]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000252 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000252 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
@@ -774,6 +778,7 @@ Worst Case Available Settling Time: 348.055 ns
 ; LED[8]                        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; LED[9]                        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; tdo                           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; out                           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; BP_DRAM_Data[0]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.49 V              ; -0.0114 V           ; 0.05 V                               ; 0.07 V                               ; 7.87e-10 s                  ; 8.24e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.49 V             ; -0.0114 V          ; 0.05 V                              ; 0.07 V                              ; 7.87e-10 s                 ; 8.24e-10 s                 ; No                        ; Yes                       ;
 ; BP_DRAM_Data[1]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.49 V              ; -0.0114 V           ; 0.05 V                               ; 0.07 V                               ; 7.87e-10 s                  ; 8.24e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.49 V             ; -0.0114 V          ; 0.05 V                              ; 0.07 V                              ; 7.87e-10 s                 ; 8.24e-10 s                 ; No                        ; Yes                       ;
 ; BP_DRAM_Data[2]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.49 V              ; -0.0114 V           ; 0.05 V                               ; 0.07 V                               ; 7.87e-10 s                  ; 8.24e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.49 V             ; -0.0114 V          ; 0.05 V                              ; 0.07 V                              ; 7.87e-10 s                 ; 8.24e-10 s                 ; No                        ; Yes                       ;
@@ -799,7 +804,7 @@ Worst Case Available Settling Time: 348.055 ns
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 771      ; 0        ; 36       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 7926     ; 0        ; 102      ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -809,7 +814,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 771      ; 0        ; 36       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 7926     ; 0        ; 102      ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -819,7 +824,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 23       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 445      ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -829,7 +834,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 23       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 445      ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -852,11 +857,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Property                        ; Setup ; Hold ;
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
-; Unconstrained Clocks            ; 1     ; 1    ;
-; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 87    ; 87   ;
-; Unconstrained Output Ports      ; 59    ; 59   ;
-; Unconstrained Output Port Paths ; 181   ; 181  ;
+; Unconstrained Clocks            ; 2     ; 2    ;
+; Unconstrained Input Ports       ; 22    ; 22   ;
+; Unconstrained Input Port Paths  ; 260   ; 260  ;
+; Unconstrained Output Ports      ; 94    ; 94   ;
+; Unconstrained Output Port Paths ; 241   ; 241  ;
 +---------------------------------+-------+------+
 
 
@@ -865,7 +870,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------+---------------------+------+---------------+
 ; Target              ; Clock               ; Type ; Status        ;
 +---------------------+---------------------+------+---------------+
-; DR1[10]             ;                     ; Base ; Unconstrained ;
+; CLK                 ;                     ; Base ; Unconstrained ;
+; SW[1]               ;                     ; Base ; Unconstrained ;
 ; altera_reserved_tck ; altera_reserved_tck ; Base ; Constrained   ;
 +---------------------+---------------------+------+---------------+
 
@@ -875,78 +881,131 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------+--------------------------------------------------------------------------------------+
 ; Input Port          ; Comment                                                                              ;
 +---------------------+--------------------------------------------------------------------------------------+
+; BP_DRAM_Data[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[8]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[9]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[10]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[11]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[12]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[13]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[14]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[15]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; CLK                 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; aclr                ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[0]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------------+--------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                                  ;
-+---------------------+---------------------------------------------------------------------------------------+
-; Output Port         ; Comment                                                                               ;
-+---------------------+---------------------------------------------------------------------------------------+
-; LED[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[8]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[9]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SDRAM_Clock         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; tdo                 ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                            ;
++-------------------------------+---------------------------------------------------------------------------------------+
+; Output Port                   ; Comment                                                                               ;
++-------------------------------+---------------------------------------------------------------------------------------+
+; BP_DRAM_Data[0]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[1]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[2]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[3]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[4]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[5]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[6]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[7]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[8]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[9]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[10]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[11]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[12]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[13]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[14]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[15]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[8]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[9]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[0]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[1]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[2]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[3]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[4]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[5]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[6]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[7]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[8]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[9]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[10]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[11]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[12]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Bank_Address[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Bank_Address[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Chip_Select           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Column_Address_Strobe ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Row_Address_Strobe    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Write_Enable          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SDRAM_Clock                   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; altera_reserved_tdo           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out                           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -954,78 +1013,131 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------+--------------------------------------------------------------------------------------+
 ; Input Port          ; Comment                                                                              ;
 +---------------------+--------------------------------------------------------------------------------------+
+; BP_DRAM_Data[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[8]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[9]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[10]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[11]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[12]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[13]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[14]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[15]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; CLK                 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; aclr                ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[0]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------------+--------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                                  ;
-+---------------------+---------------------------------------------------------------------------------------+
-; Output Port         ; Comment                                                                               ;
-+---------------------+---------------------------------------------------------------------------------------+
-; LED[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[8]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LED[9]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SDRAM_Clock         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS0[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS1[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS2[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS3[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS4[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[0]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[1]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[2]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[3]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[4]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[5]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[6]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SS5[7]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; tdo                 ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                            ;
++-------------------------------+---------------------------------------------------------------------------------------+
+; Output Port                   ; Comment                                                                               ;
++-------------------------------+---------------------------------------------------------------------------------------+
+; BP_DRAM_Data[0]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[1]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[2]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[3]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[4]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[5]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[6]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[7]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[8]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[9]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[10]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[11]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[12]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[13]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[14]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BP_DRAM_Data[15]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[8]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[9]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[0]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[1]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[2]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[3]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[4]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[5]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[6]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[7]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[8]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[9]               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[10]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[11]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_ADDR[12]              ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Bank_Address[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Bank_Address[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Chip_Select           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Column_Address_Strobe ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Row_Address_Strobe    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; OP_DRAM_Write_Enable          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SDRAM_Clock                   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS0[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS1[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS2[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS3[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS4[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[0]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[1]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[2]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[3]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[4]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[5]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[6]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SS5[7]                        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; altera_reserved_tdo           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out                           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------+
@@ -1034,27 +1146,28 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Aug  1 15:26:38 2017
+    Info: Processing started: Fri Aug  4 14:51:06 2017
 Info: Command: quartus_sta Virtual_JTAG_v1 -c Virtual_JTAG_v1
 Info: qsta_default_script.tcl version: #1
-Warning (20013): Ignored 19 assignments for entity "Qsys" -- entity does not exist in design
-Warning (20013): Ignored 34 assignments for entity "Qsys_new_sdram_controller_0" -- entity does not exist in design
-Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
+Warning (20013): Ignored 16 assignments for entity "vJTAG" -- entity does not exist in design
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 10 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 62 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity sld_hub
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Info (332104): Reading SDC File: 'Qsys/Qsys/synthesis/submodules/altera_reset_controller.sdc'
-Warning (332060): Node: DR1[10] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch LED[1]$latch is being clocked by DR1[10]
+Warning (332060): Node: CLK was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|state[1] is being clocked by CLK
+Warning (332060): Node: SW[1] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch Controller:my_Controller|Avalon_Write is being clocked by SW[1]
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: my_PLL|altpll_component|auto_generated|pll1|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: my_PLL|altpll_component|auto_generated|pll1|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
@@ -1062,118 +1175,121 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 46.426
+Info (332146): Worst-case setup slack is 43.035
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    46.426               0.000 altera_reserved_tck 
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -0.152
+    Info (332119):    43.035               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.340
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.152              -0.272 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 97.805
+    Info (332119):     0.340               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 95.447
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    97.805               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.921
+    Info (332119):    95.447               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 1.361
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.921               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.622
+    Info (332119):     1.361               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.516
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.622               0.000 altera_reserved_tck 
-Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332119):    49.516               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
-    Info (332114): Number of Synchronizer Chains Found: 1
-    Info (332114): Shortest Synchronizer Chain: 5 Registers
+    Info (332114): Number of Synchronizer Chains Found: 2
+    Info (332114): Shortest Synchronizer Chain: 4 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 344.639 ns
+    Info (332114): Worst Case Available Settling Time: 341.148 ns
     Info (332114): 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Warning (332060): Node: DR1[10] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch LED[1]$latch is being clocked by DR1[10]
+Warning (332060): Node: CLK was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|state[1] is being clocked by CLK
+Warning (332060): Node: SW[1] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch Controller:my_Controller|Avalon_Write is being clocked by SW[1]
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: my_PLL|altpll_component|auto_generated|pll1|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: my_PLL|altpll_component|auto_generated|pll1|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
-Info (332146): Worst-case setup slack is 46.718
+Info (332146): Worst-case setup slack is 43.596
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    46.718               0.000 altera_reserved_tck 
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -0.095
+    Info (332119):    43.596               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.305
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.095              -0.187 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 98.010
+    Info (332119):     0.305               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 95.878
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    98.010               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.842
+    Info (332119):    95.878               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 1.256
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.842               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.650
+    Info (332119):     1.256               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.537
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.650               0.000 altera_reserved_tck 
-Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332119):    49.537               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
-    Info (332114): Number of Synchronizer Chains Found: 1
-    Info (332114): Shortest Synchronizer Chain: 5 Registers
+    Info (332114): Number of Synchronizer Chains Found: 2
+    Info (332114): Shortest Synchronizer Chain: 4 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 345.103 ns
+    Info (332114): Worst Case Available Settling Time: 341.876 ns
     Info (332114): 
 Info: Analyzing Fast 1200mV 0C Model
-Warning (332060): Node: DR1[10] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch LED[1]$latch is being clocked by DR1[10]
+Warning (332060): Node: CLK was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|state[1] is being clocked by CLK
+Warning (332060): Node: SW[1] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch Controller:my_Controller|Avalon_Write is being clocked by SW[1]
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: my_PLL|altpll_component|auto_generated|pll1|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: my_PLL|altpll_component|auto_generated|pll1|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
-Info (332146): Worst-case setup slack is 48.714
+Info (332146): Worst-case setup slack is 47.254
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    48.714               0.000 altera_reserved_tck 
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -0.285
+    Info (332119):    47.254               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.147
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.285              -0.582 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 98.962
+    Info (332119):     0.147               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 97.704
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    98.962               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.414
+    Info (332119):    97.704               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.581
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.414               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.419
+    Info (332119):     0.581               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.378
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.419               0.000 altera_reserved_tck 
-Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332119):    49.378               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
-    Info (332114): Number of Synchronizer Chains Found: 1
-    Info (332114): Shortest Synchronizer Chain: 5 Registers
+    Info (332114): Number of Synchronizer Chains Found: 2
+    Info (332114): Shortest Synchronizer Chain: 4 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 348.055 ns
+    Info (332114): Worst Case Available Settling Time: 346.482 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 889 megabytes
-    Info: Processing ended: Tue Aug  1 15:26:46 2017
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 914 megabytes
+    Info: Processing ended: Fri Aug  4 14:51:11 2017
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:07
 
 

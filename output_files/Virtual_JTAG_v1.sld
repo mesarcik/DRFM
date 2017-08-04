@@ -1,8 +1,8 @@
 <sld_project_info>
   <sld_infos>
-    <sld_info hpath="vJTAG:vJTAG_inst" name="vJTAG_inst">
+    <sld_info hpath="Controller:my_Controller|Qsys:myQsys" name="myQsys">
       <assignment_values>
-        <assignment_value text="QSYS_NAME vJTAG HAS_SOPCINFO 1 GENERATION_ID 1501230819"/>
+        <assignment_value text="QSYS_NAME Qsys HAS_SOPCINFO 1 GENERATION_ID 1501585114"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">

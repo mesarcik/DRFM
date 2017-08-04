@@ -188,6 +188,82 @@
 					"strict" : false
 				},
 				{
+					"name" : "OP_DRAM_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_ADDR[12]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_Bank_Address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_Bank_Address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_Column_Address_Strobe",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_Chip_Select",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_Row_Address_Strobe",
+					"strict" : false
+				},
+				{
+					"name" : "OP_DRAM_Write_Enable",
+					"strict" : false
+				},
+				{
 					"name" : "LED[0]",
 					"strict" : false
 				},
@@ -228,11 +304,79 @@
 					"strict" : false
 				},
 				{
-					"name" : "tdo",
+					"name" : "out",
 					"strict" : false
 				},
 				{
-					"name" : "aclr",
+					"name" : "BP_DRAM_Data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "BP_DRAM_Data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{

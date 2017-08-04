@@ -1,17 +1,17 @@
-Fitter Status : Successful - Tue Aug  1 15:26:24 2017
+Fitter Status : Successful - Fri Aug  4 14:50:58 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : Virtual_JTAG_v1
 Top-level Entity Name : Virtual_JTAG_v1
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 212 / 49,760 ( < 1 % )
-    Total combinational functions : 168 / 49,760 ( < 1 % )
-    Dedicated logic registers : 126 / 49,760 ( < 1 % )
-Total registers : 126
-Total pins : 108 / 360 ( 30 % )
+Total logic elements : 2,306 / 49,760 ( 5 % )
+    Total combinational functions : 1,347 / 49,760 ( 3 % )
+    Dedicated logic registers : 1,783 / 49,760 ( 4 % )
+Total registers : 1850
+Total pins : 110 / 360 ( 31 % )
 Total virtual pins : 0
-Total memory bits : 0 / 1,677,312 ( 0 % )
+Total memory bits : 27,264 / 1,677,312 ( 2 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
 Total PLLs : 1 / 4 ( 25 % )
 UFM blocks : 0 / 1 ( 0 % )

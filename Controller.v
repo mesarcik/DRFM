@@ -15,8 +15,22 @@ module Controller(
  output wire        OP_DRAM_Row_Address_Strobe,            //          .ras_n
  output wire        OP_DRAM_Write_Enable,             //          .we_n
 
- output [7:0] data_out
+ output [7:0] data_out,
+
+ output [7:0] SS0,
+ output [7:0] SS1,
+ output [7:0] SS2,
+ output [7:0] SS3,
+ output [7:0] SS4,
+ output [7:0] SS5,
+ 
+ output[9:0]  LED,
+
+ output reg TDO
+
+
 );
+
 
 //FIFO BLOCK Regsiters
 reg rdreq ; //  Read request from fifo
@@ -73,7 +87,7 @@ reg   Write_Read;
 VirtualJTAG_MM_Write my_VirtualJTAG_MM_Write(
        M100CLK,
         ~lock ,
-         // LED[0],
+         SW[2],
         Write_ChipEnable,
         Write_Address,
         Write_ByteEnable,
@@ -82,7 +96,15 @@ VirtualJTAG_MM_Write my_VirtualJTAG_MM_Write(
         Write_Write,
         Write_ReadData,
         Write_ReadDataValid,
-        Write_Read
+        Write_Read,
+        SS0,
+        SS1,
+        SS2,
+        SS3,
+        SS4,
+        SS5,
+        LED,
+        TDO
         );
 
   
@@ -120,64 +142,68 @@ reg MasterSelect;
 always @(posedge M100CLK) MasterSelect <= SW[1];
 
  always @ (*) begin
-  if (MasterSelect) begin
-   Avalon_ChipEnable   <=  Write_ChipEnable;
-   Avalon_Address    <=  Write_Address;
-   Avalon_ByteEnable   <=  Write_ByteEnable;
-   Avalon_WriteData   <=  Write_WriteData;
-   Avalon_Write    <=  Write_Write;
-   Avalon_Read    <=  Write_Read;
+  if(SW[2]) begin
+    if (MasterSelect) begin
+     Avalon_ChipEnable   <=  Write_ChipEnable;
+     Avalon_Address    <=  Write_Address;
+     Avalon_ByteEnable   <=  Write_ByteEnable;
+     Avalon_WriteData   <=  Write_WriteData;
+     Avalon_Write    <=  Write_Write;
+     Avalon_Read    <=  Write_Read;
 
-   Write_WaitRequest   <=  Avalon_WaitRequest;
-   Write_ReadData    <=  Avalon_ReadData;
-   Write_ReadDataValid  <=  Avalon_ReadDataValid;
+     Write_WaitRequest   <=  Avalon_WaitRequest;
+     Write_ReadData    <=  Avalon_ReadData;
+     Write_ReadDataValid  <=  Avalon_ReadDataValid;
 
-   Read_WaitRequest   <=  1'b1;
-   Read_ReadData      <=  0;
-   Read_ReadDataValid <=  0;
+     Read_WaitRequest   <=  1'b1;
+     Read_ReadData      <=  0;
+     Read_ReadDataValid <=  0;
 
-  end else begin
-   Avalon_ChipEnable   <=  1'b1;
-   Avalon_Address    <=  Read_Address;
-   Avalon_ByteEnable   <=  2'b11;
-   Avalon_WriteData   <=  Read_WriteData;
-   Avalon_Write    <=  0;
-   Avalon_Read    <=  Read_Read;
+    end else begin
+     Avalon_ChipEnable   <=  1'b1;
+     Avalon_Address    <=  Read_Address;
+     Avalon_ByteEnable   <=  2'b11;
+     Avalon_WriteData   <=  Read_WriteData;
+     Avalon_Write    <=  0;
+     Avalon_Read    <=  Read_Read;
 
-   Read_WaitRequest   <=  Avalon_WaitRequest;
-   Read_ReadData    <=  Avalon_ReadData;
-   Read_ReadDataValid   <=  Avalon_ReadDataValid;
+     Read_WaitRequest   <=  Avalon_WaitRequest;
+     Read_ReadData    <=  Avalon_ReadData;
+     Read_ReadDataValid   <=  Avalon_ReadDataValid;
 
-   Write_WaitRequest   <=  1'b1;
-   Write_ReadData      <=  0;
-   Write_ReadDataValid <=  0;
+     Write_WaitRequest   <=  1'b1;
+     Write_ReadData      <=  0;
+     Write_ReadDataValid <=  0;
+    end
   end
-
  end
 
 assign Read_Address = Address_counter;
 
  always @(posedge M100CLK) begin
-   if(!lock) begin
-    wraddress <= 0;
-    rdaddress <= 0;
-    Address_counter <= 0;
-   end else begin
+  if(SW[2]) begin
 
-   if(Read_ReadDataValid) wraddress <= wraddress + 1'b1;
+     if(!lock) begin
+      wraddress <= 0;
+      rdaddress <= 0;
+      Address_counter <= 0;
+     end else begin
 
-   if(!Read_WaitRequest) begin
-    if((Address_counter[8:0] - rdaddress[9:1]) < 9'd_450) begin
-     Read_Read<=1'b_1;  
-     Address_counter<= Address_counter +1'b1;
-    end else Read_Read <=1'b_0;
-   end
+     if(Read_ReadDataValid) wraddress <= wraddress + 1'b1;
+
+     if(!Read_WaitRequest) begin
+      if((Address_counter[8:0] - rdaddress[9:1]) < 9'd_450) begin
+       Read_Read<=1'b_1;  
+       Address_counter<= Address_counter +1'b1;
+      end else Read_Read <=1'b_0;
+     end
 
 
-  // Read_WaitRequest
-   if(&request) begin
-    rdaddress <= rdaddress + 1'b_1;
-   end
+    // Read_WaitRequest
+     if(&request) begin
+      rdaddress <= rdaddress + 1'b_1;
+     end
+    end
   end
  end
 endmodule
