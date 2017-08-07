@@ -1,6 +1,6 @@
 echo off
 
-"C:\Python27\python.exe" LED_Counter.py
+"C:\Python27\python.exe" interface.py
 
 pause
 

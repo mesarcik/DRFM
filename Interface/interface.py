@@ -12,9 +12,8 @@ import time
 
 #GLOBALS
 
-host = 'localhost' 
-port = 2540
-size = 4294967296 
+# host = 'localhost' 
+# port = 2540
 
 
 class Window(QtGui.QMainWindow):
@@ -32,6 +31,8 @@ class Window(QtGui.QMainWindow):
         self.time_val    = 0
         self.amp_val     = 0
 
+        self.com_thread = Com_Thread(self)
+
 
         self.initUI()
     def initUI(self): 
@@ -40,7 +41,7 @@ class Window(QtGui.QMainWindow):
               
         # Start Doppler Stuff
         self.doppler    = QtGui.QRadioButton("Doppler Shift")
-        self.doppler.setChecked(True)
+        self.doppler.setChecked(False)
 
         self.doppler_sl = QtGui.QSlider(QtCore.Qt.Horizontal)
         self.doppler_sl.setMinimum(-255)
@@ -113,7 +114,7 @@ class Window(QtGui.QMainWindow):
         import_Action.setShortcut('F3')
         import_Action.setToolTip('Upload Data to DE-10 Lite')
 
-        self.setGeometry(0, 0, 500,500)
+        self.setGeometry(50, 50, 500,500)
 
         self.statusBar()
         self.display.setLayout(self.layout)
@@ -166,43 +167,26 @@ class Window(QtGui.QMainWindow):
             pass
 
     def start_com(self):
-        print('spawning communication thread')
-        print("Updating to state %5d" % self.state)
-        self.com_thread = Com_Thread(self,host,port,self.state,[0,self.time_val,self.doppler_val,self.amp_val])
-        self.com_thread.start()
+        print('spawning communication object')
+        vals = [0,self.time_val,self.doppler_val,self.amp_val]
+        self.com_thread.Setup('localhost',2540,self.state,vals)
+        self.statusBar().showMessage('Connected to DE-10 Lite')
 
 
     def Upload(self):
-         self.statusBar().showMessage('Uploading Data to DE-10 Lite')
-         if(self.state != 4):
-            print('Load')
-            self.state = 4
-            self.com_thread.disconnect()
-            while(self.com_thread.isRunning()):
-                time.sleep(0.01)
-            self.start_com()
-         # self.com_thread.updateState(4)
-
-
-    def Open(self,host, port):
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect(( host,port))
-        return s
-
-        
+        self.statusBar().showMessage('Feature has been disabled.')
+       
     def DopplerShift(self):
         self.doppler_val = self.doppler_sl.value()
         self.doppler_lbl.setText(str(self.doppler_val))
         if (self.doppler.isChecked()):
             try:
                 self.statusBar().showMessage('Performing Doppler Shift by '+ str(self.doppler_sl.value()))
-                # if (self.state != 2):
                 print('Shift')
                 self.state = 2
-                self.com_thread.disconnect()
-                while(self.com_thread.isRunning()):
-                    time.sleep(0.01)
-                self.start_com()
+                print("Updating to state %5d" % self.state)
+                self.com_thread.updateState(self.state,[0,self.time_val,self.doppler_val,self.amp_val])
+               
             except:
                 pass
         else:
@@ -214,13 +198,10 @@ class Window(QtGui.QMainWindow):
         if(self.time.isChecked()):
             try:
                 self.statusBar().showMessage('Performing Time Delay by '+str(self.time_sl.value()))
-                
                 print('Delay')
                 self.state = 1
-                self.com_thread.disconnect()
-                while(self.com_thread.isRunning()):
-                    time.sleep(0.01)
-                self.start_com()
+                print("Updating to state %5d" % self.state)
+                self.com_thread.updateState(self.state,[0,self.time_val,self.doppler_val,self.amp_val])
             except:
                 pass
             
@@ -235,10 +216,9 @@ class Window(QtGui.QMainWindow):
                 self.statusBar().showMessage('Performing Amplitude Scaling by ' +str(self.amp_sl.value()))
                 print('Scale')
                 self.state = 3
-                self.com_thread.disconnect()
-                while(self.com_thread.isRunning()):
-                    time.sleep(0.01)
-                self.start_com()
+                print("Updating to state %5d" % self.state)
+                self.com_thread.updateState(self.state,[0,self.time_val,self.doppler_val,self.amp_val])
+               
             except:
                 pass
         else:
@@ -248,8 +228,9 @@ class Window(QtGui.QMainWindow):
     def closeEvent(self, event):
         try:
             self.STP_thread.disconnect()
-        except e:
-            print(e)
+            self.com_thread.disconnect()
+        except Exception, e:
+            print(str(e))
 def main():
     
     app = QtGui.QApplication(sys.argv)
