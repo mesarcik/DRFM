@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DRFM
-Mon Aug 07 12:09:49 2017
+Tue Aug 08 13:05:50 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -49,11 +49,10 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  41. SignalTap II Logic Analyzer Settings
  42. Virtual JTAG Settings
  43. Post-Synthesis Netlist Statistics for Top Partition
- 44. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
- 45. Elapsed Time Per Partition
- 46. Connections to In-System Debugging Instance "auto_signaltap_0"
- 47. Analysis & Synthesis Messages
- 48. Analysis & Synthesis Suppressed Messages
+ 44. Elapsed Time Per Partition
+ 45. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 46. Analysis & Synthesis Messages
+ 47. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -80,15 +79,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 07 12:09:49 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 08 13:05:50 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; DRFM                                        ;
 ; Top-level Entity Name              ; PWM                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3,237                                       ;
-;     Total combinational functions  ; 1,631                                       ;
-;     Dedicated logic registers      ; 2,549                                       ;
-; Total registers                    ; 2549                                        ;
+; Total logic elements               ; 3,256                                       ;
+;     Total combinational functions  ; 1,635                                       ;
+;     Dedicated logic registers      ; 2,565                                       ;
+; Total registers                    ; 2565                                        ;
 ; Total pins                         ; 114                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 811,008                                     ;
@@ -304,20 +303,20 @@ agreement for further details.
 +---------------------------------------------+-------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                         ;
 +---------------------------------------------+-------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,237                                                                         ;
+; Estimated Total logic elements              ; 3,256                                                                         ;
 ;                                             ;                                                                               ;
-; Total combinational functions               ; 1631                                                                          ;
+; Total combinational functions               ; 1635                                                                          ;
 ; Logic element usage by number of LUT inputs ;                                                                               ;
-;     -- 4 input functions                    ; 845                                                                           ;
-;     -- 3 input functions                    ; 428                                                                           ;
-;     -- <=2 input functions                  ; 358                                                                           ;
+;     -- 4 input functions                    ; 856                                                                           ;
+;     -- 3 input functions                    ; 424                                                                           ;
+;     -- <=2 input functions                  ; 355                                                                           ;
 ;                                             ;                                                                               ;
 ; Logic elements by mode                      ;                                                                               ;
-;     -- normal mode                          ; 1431                                                                          ;
+;     -- normal mode                          ; 1435                                                                          ;
 ;     -- arithmetic mode                      ; 200                                                                           ;
 ;                                             ;                                                                               ;
-; Total registers                             ; 2549                                                                          ;
-;     -- Dedicated logic registers            ; 2549                                                                          ;
+; Total registers                             ; 2565                                                                          ;
+;     -- Dedicated logic registers            ; 2565                                                                          ;
 ;     -- I/O registers                        ; 0                                                                             ;
 ;                                             ;                                                                               ;
 ; I/O pins                                    ; 114                                                                           ;
@@ -329,8 +328,8 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                                                                             ;
 ;                                             ;                                                                               ;
 ; Maximum fan-out node                        ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 1598                                                                          ;
-; Total fan-out                               ; 16318                                                                         ;
+; Maximum fan-out                             ; 1599                                                                          ;
+; Total fan-out                               ; 16372                                                                         ;
 ; Average fan-out                             ; 3.59                                                                          ;
 +---------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -340,13 +339,13 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                     ; Entity Name                                      ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+--------------+
-; |PWM                                                                                                                                    ; 1631 (23)           ; 2549 (10)                 ; 811008      ; 0          ; 0            ; 0       ; 0         ; 114  ; 0            ; 0          ; |PWM                                                                                                                                                                                                                                                                                                                                                                    ; PWM                                              ; work         ;
-;    |Controller:my_Controller|                                                                                                           ; 504 (122)           ; 405 (46)                  ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller                                                                                                                                                                                                                                                                                                                                           ; Controller                                       ; work         ;
+; |PWM                                                                                                                                    ; 1635 (23)           ; 2565 (10)                 ; 811008      ; 0          ; 0            ; 0       ; 0         ; 114  ; 0            ; 0          ; |PWM                                                                                                                                                                                                                                                                                                                                                                    ; PWM                                              ; work         ;
+;    |Controller:my_Controller|                                                                                                           ; 508 (120)           ; 421 (46)                  ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller                                                                                                                                                                                                                                                                                                                                           ; Controller                                       ; work         ;
 ;       |RAMRAMAM:my_RAM|                                                                                                                 ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|RAMRAMAM:my_RAM                                                                                                                                                                                                                                                                                                                           ; RAMRAMAM                                         ; work         ;
 ;          |altsyncram:altsyncram_component|                                                                                              ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|RAMRAMAM:my_RAM|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                           ; altsyncram                                       ; work         ;
 ;             |altsyncram_7ln1:auto_generated|                                                                                            ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|RAMRAMAM:my_RAM|altsyncram:altsyncram_component|altsyncram_7ln1:auto_generated                                                                                                                                                                                                                                                            ; altsyncram_7ln1                                  ; work         ;
-;       |VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|                                                                                    ; 121 (108)           ; 116 (116)                 ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write                                                                                                                                                                                                                                                                                              ; VirtualJTAG_MM_Write                             ; work         ;
-;          |Seven_Seg_Driver:Seven_Seg_Driver_inst|                                                                                       ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Seven_Seg_Driver:Seven_Seg_Driver_inst                                                                                                                                                                                                                                                       ; Seven_Seg_Driver                                 ; work         ;
+;       |VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|                                                                                    ; 127 (107)           ; 132 (132)                 ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write                                                                                                                                                                                                                                                                                              ; VirtualJTAG_MM_Write                             ; work         ;
+;          |Seven_Seg_Driver:Seven_Seg_Driver_inst|                                                                                       ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Seven_Seg_Driver:Seven_Seg_Driver_inst                                                                                                                                                                                                                                                       ; Seven_Seg_Driver                                 ; work         ;
 ;          |altsyncram:altsyncram_component|                                                                                              ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|altsyncram:altsyncram_component                                                                                                                                                                                                                                                              ; altsyncram                                       ; work         ;
 ;             |altsyncram_sgl1:auto_generated|                                                                                            ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|altsyncram:altsyncram_component|altsyncram_sgl1:auto_generated                                                                                                                                                                                                                               ; altsyncram_sgl1                                  ; work         ;
 ;          |sld_virtual_jtag:virtual_jtag_0|                                                                                              ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|sld_virtual_jtag:virtual_jtag_0                                                                                                                                                                                                                                                              ; sld_virtual_jtag                                 ; work         ;
@@ -720,7 +719,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|myQsys_new_sdram_controller_0_input_efifo_module:the_myQsys_new_sdram_controller_0_input_efifo_module|entry_1[16,17] ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|i_addr[0..3,6..11]                                                                                                   ; Merged with Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|i_addr[12]    ;
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|active_dqm[1]                                                                                                        ; Merged with Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|active_dqm[0] ;
-; Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|state[2]                                                                                                                                      ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_next~9                                                                                                             ; Lost fanout                                                                                                              ;
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_next~10                                                                                                            ; Lost fanout                                                                                                              ;
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_next~13                                                                                                            ; Lost fanout                                                                                                              ;
@@ -735,7 +733,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|active_dqm[0]                                                                                                        ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_dqm[0,1]                                                                                                           ; Stuck at GND due to stuck port data_in                                                                                   ;
 ; Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_count[2]                                                                                                           ; Stuck at GND due to stuck port data_in                                                                                   ;
-; Total Number of Removed Registers = 33                                                                                                                                                                              ;                                                                                                                          ;
+; Total Number of Removed Registers = 32                                                                                                                                                                              ;                                                                                                                          ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -756,12 +754,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2549  ;
-; Number of registers using Synchronous Clear  ; 118   ;
-; Number of registers using Synchronous Load   ; 92    ;
+; Total registers                              ; 2565  ;
+; Number of registers using Synchronous Clear  ; 120   ;
+; Number of registers using Synchronous Load   ; 82    ;
 ; Number of registers using Asynchronous Clear ; 985   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1228  ;
+; Number of registers using Clock Enable       ; 1240  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -807,40 +805,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|WrAddress[2]                                                                                                                                                                                                                                                                       ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|WrAddress_Sync[10]                                                                                                                                                                                                                                                                 ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |PWM|Controller:my_Controller|Address_counter[1]                                                                                                                                                                                                                                                                                                              ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |PWM|Controller:my_Controller|wraddress[0]                                                                                                                                                                                                                                                                                                                    ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Avalon_Address[2]                                                                                                                                                                                                                                                                  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_dqm[1]                                                                                                                                                                                                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|state[0]                                                                                                                                                                                                                                                                           ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|myQsys_new_sdram_controller_0_input_efifo_module:the_myQsys_new_sdram_controller_0_input_efifo_module|entries[1]                                                                                                                                          ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_bank[1]                                                                                                                                                                                                                                                 ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|i_count[0]                                                                                                                                                                                                                                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_addr[12]                                                                                                                                                                                                                                                ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|LED[0]                                                                                                                                                                                                                                                                             ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_addr[4]                                                                                                                                                                                                                                                 ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_addr[0]                                                                                                                                                                                                                                                 ;
-; 7:1                ; 42 bits   ; 168 LEs       ; 0 LEs                ; 168 LEs                ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|active_addr[14]                                                                                                                                                                                                                                           ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_data[6]                                                                                                                                                                                                                                                 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS0[0]                                                                                                                                                                                                                                      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS2[0]                                                                                                                                                                                                                                      ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|Selector34                                                                                                                                                                                                                                                ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|Selector27                                                                                                                                                                                                                                                ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][8]                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[3]                    ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[2][4]                           ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]              ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[1] ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[4]                             ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[2]                      ;
-; 28:1               ; 4 bits    ; 72 LEs        ; 44 LEs               ; 28 LEs                 ; Yes        ; |PWM|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|WrAddress[6]                                                                                                                              ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|WrAddress_Sync[4]                                                                                                                         ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |PWM|Controller:my_Controller|Address_counter[24]                                                                                                                                                                    ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |PWM|Controller:my_Controller|wraddress[2]                                                                                                                                                                           ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Avalon_Address[19]                                                                                                                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_dqm[0]                                                                                                         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|myQsys_new_sdram_controller_0_input_efifo_module:the_myQsys_new_sdram_controller_0_input_efifo_module|entries[1] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|LED[9]                                                                                                                                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_bank[0]                                                                                                        ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|i_count[0]                                                                                                       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_addr[12]                                                                                                       ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_addr[5]                                                                                                        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_addr[9]                                                                                                        ;
+; 7:1                ; 42 bits   ; 168 LEs       ; 0 LEs                ; 168 LEs                ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|active_rnw                                                                                                       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|m_data[4]                                                                                                        ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS5[0]                                                                                             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |PWM|Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|Seven_Seg_Driver:Seven_Seg_Driver_inst|SS5[5]                                                                                             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|Selector35                                                                                                       ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |PWM|Controller:my_Controller|myQsys:my_myQsys|myQsys_new_sdram_controller_0:new_sdram_controller_0|Selector27                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1780,73 +1769,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 234                         ;
-; cycloneiii_ff         ; 415                         ;
+; cycloneiii_ff         ; 431                         ;
 ;     CLR               ; 93                          ;
 ;     CLR SCLR          ; 1                           ;
-;     ENA               ; 205                         ;
+;     ENA               ; 227                         ;
 ;     ENA CLR           ; 9                           ;
 ;     ENA CLR SLD       ; 10                          ;
 ;     ENA SCLR          ; 59                          ;
-;     ENA SLD           ; 10                          ;
-;     SCLR              ; 10                          ;
-;     plain             ; 18                          ;
+;     SCLR              ; 12                          ;
+;     plain             ; 20                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 534                         ;
+; cycloneiii_lcell_comb ; 538                         ;
 ;     arith             ; 111                         ;
 ;         2 data inputs ; 94                          ;
 ;         3 data inputs ; 17                          ;
-;     normal            ; 423                         ;
+;     normal            ; 427                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 20                          ;
-;         2 data inputs ; 67                          ;
-;         3 data inputs ; 137                         ;
-;         4 data inputs ; 197                         ;
+;         2 data inputs ; 64                          ;
+;         3 data inputs ; 133                         ;
+;         4 data inputs ; 208                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 2.69                        ;
+; Average LUT depth     ; 2.62                        ;
 +-----------------------+-----------------------------+
 
 
-+------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
-+-----------------------+------------------------------------------+
-; Type                  ; Count                                    ;
-+-----------------------+------------------------------------------+
-; boundary_port         ; 173                                      ;
-; cycloneiii_ff         ; 106                                      ;
-;     CLR               ; 7                                        ;
-;     ENA               ; 16                                       ;
-;     ENA CLR           ; 45                                       ;
-;     ENA CLR SLD       ; 1                                        ;
-;     ENA SCLR          ; 5                                        ;
-;     ENA SLD           ; 9                                        ;
-;     SCLR              ; 7                                        ;
-;     plain             ; 16                                       ;
-; cycloneiii_lcell_comb ; 175                                      ;
-;     arith             ; 8                                        ;
-;         2 data inputs ; 8                                        ;
-;     normal            ; 167                                      ;
-;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 6                                        ;
-;         2 data inputs ; 25                                       ;
-;         3 data inputs ; 57                                       ;
-;         4 data inputs ; 78                                       ;
-;                       ;                                          ;
-; Max LUT depth         ; 4.00                                     ;
-; Average LUT depth     ; 2.01                                     ;
-+-----------------------+------------------------------------------+
-
-
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; Top              ; 00:00:03     ;
-; sld_hub:auto_hub ; 00:00:01     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2184,7 +2141,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Mon Aug 07 12:08:33 2017
+    Info: Processing started: Tue Aug 08 13:05:18 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DRFM -c DRFM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2300,7 +2257,8 @@ Warning (10030): Net "Read_WriteData" at Controller.v(66) has no driver or initi
 Info (12128): Elaborating entity "VirtualJTAG_MM_Write" for hierarchy "Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write" File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/Controller.v Line: 106
 Warning (10036): Verilog HDL or VHDL warning at VirtualJTAG_MM_Write.v(151): object "JTAG_Busy" assigned a value but never read File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 151
 Warning (10240): Verilog HDL Always Construct warning at VirtualJTAG_MM_Write.v(193): inferring latch(es) for variable "TDO", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 193
-Warning (10230): Verilog HDL assignment warning at VirtualJTAG_MM_Write.v(263): truncated value with size 17 to match size of target (10) File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 263
+Warning (10230): Verilog HDL assignment warning at VirtualJTAG_MM_Write.v(256): truncated value with size 32 to match size of target (10) File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 256
+Warning (10230): Verilog HDL assignment warning at VirtualJTAG_MM_Write.v(260): truncated value with size 16 to match size of target (10) File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 260
 Info (10041): Inferred latch for "TDO" at VirtualJTAG_MM_Write.v(193) File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 193
 Info (12128): Elaborating entity "sld_virtual_jtag" for hierarchy "Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|sld_virtual_jtag:virtual_jtag_0" File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 81
 Info (12130): Elaborated megafunction instantiation "Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|sld_virtual_jtag:virtual_jtag_0" File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/VirtualJTAG_MM_Write.v Line: 81
@@ -2394,7 +2352,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_drb File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/db/cmpr_drb.tdf Line: 23
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2017.08.07.12:08:59 Progress: Loading sld6e24906c/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2017.08.08.13:05:39 Progress: Loading sld6e24906c/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2423,16 +2381,11 @@ Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal 
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SS0[1]" is stuck at VCC File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 9
     Warning (13410): Pin "SS0[2]" is stuck at VCC File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 9
-    Warning (13410): Pin "SS0[3]" is stuck at VCC File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 9
-    Warning (13410): Pin "SS0[6]" is stuck at VCC File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 9
     Warning (13410): Pin "OP_DRAM_Clock_Enable" is stuck at VCC File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 19
     Warning (13410): Pin "OP_DRAM_Data_Mask[0]" is stuck at GND File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 22
     Warning (13410): Pin "OP_DRAM_Data_Mask[1]" is stuck at GND File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 22
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 11 registers lost all their fanouts during netlist optimizations.
-Info (13000): Registers with preset signals will power-up high File: c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (144001): Generated suppressed messages file C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/output_files/DRFM.map.smsg
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 318 of its 321 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 3 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -2448,18 +2401,18 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 2
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 2
     Warning (15610): No output dependent on input pin "reset_n" File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM.v Line: 3
-Info (21057): Implemented 3588 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3607 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 87 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 3362 logic cells
+    Info (21061): Implemented 3381 logic cells
     Info (21064): Implemented 106 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 739 megabytes
-    Info: Processing ended: Mon Aug 07 12:09:49 2017
-    Info: Elapsed time: 00:01:16
-    Info: Total CPU time (on all processors): 00:01:06
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 722 megabytes
+    Info: Processing ended: Tue Aug 08 13:05:50 2017
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:58
 
 
 +------------------------------------------+

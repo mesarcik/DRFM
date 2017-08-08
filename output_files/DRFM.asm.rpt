@@ -1,5 +1,5 @@
 Assembler report for DRFM
-Mon Aug 07 12:10:34 2017
+Tue Aug 08 13:06:25 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Aug 07 12:10:34 2017 ;
+; Assembler Status      ; Successful - Tue Aug 08 13:06:25 2017 ;
 ; Revision Name         ; DRFM                                  ;
 ; Top-level Entity Name ; PWM                                   ;
 ; Family                ; MAX 10                                ;
@@ -79,8 +79,8 @@ agreement for further details.
 ; Option         ; Setting                                                                                           ;
 +----------------+---------------------------------------------------------------------------------------------------+
 ; Device         ; 10M50DAF484C7G                                                                                    ;
-; JTAG usercode  ; 0x00486751                                                                                        ;
-; Checksum       ; 0x00486751                                                                                        ;
+; JTAG usercode  ; 0x00485AB9                                                                                        ;
+; Checksum       ; 0x00485AB9                                                                                        ;
 +----------------+---------------------------------------------------------------------------------------------------+
 
 
@@ -90,15 +90,15 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Mon Aug 07 12:10:29 2017
+    Info: Processing started: Tue Aug 08 13:06:20 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DRFM -c DRFM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Warning (12914): The file, C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/Qsys/myQsys.sopcinfo, is not embedded into sof file as expected.  Some tools, such as System Console, may not function fully.
 Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 557 megabytes
-    Info: Processing ended: Mon Aug 07 12:10:34 2017
+    Info: Peak virtual memory: 559 megabytes
+    Info: Processing ended: Tue Aug 08 13:06:25 2017
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

@@ -9,7 +9,7 @@ import signal
 
 
 
-fsm = ['0000000000000000000000000000000000000000000000000','0000000000000000000000000000000000000001000000000','0000000000000000000000000000010000000000000000000','0000000000000000000100000000000000000000000000000','0100000000000000000000000000000000000000000000000']
+fsm = ['0000000000000000000000000000000000000000000000000000000000000000','0000000000000000000010000000000000000000000000000000000000000000','0000000000000000000000000000000100000000000000000000000000000000','0001000000000000000000000000000000000000000000000000000000000000','XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
 
 
 class Com_Thread(QtCore.QThread):
@@ -25,11 +25,11 @@ class Com_Thread(QtCore.QThread):
 
 
 
-       
-#0000000000000000000000000000000000000001000000000 delay
-#0000000000000000000000000000010000000000000000000 doppler
-#0000000000000000000100000000000000000000000000000 scale
-#0100000000000000000000000000000000000000000000000 load
+#0000000000000000000000000000000000000000000000000000000000000000 wait       
+#0000000000000000000010000000000000000000000000000000000000000000 delay
+#0000000000000000000000000000000100000000000000000000000000000000 doppler
+#0001000000000000000000000000000000000000000000000000000000000000 scale
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX load
     def Setup(self,host,port,state_no,vals):
         self.host               = host
         self.port               = port
@@ -50,12 +50,15 @@ class Com_Thread(QtCore.QThread):
     def updateState(self,new_state,vals):
         self.state_no           = new_state
         self.vals               = vals
-        if (self.state_no == 0):
+        if (self.state_no == 0): #WAIT
             data = fsm[self.state_no]
-        elif (self.state_no != 4):
-            data = bin(int(fsm[self.state_no],2) | 2**(10*(self.state_no-1)) *self.vals[self.state_no]).split('0b')[1].zfill(49)
-        else:
-            data = bin(int(fsm[self.state_no],2) | 2**(31) *65535).split('0b')[1].zfill(49)
+        elif (self.state_no ==1): #DELAY
+            data = bin(int(fsm[self.state_no],2) | 2**(33) *self.vals[self.state_no]).split('0b')[1].zfill(64)
+        elif (self.state_no ==2): #DOPPLER
+            data = bin(int(fsm[self.state_no],2) | 2**(0) *self.vals[self.state_no]).split('0b')[1].zfill(64)
+        elif (self.state_no ==3): #AMPSCALE
+            data = bin(int(fsm[self.state_no],2) | 2**(44) *self.vals[self.state_no]).split('0b')[1].zfill(64)
+       
 
         print(data)
         self.conn.send(data + "\n") 

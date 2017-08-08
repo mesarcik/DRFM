@@ -181,7 +181,7 @@ always @(posedge TCK) begin
         
       if (Shift) begin  // JTAG shift state.
         if (&Instruction)begin //Data is availiable to be taken out.
-          DR1 <= {DR0, DR1[48:1]}; // Collect the data and shift.
+          DR1 <= {DR0, DR1[63:1]}; // Collect the data and shift.
         end
       end
     end
@@ -210,7 +210,8 @@ reg       Capture_Sync;
 
 always @(posedge Clk) begin
    if(write) begin
-      Local_Reset  <=  Reset;
+     state        <= 4'b_0100; //LOAD STATE
+     Local_Reset  <=  Reset;
      TCK_Sync     <= {TCK_Sync[0], TCK};
      Capture_Sync <=  Capture;
     //------------------------------------------------------------------------------
@@ -246,23 +247,21 @@ always @(posedge Clk) begin
    end
    else begin
        // Check the incomming data to see if we need to do anything.
-      if(DR1[10])begin 
+      if(DR1[44])begin 
         state <= 4'b_0001; // DELAY
-        LED <= DR1[9:0];
+        LED <= DR1[43:34]; //10 bit res
       end
-      else if(DR1[20] ) begin
+      else if(DR1[33] ) begin //20
         state <= 4'b_1000; // DOPPLER
-        LED <= DR1[19:10];    
+        LED <= DR1[32:1];    // 32 bit res
       end 
-      else if(  DR1[30]) begin
+      else if(  DR1[61]) begin //30
         state <= 4'b_0010; // SCALE 
-        LED <= DR1 [29:20];
+        LED <= DR1 [60:45]; //16 bit res
       end 
-      else if(  DR1[48]) begin 
-       
-      LED <= DR1 [47:31];
+      else begin //48
+        state <= 4'b_0000; // WAIT
       end 
-      else state <= 4'b_0000; //Waiting state
    end
 end
 //------------------------------------------------------------------------------

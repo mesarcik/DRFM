@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/PWM JPTEDIT/output_files/") File("PWM.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/output_files/") File("DRFM.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -6,6 +6,7 @@ import os
 from Overlay import Overlay
 from STP_Thread import STP_Thread
 from Com_Thread import Com_Thread
+from Upload_Thread import Upload_Thread
 from PyQt4 import QtGui, QtCore
 import thread
 import time
@@ -22,14 +23,15 @@ class Window(QtGui.QMainWindow):
         super(Window, self).__init__()
 
         #Atrributes
-        self.display     = QtGui.QWidget(self)
-        self.layout      = QtGui.QGridLayout()
-        self.state       = 0
-        self.tcl         = False
+        self.display        = QtGui.QWidget(self)
+        self.layout         = QtGui.QGridLayout()
+        self.state          = 0
+        self.tcl            = False
 
-        self.doppler_val = 0
-        self.time_val    = 0
-        self.amp_val     = 0
+        self.doppler_val    = 0
+        self.time_val       = 0
+        self.amp_val        = 0
+        self.load_string    = '.'
 
         self.com_thread = Com_Thread(self)
 
@@ -65,7 +67,7 @@ class Window(QtGui.QMainWindow):
 
         self.time_sl = QtGui.QSlider(QtCore.Qt.Horizontal)
         self.time_sl.setMinimum(0)
-        self.time_sl.setMaximum(511)
+        self.time_sl.setMaximum(1023)
         self.time_sl.setValue(0)
         self.time_sl.setTickPosition(QtGui.QSlider.TicksBelow)
         self.time_sl.setTickInterval(5)
@@ -85,7 +87,7 @@ class Window(QtGui.QMainWindow):
 
         self.amp_sl = QtGui.QSlider(QtCore.Qt.Horizontal)
         self.amp_sl.setMinimum(0)
-        self.amp_sl.setMaximum(511)
+        self.amp_sl.setMaximum(65536)
         self.amp_sl.setValue(0)
         self.amp_sl.setTickPosition(QtGui.QSlider.TicksBelow)
         self.amp_sl.setTickInterval(5)
@@ -172,9 +174,39 @@ class Window(QtGui.QMainWindow):
         self.com_thread.Setup('localhost',2540,self.state,vals)
         self.statusBar().showMessage('Connected to DE-10 Lite')
 
+    def load_screen(self):
+        self.overlay.show()
+        if (self.load_string == '.'):
+            self.load_string = self.load_string +'.'
+        elif (self.load_string == '..'):
+            self.load_string = self.load_string +'.'
+        else:
+            self.load_string = '.'
+        self.statusBar().showMessage('Uploading Data to DE-10 Lite' + self.load_string)
+        
+    def load_done(self):
+        self.statusBar().showMessage('')
+
 
     def Upload(self):
-        self.statusBar().showMessage('Feature has been disabled.')
+        # 
+        msgBox = QtGui.QMessageBox()
+        msgBox.setText('Ensure SW0 is set.')
+        # msgBox.setInformativeText('Ensure you have connected the DE-10 lite correctly.')
+        msgBox.setWindowTitle("Upload Reminder")
+        msgBox.setDefaultButton(QtGui.QMessageBox.Ok)
+        ret = msgBox.exec_()
+
+        if ret == QtGui.QMessageBox.Ok:
+            pass
+        
+        self.statusBar().showMessage('Uploading Data to DE-10 Lite')
+        upload_thread = Upload_Thread()
+        upload_thread.load_signal.connect(self.load_screen)
+        upload_thread.done_signal.connect(self.load_done)
+        upload_thread.start()
+
+
        
     def DopplerShift(self):
         self.doppler_val = self.doppler_sl.value()

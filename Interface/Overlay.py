@@ -3,6 +3,7 @@ import subprocess
 from PyQt4.QtCore import Qt, QTimer
 from PyQt4.QtGui import *
 
+
 class Overlay(QWidget):
 
     def __init__(self, parent,tcl):
@@ -39,8 +40,10 @@ class Overlay(QWidget):
         painter.end()
     
     def showEvent(self, event):
-        self.timer = self.startTimer(50)
+        self.timer = self.startTimer(30)
         self.counter = 0
+        self.setVisible(True)
+
     
     def timerEvent(self, event):
         self.tcl = False
