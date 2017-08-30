@@ -1,0 +1,38 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "/home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/PWM/Qsys/myQsys.qsys" --block-symbol-file --output-directory="/home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/PWM/Qsys/Qsys/MyQsys" --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading Qsys/myQsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 16.1]
+Progress: Parameterizing module clk_0
+Progress: Adding new_sdram_controller_0 [altera_avalon_new_sdram_controller 16.1]
+Progress: Parameterizing module new_sdram_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: myQsys.new_sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "/home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/PWM/Qsys/myQsys.qsys" --synthesis=VERILOG --output-directory="/home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/PWM/Qsys/Qsys/MyQsys/synthesis" --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading Qsys/myQsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 16.1]
+Progress: Parameterizing module clk_0
+Progress: Adding new_sdram_controller_0 [altera_avalon_new_sdram_controller 16.1]
+Progress: Parameterizing module new_sdram_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: myQsys.new_sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: myQsys: Generating myQsys "myQsys" for QUARTUS_SYNTH
+Info: new_sdram_controller_0: Starting RTL generation for module 'myQsys_new_sdram_controller_0'
+Info: new_sdram_controller_0:   Generation command is [exec /opt/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /opt/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=myQsys_new_sdram_controller_0 --dir=/tmp/alt7366_338672894917707763.dir/0001_new_sdram_controller_0_gen/ --quartus_dir=/opt/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7366_338672894917707763.dir/0001_new_sdram_controller_0_gen//myQsys_new_sdram_controller_0_component_configuration.pl  --do_build_sim=0  ]
+Info: new_sdram_controller_0: Done RTL generation for module 'myQsys_new_sdram_controller_0'
+Info: new_sdram_controller_0: "myQsys" instantiated altera_avalon_new_sdram_controller "new_sdram_controller_0"
+Info: rst_controller: "myQsys" instantiated altera_reset_controller "rst_controller"
+Info: myQsys: Done "myQsys" with 3 modules, 6 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

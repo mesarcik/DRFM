@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 0.495
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'DRAM_CLK'
+Slack : 3.740
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 17.156
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.241
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'DRAM_CLK'
+Slack : 2.288
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 5.554
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 94.428
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 0.967
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.168
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 4.586
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DRAM_CLK'
+Slack : 4.918
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1]'
+Slack : 4.918
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : 9.801
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.517
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 1.230
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'DRAM_CLK'
+Slack : 3.894
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 18.017
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.247
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'DRAM_CLK'
+Slack : 2.153
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 5.878
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 94.859
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 0.892
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.067
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 4.599
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1]'
+Slack : 4.882
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DRAM_CLK'
+Slack : 4.918
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : 9.736
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.536
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'DRAM_CLK'
+Slack : 3.861
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 3.919
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 23.468
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.093
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 0.149
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'DRAM_CLK'
+Slack : 1.832
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 7.975
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 97.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.496
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DRAM_CLK'
+Slack : 1.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1]'
+Slack : 1.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]'
+Slack : 4.713
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : 9.523
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.377
+TNS   : 0.000
+
+------------------------------------------------------------
