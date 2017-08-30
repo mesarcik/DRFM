@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="241953bc7420d4640d38"/>
+    <hash md5_digest_80b="5e70990ce12bec17f698"/>
   </project>
   <file_info>
     <file device="10M50DAF484C7G" path="DRFM.sof" usercode="0xFFFFFFFF"/>
@@ -85,14 +85,14 @@
         <parameter name="SLD_IP_VERSION" type="dec" value="6"/>
         <parameter name="SLD_IP_MINOR_VERSION" type="dec" value="0"/>
         <parameter name="SLD_COMMON_IP_VERSION" type="dec" value="0"/>
-        <parameter name="sld_data_bits" type="unknown" value="96"/>
-        <parameter name="sld_trigger_bits" type="unknown" value="96"/>
+        <parameter name="sld_data_bits" type="unknown" value="205"/>
+        <parameter name="sld_trigger_bits" type="unknown" value="205"/>
         <parameter name="SLD_NODE_CRC_BITS" type="dec" value="32"/>
         <parameter name="SLD_NODE_CRC_HIWORD" type="dec" value="41394"/>
         <parameter name="SLD_NODE_CRC_LOWORD" type="dec" value="50132"/>
         <parameter name="sld_incremental_routing" type="unknown" value="1"/>
-        <parameter name="sld_sample_depth" type="unknown" value="8192"/>
-        <parameter name="sld_segment_size" type="unknown" value="8192"/>
+        <parameter name="sld_sample_depth" type="unknown" value="1024"/>
+        <parameter name="sld_segment_size" type="unknown" value="1024"/>
         <parameter name="sld_ram_block_type" type="unknown" value="AUTO"/>
         <parameter name="sld_state_bits" type="unknown" value="11"/>
         <parameter name="sld_buffer_full_stop" type="unknown" value="1"/>
@@ -120,20 +120,20 @@
         <parameter name="SLD_ADVANCED_TRIGGER_8" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_9" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_10" type="string" value="NONE"/>
-        <parameter name="sld_inversion_mask_length" type="unknown" value="604"/>
-        <parameter name="sld_inversion_mask" type="unknown" value="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
+        <parameter name="sld_inversion_mask_length" type="unknown" value="639"/>
+        <parameter name="sld_inversion_mask" type="unknown" value="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
         <parameter name="sld_power_up_trigger" type="unknown" value="0"/>
         <parameter name="SLD_STATE_FLOW_MGR_ENTITY" type="string" value="state_flow_mgr_entity.vhd"/>
         <parameter name="sld_state_flow_use_generated" type="unknown" value="0"/>
         <parameter name="sld_current_resource_width" type="unknown" value="1"/>
         <parameter name="sld_attribute_mem_mode" type="unknown" value="OFF"/>
-        <parameter name="sld_storage_qualifier_bits" type="unknown" value="96"/>
-        <parameter name="sld_storage_qualifier_gap_record" type="unknown" value="1"/>
-        <parameter name="sld_storage_qualifier_mode" type="unknown" value="COMBINATIONAL"/>
-        <parameter name="sld_storage_qualifier_enable_advanced_condition" type="unknown" value="0"/>
-        <parameter name="sld_storage_qualifier_inversion_mask_length" type="unknown" value="289"/>
-        <parameter name="sld_storage_qualifier_advanced_condition_entity" type="unknown" value="basic,1,"/>
-        <parameter name="sld_storage_qualifier_pipeline" type="unknown" value="1"/>
+        <parameter name="sld_storage_qualifier_bits" type="unknown" value="205"/>
+        <parameter name="SLD_STORAGE_QUALIFIER_GAP_RECORD" type="dec" value="0"/>
+        <parameter name="SLD_STORAGE_QUALIFIER_MODE" type="string" value="OFF"/>
+        <parameter name="SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION" type="dec" value="0"/>
+        <parameter name="sld_storage_qualifier_inversion_mask_length" type="unknown" value="0"/>
+        <parameter name="SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY" type="string" value="basic"/>
+        <parameter name="SLD_STORAGE_QUALIFIER_PIPELINE" type="dec" value="0"/>
         <parameter name="SLD_CREATE_MONITOR_INTERFACE" type="dec" value="0"/>
         <parameter name="SLD_USE_JTAG_SIGNAL_ADAPTER" type="dec" value="1"/>
       </parameters>

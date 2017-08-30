@@ -42,28 +42,29 @@ class Window(QtGui.QMainWindow):
     	self.layout.setSpacing(20)
               
         # Start Doppler Stuff
-        self.doppler    = QtGui.QRadioButton("Doppler Shift")
+        self.doppler    = QtGui.QCheckBox("Doppler Shift")
         self.doppler.setChecked(False)
 
         self.doppler_sl = QtGui.QSlider(QtCore.Qt.Horizontal)
-        self.doppler_sl.setMinimum(-255)
-        self.doppler_sl.setMaximum(255)
-        self.doppler_sl.setValue(0)
+        self.doppler_sl.setMinimum(1)
+        self.doppler_sl.setMaximum(99.999999e6)
+        self.doppler_sl.setValue(5)
         self.doppler_sl.setTickPosition(QtGui.QSlider.TicksBelow)
-        self.doppler_sl.setTickInterval(5)
+        self.doppler_sl.setTickInterval(2**10)
+        self.doppler_sl.setSingleStep(2**10)
 
-        self.doppler_lbl = QtGui.QLabel(str(self.doppler_sl.value()) )
+        self.doppler_lbl = QtGui.QLabel(str(float(self.doppler_sl.value())/1e3 ) +' kHz')
 
         self.layout.addWidget(self.doppler,0,0)
         self.layout.addWidget(self.doppler_sl,0,1)
         self.layout.addWidget(self.doppler_lbl,0,2)
 
-        self.doppler.toggled.connect(self.DopplerShift)
-        self.doppler_sl.valueChanged.connect(self.DopplerShift)                        
+        self.doppler.toggled.connect(self.checked_connect)
+        self.doppler_sl.valueChanged.connect(self.checked_connect)                        
         #
 
         # Start Time Stuff
-        self.time    = QtGui.QRadioButton("Time Delay")
+        self.time    = QtGui.QCheckBox("Time Delay")
 
         self.time_sl = QtGui.QSlider(QtCore.Qt.Horizontal)
         self.time_sl.setMinimum(0)
@@ -72,34 +73,36 @@ class Window(QtGui.QMainWindow):
         self.time_sl.setTickPosition(QtGui.QSlider.TicksBelow)
         self.time_sl.setTickInterval(5)
 
-        self.time_lbl = QtGui.QLabel(str(self.time_sl.value()) )
+        self.time_lbl = QtGui.QLabel(str(self.time_sl.value()) + ' Samples')
 
         self.layout.addWidget(self.time,1,0)
         self.layout.addWidget(self.time_sl,1,1)
         self.layout.addWidget(self.time_lbl,1,2)
 
-        self.time.toggled.connect(self.TimeDelay)
-        self.time_sl.valueChanged.connect(self.TimeDelay)    
+        self.time.toggled.connect(self.checked_connect)
+        self.time_sl.valueChanged.connect(self.checked_connect)    
         #     
 
         # Start Amplitude Stuff
-        self.amp = QtGui.QRadioButton("Amplitude Scaling")
+        self.amp = QtGui.QCheckBox("Amplitude Scaling")
 
         self.amp_sl = QtGui.QSlider(QtCore.Qt.Horizontal)
         self.amp_sl.setMinimum(0)
-        self.amp_sl.setMaximum(65536)
-        self.amp_sl.setValue(0)
+        self.amp_sl.setMaximum(65535)
+        self.amp_sl.setValue(65535)
         self.amp_sl.setTickPosition(QtGui.QSlider.TicksBelow)
-        self.amp_sl.setTickInterval(5)
+        self.amp_sl.setTickInterval(2**10)
+        self.amp_sl.setSingleStep(2**10)
 
-        self.amp_lbl = QtGui.QLabel(str(self.amp_sl.value()) )
+
+        self.amp_lbl = QtGui.QLabel(str(round(float(self.amp_sl.value())/2**16,4)))
 
         self.layout.addWidget(self.amp,2,0)
         self.layout.addWidget(self.amp_sl,2,1)
         self.layout.addWidget(self.amp_lbl,2,2)
 
-        self.amp.toggled.connect(self.AmpScale)
-        self.amp_sl.valueChanged.connect(self.AmpScale)    
+        self.amp.toggled.connect(self.checked_connect)
+        self.amp_sl.valueChanged.connect(self.checked_connect)    
         #
               
         #Menu Stuff.
@@ -207,54 +210,106 @@ class Window(QtGui.QMainWindow):
         upload_thread.start()
 
 
-       
-    def DopplerShift(self):
-        self.doppler_val = self.doppler_sl.value()
-        self.doppler_lbl.setText(str(self.doppler_val))
+
+    def checked_connect(self):
+        self.doppler_lbl.setText(str(float(self.doppler_sl.value())/1e3 ) +' kHz')
+        self.time_lbl.setText(str( self.time_sl.value()) + ' Samples')
+        self.amp_lbl.setText(str(round(float(self.amp_sl.value())/2**16,4)))
+        state_string = ''
+        change = False        
         if (self.doppler.isChecked()):
-            try:
-                self.statusBar().showMessage('Performing Doppler Shift by '+ str(self.doppler_sl.value()))
-                print('Shift')
-                self.state = 2
-                print("Updating to state %5d" % self.state)
-                self.com_thread.updateState(self.state,[0,self.time_val,self.doppler_val,self.amp_val])
-               
-            except:
-                pass
-        else:
-            self.statusBar().showMessage("")
-
-    def TimeDelay(self):
-        self.time_val    = self.time_sl.value()
-        self.time_lbl.setText(str(self.time_val))
-        if(self.time.isChecked()):
-            try:
-                self.statusBar().showMessage('Performing Time Delay by '+str(self.time_sl.value()))
-                print('Delay')
-                self.state = 1
-                print("Updating to state %5d" % self.state)
-                self.com_thread.updateState(self.state,[0,self.time_val,self.doppler_val,self.amp_val])
-            except:
-                pass
             
-        else:
-            self.statusBar().showMessage("")
+            if(self.time.isChecked()):
+                    if (self.amp.isChecked()):
+                        self.state = 7
+                        self.doppler_val    =        self.doppler_sl.value()
+                        self.time_val       =        self.time_sl.value()
+                        self.amp_val        =        self.amp_sl.value()
+                        state_string = 'Time Delay, Doppler Shift and Amplitude Scale'
+                        change = True
+                    else:
+                        self.state = 5
+                        self.doppler_val   =        self.doppler_sl.value()
+                        self.time_val       =        self.time_sl.value()
+                        state_string = 'Time Delay and Doppler Shift'
+                        change = True
+            elif (self.amp.isChecked()):
+                self.state = 6
+                self.doppler_val   =        self.doppler_sl.value()
+                self.amp_val        =        self.amp_sl.value()
+                state_string = 'Amplitude Scaling and Doppler Shift'
+                change = True
+            else:    
+                self.state = 2
+                self.doppler_val   =        self.doppler_sl.value()
+                state_string = 'Doppler Shift'
+                change = True
+        if(self.time.isChecked()):
+            if(self.doppler.isChecked()):
+                    if (self.amp.isChecked()):
+                        self.state = 7
+                        self.doppler_val   =        self.doppler_sl.value()
+                        self.time_val       =        self.time_sl.value()
+                        self.amp_val        =        self.amp_sl.value()
+                        state_string = 'Time Delay, Doppler Shift and Amplitude Scale'
+                        change = True
+                    else:
+                        self.state = 5
+                        self.doppler_val   =        self.doppler_sl.value()
+                        self.time_val       =        self.time_sl.value()
+                        state_string = 'Time Delay and Doppler Shift'
+                        change = True
+            elif (self.amp.isChecked()):
+                self.state = 4
+                self.time_val       =        self.time_sl.value()
+                self.amp_val        =        self.amp_sl.value()
+                state_string = 'Time Delay and Amplitude Scale'
+                change = True
+            else:    
+                self.state = 1
+                self.time_val       =        self.time_sl.value()
+                state_string = 'Time Delay'
+                change = True
 
-    def AmpScale(self):
-        self.amp_val     = self.amp_sl.value()
-        self.amp_lbl.setText(str(self.amp_val))
-        if(self.amp.isChecked()):
-            try:
-                self.statusBar().showMessage('Performing Amplitude Scaling by ' +str(self.amp_sl.value()))
-                print('Scale')
+        if(self.amp.isChecked()):  
+            if(self.doppler.isChecked()):
+                    if (self.time.isChecked()):
+                        self.state = 7
+                        self.doppler_val   =        self.doppler_sl.value()
+                        self.time_val       =        self.time_sl.value()
+                        self.amp_val        =        self.amp_sl.value()
+                        state_string = 'Time Delay, Doppler Shift and Amplitude Scale'
+                        change = True
+                    else:
+                        self.state = 6
+                        self.doppler_val   =        self.doppler_sl.value()
+                        self.amp_val        =        self.amp_sl.value()
+                        state_string = 'Amplitude Scaling and Doppler Shift'
+                        change = True
+            elif (self.time.isChecked()):
+                self.state = 4
+                self.time_val       =        self.time_sl.value()
+                self.amp_val        =        self.amp_sl.value()
+                state_string = 'Time Delay and Amplitude Scale'
+                change = True
+            else:    
                 self.state = 3
-                print("Updating to state %5d" % self.state)
-                self.com_thread.updateState(self.state,[0,self.time_val,self.doppler_val,self.amp_val])
-               
-            except:
-                pass
-        else:
-            self.statusBar().showMessage("")
+                self.amp_val        =        self.amp_sl.value()
+                state_string = 'Amplitude Scale'
+                change = True
+        if ((self.amp.isChecked() == 0) and (self.time.isChecked() == 0) and (self.doppler.isChecked() ==0) ):
+            self.state = 0
+            state_string = ''
+            # change = True
+        if (change):
+            self.com_thread.updateState(self.state,[0,self.time_val,int(self.doppler_val * (2**32/100e6)),self.amp_val])
+            self.statusBar().showMessage('Performing '+ state_string)
+            change = False
+
+
+
+       
+   
 
 
     def closeEvent(self, event):

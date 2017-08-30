@@ -1,4 +1,13 @@
 v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Controller:my_Controller|Arbiter:my_Arbiter|Frequency_Shifter:my_Frequency_Shifter|lpm_mult:Mult0|mult_rgs:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Controller:my_Controller|Arbiter:my_Arbiter|Frequency_Shifter:my_Frequency_Shifter|lpm_mult:Mult1|mult_rgs:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Controller:my_Controller|Scaler:my_Scaler|lpm_mult:Mult2|mult_6os:auto_generated|mac_out6,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Controller:my_Controller|Scaler:my_Scaler|lpm_mult:Mult2|mult_6os:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Controller:my_Controller|Scaler:my_Scaler|lpm_mult:Mult2|mult_6os:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Controller:my_Controller|Arbiter:my_Arbiter|Frequency_Shifter:my_Frequency_Shifter|lpm_mult:Mult0|mult_rgs:auto_generated|mac_mult1,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Controller:my_Controller|Arbiter:my_Arbiter|Frequency_Shifter:my_Frequency_Shifter|lpm_mult:Mult1|mult_rgs:auto_generated|mac_mult1,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Controller:my_Controller|Scaler:my_Scaler|lpm_mult:Mult2|mult_6os:auto_generated|mac_mult5,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Controller:my_Controller|Scaler:my_Scaler|lpm_mult:Mult2|mult_6os:auto_generated|mac_mult1,
 IO_RULES,NUM_PINS_NOT_EXCEED_LOC_AVAILABLE,PASS,IO_000001,Capacity Checks,Number of pins in an I/O bank should not exceed the number of locations available.,Critical,0 such failures found.,,I/O,,
 IO_RULES,NUM_CLKS_NOT_EXCEED_CLKS_AVAILABLE,PASS,IO_000002,Capacity Checks,Number of clocks in an I/O bank should not exceed the number of clocks available.,Critical,0 such failures found.,,I/O,,
 IO_RULES,NUM_VREF_NOT_EXCEED_LOC_AVAILABLE,PASS,IO_000003,Capacity Checks,Number of pins in a Vrefgroup should not exceed the number of locations available.,Critical,0 such failures found.,,I/O,,

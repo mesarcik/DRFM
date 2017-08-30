@@ -58,9 +58,16 @@ class Com_Thread(QtCore.QThread):
             data = bin(int(fsm[self.state_no],2) | 2**(0) *self.vals[self.state_no]).split('0b')[1].zfill(64)
         elif (self.state_no ==3): #AMPSCALE
             data = bin(int(fsm[self.state_no],2) | 2**(44) *self.vals[self.state_no]).split('0b')[1].zfill(64)
-       
+        elif (self.state_no ==4): #DELAY+SCALE
+            data = bin((int(fsm[1],2) | 2**(33) *self.vals[1]) | (int(fsm[3],2) | 2**(44) *self.vals[3])).split('0b')[1].zfill(64)
+        elif (self.state_no ==5): #DELAY+DOPPLER
+            data = bin((int(fsm[1],2) | 2**(33) *self.vals[1]) | (int(fsm[2],2) | 2**(0) *self.vals[2])).split('0b')[1].zfill(64)
+        elif (self.state_no ==6): #SCALE+DOPPLER
+            data = bin((int(fsm[3],2) | 2**(44) *self.vals[3]) | (int(fsm[2],2) | 2**(0) *self.vals[2])).split('0b')[1].zfill(64)
+        elif (self.state_no ==7): #SCALE+DOPPLER +DELAY
+            data = bin((int(fsm[3],2) | 2**(44) *self.vals[3]) | (int(fsm[2],2) | 2**(0) *self.vals[2]) | (int(fsm[1],2) | 2**(33) *self.vals[1])).split('0b')[1].zfill(64)
 
-        print(data)
+        # print(data)
         self.conn.send(data + "\n") 
 
 

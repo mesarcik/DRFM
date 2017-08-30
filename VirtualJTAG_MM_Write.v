@@ -45,10 +45,18 @@ module VirtualJTAG_MM_Write(
 
  output[9:0]  LED,
 
- output reg   TDO
+ output reg   TDO,
+
+ output [3:0] state_o,
+ output [9:0] time_delay,
+ output [31:0] doppler_shift,
+ output [15:0] amplitude_scale
 
 
 );
+
+
+//------------------------------------------------------------------------------
 
 assign Avalon_ChipEnable = 1'b_1;
 assign Avalon_ByteEnable = 2'b11;
@@ -249,17 +257,39 @@ always @(posedge Clk) begin
        // Check the incomming data to see if we need to do anything.
       if(DR1[44])begin 
         state <= 4'b_0001; // DELAY
-        LED <= DR1[43:34]; //10 bit res
+        state_o <= 4'b_0001; // DELAY
+        time_delay <= DR1[43:34];
+        // LED <= DR1[43:34]; //10 bit res
       end
-      else if(DR1[33] ) begin //20
+      if(DR1[33] ) begin //20
         state <= 4'b_1000; // DOPPLER
-        LED <= DR1[32:1];    // 32 bit res
+        state_o<= 4'b_1000; // DOPPLER
+        doppler_shift <= DR1[32:1];    // 32 bit res
+        // LED <= DR1[32:1];    // 32 bit res
       end 
-      else if(  DR1[61]) begin //30
+      if(  DR1[61]) begin //30
         state <= 4'b_0010; // SCALE 
-        LED <= DR1 [60:45]; //16 bit res
+        state_o <= 4'b_0010; // SCALE 
+        amplitude_scale <= DR1 [60:45]; //16 bit res
+        // LED <= DR1 [60:45]; //16 bit res
       end 
-      else begin //48
+      if( DR1[44]&DR1[61] ) begin //Delay and scale.
+        state <= 4'b_0011; 
+        state_o <= 4'b_0011; 
+      end
+      if( DR1[44]&DR1[33] ) begin //Delay and doppler.
+         state <= 4'b_1001; 
+         state_o <= 4'b_1001; 
+      end
+      if( DR1[61]&DR1[33] ) begin //scale and doppler.
+         state <= 4'b_1010; 
+         state_o <= 4'b_1010; 
+      end
+      if( DR1[44]&DR1[61] &DR1[33] ) begin //delay,  scale and doppler 
+         state <= 4'b_1011; 
+         state_o <= 4'b_1011; 
+      end
+      if (DR1 == 64'b_0000000000000000000000000000000000000000000000000000000000000000) begin //48
         state <= 4'b_0000; // WAIT
       end 
    end

@@ -1,29 +1,31 @@
-Fs = 512;
-t = 2*pi/Fs:2*pi/Fs:10*pi;
+f = 100;
+N = 2^12;
+t = 0:(N-1);
 
 
-y = (square(2*pi*10*t));
-for i=1:length(y)
-	if y(i) < 0
-		y(i) = 0;
-	end
-end
+y = sin(2*pi*f*(t./N));
+% y = uint8(round((y/2+0.5)*(2^8-1)));
+y = uint16(round((y/2+0.5)*(2^16-1)));
 
-depth = 512;
+% I_Data = uint8(round((I_Data/2+0.5)*(2^8-1)));
+
+
+figure(1); plot(y);
+
 width = 16;
 
 
-mif_file = fopen('sin.mif','wt');
-fprintf(mif_file, 'Depth= %d ;\n',depth);
+mif_file = fopen('sin.mif','wb');
+fprintf(mif_file, 'Depth= %d ;\n',N);
 fprintf(mif_file, 'Width = %d ;\n' ,width);
 fprintf(mif_file, 'ADDRESS_RADIX = HEX; \n');
 fprintf(mif_file, 'DATA_RADIX = BIN;\n');
 fprintf(mif_file, 'CONTENT \nBEGIN\n\n');
 
 count = 0;
-for j=1:16:length(y) -16
-	b = transpose(dec2bin(y(j:j+15)));
-	h =dec2hex(count,2);
+for j=1:N
+	b = transpose(dec2bin(y(j),16));
+	h =dec2hex(count,3);
 	fprintf(mif_file, '%s : %s; \n',h,b);
 	count = count +1;
 end	

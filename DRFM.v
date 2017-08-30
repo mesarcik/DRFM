@@ -2,7 +2,7 @@ module PWM(
 	input [9:0] 						SW, 
 	input 								reset_n, // connect reset and locked together.
 	input 								CLK,  
-	output 							out,
+	output 								out,
 	output [9:0]						LED,
 
  // Seven Segment Display
@@ -32,10 +32,9 @@ module PWM(
 
 wire M100CLK;
 wire lock;
-reg rst       = 0;
 
 //GLobal params
-reg[7:0] PWM_Counter   =    8'b_0000_0000;
+reg[7:0] PWM_Counter;
 reg[7:0] data_out;
 
 wire Clock_780;
