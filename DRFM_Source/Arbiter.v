@@ -38,7 +38,7 @@ module Arbiter (
 
 	NCO my_NCO (doppler_shift,M100CLK,reset,sin,cos);
 
-	Frequency_Shifter my_Frequency_Shifter (M100CLK,reset,doppler_shift,i,q,ready,cos,sin,q_shifted_val,i_shited_val);
+	Frequency_Shifter my_Frequency_Shifter (M100CLK,reset,i,q,ready,cos,sin,q_shifted_val,i_shited_val);
 
 	Adder my_Adder(M100CLK,reset,i_shited_val,q_shifted_val, output_ready, sum);
 

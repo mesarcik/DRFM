@@ -2,7 +2,6 @@ module Frequency_Shifter (
 	input 				M100CLK,
 	input 				reset,
 
-	input [31:0]		doppler_shift,
 
 	input [15:0]		i,// in offset binary
 	input [15:0]		q, // in offset binary
