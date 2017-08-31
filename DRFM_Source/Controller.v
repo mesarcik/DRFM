@@ -143,7 +143,7 @@ reg [24:0] Address_counter;
   reg [31:0]      q_shifted_val;
   reg [31:0]      i_shited_val;
 
-  Arbiter my_Arbiter(M100CLK,~lock,1'b1,ram_out,doppler_shift,amplitude_scale,ready,arbiter_out,q_shifted_val,i_shited_val);
+  Arbiter my_Arbiter(M100CLK,~lock,ram_out,doppler_shift,ready,arbiter_out,q_shifted_val,i_shited_val);
 
 // Scaler Stuff
   reg [63:0]        i_scaled;

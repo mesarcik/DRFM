@@ -1,11 +1,9 @@
 module Arbiter (
 	input 				M100CLK,
 	input 				reset,
-	input 				valid,
 
 	input [15:0]        data_in,
 	input [31:0]		doppler_shift,
-	input [15:0]		amp_scale,
 
 	output 				arbiter_ready,
 	output [31:0] 		shifted_output,
@@ -63,19 +61,19 @@ module Arbiter (
 			if(output_ready) shifted_output <= {~sum[31],sum[31:0]};
 			// else shifted_output <= 32'b0;
 			if(ready) ready 	<= 	0; ///this done so ready is high for only 1 clk
-			if(valid) begin
-				if (state == 0)begin
-					q_temp 			<=  data_in; //2's comp
-					state 			<=	1;
-				end
-				else begin 
-					i_temp 			<=  data_in;
-					state 			<=	0;
-					ready 			<= 	1;
-					i 				<= {~i_temp[15],i_temp[14:0]};
-					q 				<= {~q_temp[15],q_temp[14:0]};
-				end
+			
+			if (state == 0)begin
+				q_temp 			<=  data_in; //2's comp
+				state 			<=	1;
 			end
+			else begin 
+				i_temp 			<=  data_in;
+				state 			<=	0;
+				ready 			<= 	1;
+				i 				<= {~i_temp[15],i_temp[14:0]};
+				q 				<= {~q_temp[15],q_temp[14:0]};
+			end
+			
 		end
 	end
 
