@@ -150,7 +150,7 @@ reg [24:0] Address_counter;
   reg [63:0]        q_scaled;
   reg [63:0]        sum_scaled;
   wire              wrreq;
-  Scaler my_Scaler (M100CLK,reset,amplitude_scale,ready,i_shited_val,q_shifted_val,arbiter_out,wrreq,i_scaled,q_scaled,sum_scaled);
+  Scaler my_Scaler (M100CLK,~lock,amplitude_scale,ready,i_shited_val,q_shifted_val,arbiter_out,wrreq,i_scaled,q_scaled,sum_scaled);
 
 // FIFO Stuff
 reg                 empty;
