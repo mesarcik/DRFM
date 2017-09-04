@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.7.3)  1 SEP 2017 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.7.3)  4 SEP 2017 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**DRFM_Paper.tex
+(./DRFM_Paper.tex
 LaTeX2e <2017-04-15>
 Babel <3.11> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texmf/tex/latex/IEEEtran/IEEEtran.cls
@@ -306,7 +306,11 @@ Package color Info: Driver file: pdftex.def on input line 147.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 13.
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count116
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 14.
 
 (./preamble/FiguresAndTables.tex
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
@@ -341,7 +345,7 @@ ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
 ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
 \fi .
-\c@ContinuedFloat=\count116
+\c@ContinuedFloat=\count117
 Package caption Info: hyperref package is loaded.
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/flafter.sty
 Package: flafter 2017/04/11 v1.4a Standard LaTeX floats after reference (FMi)
@@ -372,23 +376,23 @@ Package: newfloat 2015/09/17 v1.1-109 Defining new floating environments (AR)
 ))
 (./preamble/Listings.tex
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count117
+\lst@mode=\count118
 \lst@gtempboxa=\box30
 \lst@token=\toks21
-\lst@length=\count118
+\lst@length=\count119
 \lst@currlwidth=\dimen148
-\lst@column=\count119
-\lst@pos=\count120
+\lst@column=\count120
+\lst@pos=\count121
 \lst@lostspace=\dimen149
 \lst@width=\dimen150
-\lst@newlines=\count121
-\lst@lineno=\count122
+\lst@newlines=\count122
+\lst@lineno=\count123
 \lst@maxwidth=\dimen151
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count123
-\lst@skipnumbers=\count124
+\c@lstnumber=\count124
+\lst@skipnumbers=\count125
 \lst@framebox=\box31
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -505,8 +509,8 @@ File: lstlang3.sty 2015/06/04 1.6 listings language file
 LaTeX Warning: Unused global option(s):
     [book].
 
-(./main.aux)
-\openout1 = `main.aux'.
+(./DRFM_Paper.aux)
+\openout1 = `DRFM_Paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -538,29 +542,29 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count125
+\c@section@level=\count126
 )
 LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
 
-(./main.out) (./main.out)
+(./DRFM_Paper.out) (./DRFM_Paper.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `DRFM_Paper.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
+\scratchcounter=\count127
 \scratchdimen=\dimen155
 \scratchbox=\box33
-\nofMPsegments=\count127
-\nofMParguments=\count128
+\nofMPsegments=\count128
+\nofMParguments=\count129
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count129
+\MPscratchCnt=\count130
 \MPscratchDim=\dimen156
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -582,66 +586,141 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count132
+\c@lstlisting=\count133
 
 (./body/Abstract.tex) (./body/Introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
+Underfull \hbox (badness 1796) in paragraph at lines 3--4
+\OT1/ptm/m/n/10 radar's per-spec-tive, in-dis-tin-guish-able from other gen-uin
+e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-<img/DRFM_Intro.pdf, id=38, pagebox=cropbox, 514.92375pt x 209.78375pt>
+<img/DRFM_Intro.pdf, id=127, pagebox=cropbox, 514.92375pt x 209.78375pt>
 File: img/DRFM_Intro.pdf Graphic file (type pdf)
 <use img/DRFM_Intro.pdf>
-Package pdftex.def Info: img/DRFM_Intro.pdf  used on input line 6. on input lin
-e 6.
+Package pdftex.def Info: img/DRFM_Intro.pdf  used on input line 8. on input lin
+e 8.
 Package pdftex.def Info: Requested size: 201.60077pt x 82.13222pt on input line
- 6.
+ 8.
 
-Overfull \hbox (106.19843pt too wide) in paragraph at lines 7--7
+Overfull \hbox (106.19843pt too wide) in paragraph at lines 9--9
 [] [] 
  []
 
-) (./body/Overview.tex) (./body/Methodology.tex) (./body/Design.tex)
-(./body/Results.tex) (./body/Conclusion.tex) (./main.bbl)
+
+Underfull \hbox (badness 1642) in paragraph at lines 5--12
+\OT1/ptm/m/n/10 (FPGA). There-fore this pa-per de-scribes the de-sign and
+ []
+
+) (./body/Overview.tex
+Package epstopdf Info: Source file: <img/System_Overview.eps>
+(epstopdf)                    date: 2017-09-04 11:38:45
+(epstopdf)                    size: 128707 bytes
+(epstopdf)             Output file: <img/System_Overview-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-04 11:39:19
+(epstopdf)                    size: 55760 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/System_Overview-eps-co
+nverted-to.pdf img/System_Overview.eps>
+(epstopdf)             \includegraphics on input line 5.
+Package epstopdf Info: Output file is already uptodate.
+<img/System_Overview-eps-converted-to.pdf, id=130, pagebox=cropbox, 1419.3025pt
+ x 531.9875pt>
+File: img/System_Overview-eps-converted-to.pdf Graphic file (type pdf)
+<use img/System_Overview-eps-converted-to.pdf>
+Package pdftex.def Info: img/System_Overview-eps-converted-to.pdf  used on inpu
+t line 5. on input line 5.
+Package pdftex.def Info: Requested size: 490.19843pt x 183.73882pt on input lin
+e 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--9
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 11--12
+\OT1/ptm/m/n/10 man-u-fac-tur-ing. It was cre-ated as a re-sult of In-te-grated
+
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 11--12
+\OT1/ptm/m/n/10 Cir-cuits (IC) pins be-com-ing more densely spaced and
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 11--12
+\OT1/ptm/m/n/10 there-fore clas-si-cal in-ter-con-nec-tiv-ity test ap-proaches 
+were
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 11--12
+\OT1/ptm/m/n/10 shift reg-is-ters are re-ferred to as Bound-ary Scan Cells
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./img/DRFM_Intro.pdf>])
+(./body/Methodology.tex) (./body/Design.tex) (./body/Results.tex)
+(./body/Conclusion.tex) (./DRFM_Paper.bbl)
 
 Package caption Warning: Unused \captionsetup[table] on input line 11.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 22.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
- <./img/DRFM_Intro.pdf>]
+[2 <./img/System_Overview-eps-converted-to.pdf>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 22.
-
-(./main.aux)
+ (./DRFM_Paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 22.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 22.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0516B73AEBB6A646AAC27F6C0CAA6930;387.
+Package rerunfilecheck Info: File `DRFM_Paper.out' has not changed.
+(rerunfilecheck)             Checksum: 1B2BDEF5F2CDC6EFBE496ADA34D3FDA7;1931.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 22.
  ) 
 Here is how much of TeX's memory you used:
- 9652 strings out of 492990
- 149939 string characters out of 6135006
- 269981 words of memory out of 5000000
- 13078 multiletter control sequences out of 15000+600000
- 35476 words of font info for 65 fonts, out of 8000000 for 9000
+ 9918 strings out of 492990
+ 153539 string characters out of 6135006
+ 374826 words of memory out of 5000000
+ 13299 multiletter control sequences out of 15000+600000
+ 36612 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,39p,1307b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,7n,39p,1728b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</home/misha/texmf
 /fonts/type1/urw/times/utmb8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmb
 i8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmr8a.pfb></home/misha/texmf/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 56865 bytes).
+Output written on DRFM_Paper.pdf (2 pages, 125765 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 182 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 

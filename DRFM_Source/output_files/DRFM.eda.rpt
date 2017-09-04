@@ -1,5 +1,5 @@
 EDA Netlist Writer report for DRFM
-Tue Aug 29 15:47:37 2017
+Mon Sep  4 17:12:09 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Tue Aug 29 15:47:37 2017 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Mon Sep  4 17:12:09 2017 ;
 ; Revision Name             ; DRFM                                                 ;
 ; Top-level Entity Name     ; PWM                                                  ;
 ; Family                    ; MAX 10                                               ;
@@ -48,14 +48,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Aug 29 15:47:36 2017
+    Info: Processing started: Mon Sep  4 17:12:08 2017
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off DRFM -c DRFM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 513 megabytes
-    Info: Processing ended: Tue Aug 29 15:47:39 2017
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 1084 megabytes
+    Info: Processing ended: Mon Sep  4 17:12:09 2017
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

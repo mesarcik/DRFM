@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DRFM
-Tue Aug 29 15:47:30 2017
+Mon Sep  4 17:12:00 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -91,16 +91,14 @@ agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.67        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.40        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  23.7%      ;
-;     Processor 3            ;  21.7%      ;
-;     Processor 4            ;  21.3%      ;
+;     Processor 2            ;  40.0%      ;
 +----------------------------+-------------+
 
 
@@ -109,8 +107,8 @@ agreement for further details.
 +--------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                ; Status ; Read at                  ;
 +--------------------------------------------------------------+--------+--------------------------+
-; Qsys/myQsys/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Tue Aug 29 15:47:25 2017 ;
-; DRFM.sdc                                                     ; OK     ; Tue Aug 29 15:47:25 2017 ;
+; Qsys/myQsys/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Mon Sep  4 17:11:53 2017 ;
+; DRFM.sdc                                                     ; OK     ; Mon Sep  4 17:11:53 2017 ;
 +--------------------------------------------------------------+--------+--------------------------+
 
 
@@ -133,8 +131,8 @@ agreement for further details.
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                    ; Note ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
-; 15.22 MHz  ; 15.22 MHz       ; altera_reserved_tck                                                           ;      ;
-; 105.21 MHz ; 105.21 MHz      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
+; 15.81 MHz  ; 15.81 MHz       ; altera_reserved_tck                                                           ;      ;
+; 109.83 MHz ; 109.83 MHz      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -144,9 +142,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.495  ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.895  ; 0.000         ;
 ; DRAM_CLK                                                                      ; 3.740  ; 0.000         ;
-; altera_reserved_tck                                                           ; 17.156 ; 0.000         ;
+; altera_reserved_tck                                                           ; 18.378 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -155,7 +153,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                           ; 0.241 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.317 ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.341 ; 0.000         ;
 ; DRAM_CLK                                                                      ; 2.288 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
@@ -166,8 +164,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 5.554  ; 0.000         ;
-; altera_reserved_tck                                                           ; 94.428 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 6.095  ; 0.000         ;
+; altera_reserved_tck                                                           ; 94.805 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -176,8 +174,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.967 ; 0.000         ;
-; altera_reserved_tck                                                           ; 1.168 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.904 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.984 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -186,11 +184,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 4.586  ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 4.589  ; 0.000         ;
 ; DRAM_CLK                                                                      ; 4.918  ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; 4.918  ; 0.000         ;
 ; CLK                                                                           ; 9.801  ; 0.000         ;
-; altera_reserved_tck                                                           ; 49.517 ; 0.000         ;
+; altera_reserved_tck                                                           ; 49.515 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -205,8 +203,8 @@ No synchronizer chains to report.
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                    ; Note ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
-; 15.63 MHz  ; 15.63 MHz       ; altera_reserved_tck                                                           ;      ;
-; 114.03 MHz ; 114.03 MHz      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
+; 16.16 MHz  ; 16.16 MHz       ; altera_reserved_tck                                                           ;      ;
+; 119.83 MHz ; 119.83 MHz      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -216,9 +214,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 1.230  ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 1.655  ; 0.000         ;
 ; DRAM_CLK                                                                      ; 3.894  ; 0.000         ;
-; altera_reserved_tck                                                           ; 18.017 ; 0.000         ;
+; altera_reserved_tck                                                           ; 19.056 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -227,7 +225,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                           ; 0.247 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.305 ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.306 ; 0.000         ;
 ; DRAM_CLK                                                                      ; 2.153 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
@@ -238,8 +236,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 5.878  ; 0.000         ;
-; altera_reserved_tck                                                           ; 94.859 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 6.405  ; 0.000         ;
+; altera_reserved_tck                                                           ; 95.294 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -248,8 +246,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.892 ; 0.000         ;
-; altera_reserved_tck                                                           ; 1.067 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.829 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.906 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -258,11 +256,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 4.599  ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 4.602  ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; 4.882  ; 0.000         ;
 ; DRAM_CLK                                                                      ; 4.918  ; 0.000         ;
 ; CLK                                                                           ; 9.736  ; 0.000         ;
-; altera_reserved_tck                                                           ; 49.536 ; 0.000         ;
+; altera_reserved_tck                                                           ; 49.531 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -279,7 +277,7 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+--------+---------------+
 ; DRAM_CLK                                                                      ; 3.861  ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 3.919  ; 0.000         ;
-; altera_reserved_tck                                                           ; 23.468 ; 0.000         ;
+; altera_reserved_tck                                                           ; 24.062 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -288,8 +286,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                           ; 0.093 ; 0.000         ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.149 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.120 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.144 ; 0.000         ;
 ; DRAM_CLK                                                                      ; 1.832 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
@@ -299,8 +297,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 7.975  ; 0.000         ;
-; altera_reserved_tck                                                           ; 97.206 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 8.251  ; 0.000         ;
+; altera_reserved_tck                                                           ; 97.381 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -309,8 +307,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.421 ; 0.000         ;
-; altera_reserved_tck                                                           ; 0.496 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.403 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.431 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -321,9 +319,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+--------+---------------+
 ; DRAM_CLK                                                                      ; 1.156  ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; 1.156  ; 0.000         ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 4.713  ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 4.712  ; 0.000         ;
 ; CLK                                                                           ; 9.523  ; 0.000         ;
-; altera_reserved_tck                                                           ; 49.377 ; 0.000         ;
+; altera_reserved_tck                                                           ; 49.381 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -338,12 +336,12 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                                                          ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                               ; 0.495  ; 0.093 ; 5.554    ; 0.421   ; 1.156               ;
+; Worst-case Slack                                                               ; 0.895  ; 0.120 ; 6.095    ; 0.403   ; 1.156               ;
 ;  CLK                                                                           ; N/A    ; N/A   ; N/A      ; N/A     ; 9.523               ;
 ;  DRAM_CLK                                                                      ; 3.740  ; 1.832 ; N/A      ; N/A     ; 1.156               ;
-;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.495  ; 0.149 ; 5.554    ; 0.421   ; 4.586               ;
+;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.895  ; 0.144 ; 6.095    ; 0.431   ; 4.589               ;
 ;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; N/A    ; N/A   ; N/A      ; N/A     ; 1.156               ;
-;  altera_reserved_tck                                                           ; 17.156 ; 0.093 ; 94.428   ; 0.496   ; 49.377              ;
+;  altera_reserved_tck                                                           ; 18.378 ; 0.120 ; 94.805   ; 0.403   ; 49.381              ;
 ; Design-wide TNS                                                                ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLK                                                                           ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  DRAM_CLK                                                                      ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
@@ -845,12 +843,12 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths   ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 12203      ; 1          ; 96       ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 13190      ; 1          ; 96       ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; altera_reserved_tck                                                           ; false path ; 0          ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; DRAM_CLK                                                                      ; 51         ; 0          ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; false path ; 0        ; 0        ;
 ; DRAM_CLK                                                                      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 16         ; 0          ; 0        ; 0        ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 41705      ; 0          ; 0        ; 0        ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 42077      ; 0          ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -860,12 +858,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths   ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 12203      ; 1          ; 96       ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 13190      ; 1          ; 96       ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; altera_reserved_tck                                                           ; false path ; 0          ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; DRAM_CLK                                                                      ; 51         ; 0          ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; false path ; 0        ; 0        ;
 ; DRAM_CLK                                                                      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 16         ; 0          ; 0        ; 0        ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 41705      ; 0          ; 0        ; 0        ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 42077      ; 0          ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -875,7 +873,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 940        ; 0        ; 0        ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 1068       ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; 0        ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 144        ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
@@ -887,7 +885,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 940        ; 0        ; 0        ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 1068       ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; 0        ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 144        ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
@@ -1055,11 +1053,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Aug 29 15:47:23 2017
+    Info: Processing started: Mon Sep  4 17:11:52 2017
 Info: Command: quartus_sta DRFM -c DRFM
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): TimeQuest Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
@@ -1069,12 +1067,12 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Info (332104): Reading SDC File: 'Qsys/myQsys/synthesis/submodules/altera_reset_controller.sdc'
 Info (332104): Reading SDC File: 'DRFM.sdc'
-Warning (332174): Ignored filter at DRFM.sdc(3): Switch* could not be matched with a port File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM-master/DRFM.sdc Line: 3
-Warning (332049): Ignored set_false_path at DRFM.sdc(3): Argument <from> is an empty collection File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM-master/DRFM.sdc Line: 3
-    Info (332050): set_false_path -to * -from [get_ports Switch*] File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM-master/DRFM.sdc Line: 3
-Warning (332174): Ignored filter at DRFM.sdc(4): Button* could not be matched with a port File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM-master/DRFM.sdc Line: 4
-Warning (332049): Ignored set_false_path at DRFM.sdc(4): Argument <from> is an empty collection File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM-master/DRFM.sdc Line: 4
-    Info (332050): set_false_path -to * -from [get_ports Button*] File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM-master/DRFM.sdc Line: 4
+Warning (332174): Ignored filter at DRFM.sdc(3): Switch* could not be matched with a port File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 3
+Warning (332049): Ignored set_false_path at DRFM.sdc(3): Argument <from> is an empty collection File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 3
+    Info (332050): set_false_path -to * -from [get_ports Switch*] File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 3
+Warning (332174): Ignored filter at DRFM.sdc(4): Button* could not be matched with a port File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 4
+Warning (332049): Ignored set_false_path at DRFM.sdc(4): Argument <from> is an empty collection File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 4
+    Info (332050): set_false_path -to * -from [get_ports Button*] File: /home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 4
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {my_PLL|altpll_component|auto_generated|pll1|inclk[0]} -multiply_by 2 -duty_cycle 50.00 -name {PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]} {my_PLL|altpll_component|auto_generated|pll1|clk[0]}
     Info (332110): create_generated_clock -source {my_PLL|altpll_component|auto_generated|pll1|inclk[0]} -multiply_by 2 -phase -90.00 -duty_cycle 50.00 -name {PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1]} {my_PLL|altpll_component|auto_generated|pll1|clk[1]}
@@ -1088,36 +1086,36 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 0.495
+Info (332146): Worst-case setup slack is 0.895
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.495               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     0.895               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     3.740               0.000 DRAM_CLK 
-    Info (332119):    17.156               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.241
+    Info (332119):    18.378               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.317
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.241               0.000 altera_reserved_tck 
+    Info (332119):     0.317               0.000 altera_reserved_tck 
     Info (332119):     0.341               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     2.288               0.000 DRAM_CLK 
-Info (332146): Worst-case recovery slack is 5.554
+Info (332146): Worst-case recovery slack is 6.095
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     5.554               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    94.428               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.967
+    Info (332119):     6.095               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):    94.805               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.904
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.967               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):     1.168               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 4.586
+    Info (332119):     0.904               0.000 altera_reserved_tck 
+    Info (332119):     0.984               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+Info (332146): Worst-case minimum pulse width slack is 4.589
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.586               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     4.589               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     4.918               0.000 DRAM_CLK 
     Info (332119):     4.918               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] 
     Info (332119):     9.801               0.000 CLK 
-    Info (332119):    49.517               0.000 altera_reserved_tck 
+    Info (332119):    49.515               0.000 altera_reserved_tck 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1126,36 +1124,36 @@ Warning (332060): Node: Controller:my_Controller|MasterSelect was determined to 
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 1.230
+Info (332146): Worst-case setup slack is 1.655
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.230               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     1.655               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     3.894               0.000 DRAM_CLK 
-    Info (332119):    18.017               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.247
+    Info (332119):    19.056               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.305
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.247               0.000 altera_reserved_tck 
+    Info (332119):     0.305               0.000 altera_reserved_tck 
     Info (332119):     0.306               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     2.153               0.000 DRAM_CLK 
-Info (332146): Worst-case recovery slack is 5.878
+Info (332146): Worst-case recovery slack is 6.405
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     5.878               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    94.859               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.892
+    Info (332119):     6.405               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):    95.294               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.829
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.892               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):     1.067               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 4.599
+    Info (332119):     0.829               0.000 altera_reserved_tck 
+    Info (332119):     0.906               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+Info (332146): Worst-case minimum pulse width slack is 4.602
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.599               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     4.602               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     4.882               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] 
     Info (332119):     4.918               0.000 DRAM_CLK 
     Info (332119):     9.736               0.000 CLK 
-    Info (332119):    49.536               0.000 altera_reserved_tck 
+    Info (332119):    49.531               0.000 altera_reserved_tck 
 Info: Analyzing Fast 1200mV 0C Model
 Warning (332060): Node: Controller:my_Controller|MasterSelect was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|TDO is being clocked by Controller:my_Controller|MasterSelect
@@ -1167,37 +1165,37 @@ Info (332146): Worst-case setup slack is 3.861
     Info (332119): ========= =================== =====================
     Info (332119):     3.861               0.000 DRAM_CLK 
     Info (332119):     3.919               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    23.468               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.093
+    Info (332119):    24.062               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.120
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.093               0.000 altera_reserved_tck 
-    Info (332119):     0.149               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     0.120               0.000 altera_reserved_tck 
+    Info (332119):     0.144               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     1.832               0.000 DRAM_CLK 
-Info (332146): Worst-case recovery slack is 7.975
+Info (332146): Worst-case recovery slack is 8.251
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     7.975               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    97.206               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.421
+    Info (332119):     8.251               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):    97.381               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.403
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.421               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):     0.496               0.000 altera_reserved_tck 
+    Info (332119):     0.403               0.000 altera_reserved_tck 
+    Info (332119):     0.431               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
 Info (332146): Worst-case minimum pulse width slack is 1.156
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.156               0.000 DRAM_CLK 
     Info (332119):     1.156               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] 
-    Info (332119):     4.713               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     4.712               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     9.523               0.000 CLK 
-    Info (332119):    49.377               0.000 altera_reserved_tck 
+    Info (332119):    49.381               0.000 altera_reserved_tck 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 726 megabytes
-    Info: Processing ended: Tue Aug 29 15:47:30 2017
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 941 megabytes
+    Info: Processing ended: Mon Sep  4 17:12:00 2017
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:11
 
 

@@ -24,4 +24,10 @@
 \bibitem{SJROOME}
 S.~J. Roome, ``Digital radio frequency memory.''
 
+\bibitem{DE10lite}
+\emph{DE10-Lite User Manual}.
+
+\bibitem{JTAG}
+\emph{Virtual JTAG (altera\_virtual\_jtag) IP Core User Guide}.
+
 \end{thebibliography}
