@@ -15,45 +15,45 @@ Warning--empty journal in SJROOME
 Warning--empty year in SJROOME
 
 Done.
-You've used 3 entries,
+You've used 5 entries,
             4087 wiz_defined-function locations,
-            831 strings with 7454 characters,
-and the built_in function-call counts, 796 in all, are:
-= -- 35
-> -- 6
+            837 strings with 7538 characters,
+and the built_in function-call counts, 1202 in all, are:
+= -- 53
+> -- 8
 < -- 0
-+ -- 4
++ -- 6
 - -- 1
-* -- 37
-:= -- 138
-add.period$ -- 4
-call.type$ -- 3
+* -- 43
+:= -- 196
+add.period$ -- 6
+call.type$ -- 5
 change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 77
-empty$ -- 81
+cite$ -- 7
+duplicate$ -- 125
+empty$ -- 131
 format.name$ -- 1
-if$ -- 155
+if$ -- 247
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 17
-newline$ -- 32
+int.to.str$ -- 5
+missing$ -- 29
+newline$ -- 38
 num.names$ -- 1
-pop$ -- 53
+pop$ -- 89
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 54
+skip$ -- 88
 stack$ -- 0
 substring$ -- 1
-swap$ -- 31
+swap$ -- 51
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 3
+type$ -- 5
 warning$ -- 2
 while$ -- 1
-width$ -- 4
-write$ -- 38
+width$ -- 6
+write$ -- 48
 (There were 2 warnings)

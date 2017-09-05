@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.7.3)  4 SEP 2017 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.7.3)  5 SEP 2017 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -600,6 +600,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
+Underfull \hbox (badness 2547) in paragraph at lines 3--4
+\OT1/ptm/m/n/10 radar op-er-ates by trans-mit-ting pulses on a tar-get and
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -688,39 +693,134 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./img/DRFM_Intro.pdf>])
-(./body/Methodology.tex) (./body/Design.tex) (./body/Results.tex)
-(./body/Conclusion.tex) (./DRFM_Paper.bbl)
+ <./img/DRFM_Intro.pdf>]
+Overfull \hbox (106.19843pt too wide) in paragraph at lines 15--15
+[] [] 
+ []
 
-Package caption Warning: Unused \captionsetup[table] on input line 11.
-See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 22.
+Overfull \hbox (3.53442pt too wide) in paragraph at lines 16--24
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 27--28
+\OT1/ptm/m/n/10 An SDRAM con-troller was im-ple-mented on the FPGA
+ []
+
+
+Underfull \hbox (badness 2735) in paragraph at lines 27--28
+\OT1/ptm/m/n/10 in or-der to fa-cil-i-tate com-mu-ni-ca-tion with the ex-ter-na
+l
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 27--28
+\OT1/ptm/m/n/10 Finally, for de-bug-ging and user in-ter-fac-ing pur-poses a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 29--30
+\OT1/ptm/m/n/10 The ma-jor con-sid-er-a-tion in the im-ple-men-ta-tion of this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 29--30
+\OT1/ptm/m/n/10 In or-der to de-scribe the sig-nal pro-cess-ing model the
+ []
+
 [2 <./img/System_Overview-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+) (./body/Methodology.tex) (./body/Design.tex) (./body/Results.tex)
+(./body/Conclusion.tex) (./DRFM_Paper.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 22.
+ [3]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 22.
  (./DRFM_Paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 22.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 22.
 Package rerunfilecheck Info: File `DRFM_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 1B2BDEF5F2CDC6EFBE496ADA34D3FDA7;1931.
+(rerunfilecheck)             Checksum: A88341FB94623242BE8FE4D7538E40AE;1931.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 22.
  ) 
 Here is how much of TeX's memory you used:
- 9918 strings out of 492990
- 153539 string characters out of 6135006
- 374826 words of memory out of 5000000
- 13299 multiletter control sequences out of 15000+600000
- 36612 words of font info for 66 fonts, out of 8000000 for 9000
+ 9949 strings out of 492990
+ 153854 string characters out of 6135006
+ 375826 words of memory out of 5000000
+ 13314 multiletter control sequences out of 15000+600000
+ 42170 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,39p,1728b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</home/misha/texmf
-/fonts/type1/urw/times/utmb8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmb
-i8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmr8a.pfb></home/misha/texmf/
-fonts/type1/urw/times/utmri8a.pfb>
-Output written on DRFM_Paper.pdf (2 pages, 125765 bytes).
+ 40i,8n,39p,1756b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></home/misha/texmf/fonts/type1/urw/times/utm
+b8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmbi8a.pfb></home/misha/texmf
+/fonts/type1/urw/times/utmr8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on DRFM_Paper.pdf (3 pages, 165361 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
  251 words of extra memory for PDF output out of 10000 (max. 10000000)
 

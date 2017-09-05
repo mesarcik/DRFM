@@ -30,4 +30,10 @@ S.~J. Roome, ``Digital radio frequency memory.''
 \bibitem{JTAG}
 \emph{Virtual JTAG (altera\_virtual\_jtag) IP Core User Guide}.
 
+\bibitem{SDRAM}
+\emph{ISSI SDRAM Data Sheet}.
+
+\bibitem{SDRAM_Core}
+\emph{SDRAM Controller Core User Manual}.
+
 \end{thebibliography}
