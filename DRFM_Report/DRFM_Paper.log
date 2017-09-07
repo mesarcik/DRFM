@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.7.3)  5 SEP 2017 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.7.3)  6 SEP 2017 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -609,12 +609,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-<img/DRFM_Intro.pdf, id=127, pagebox=cropbox, 514.92375pt x 209.78375pt>
-File: img/DRFM_Intro.pdf Graphic file (type pdf)
-<use img/DRFM_Intro.pdf>
-Package pdftex.def Info: img/DRFM_Intro.pdf  used on input line 8. on input lin
-e 8.
-Package pdftex.def Info: Requested size: 201.60077pt x 82.13222pt on input line
+Package epstopdf Info: Source file: <img/DRFM_Intro.eps>
+(epstopdf)                    date: 2017-09-06 14:02:58
+(epstopdf)                    size: 28704 bytes
+(epstopdf)             Output file: <img/DRFM_Intro-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-06 14:03:23
+(epstopdf)                    size: 12278 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/DRFM_Intro-eps-convert
+ed-to.pdf img/DRFM_Intro.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+<img/DRFM_Intro-eps-converted-to.pdf, id=127, pagebox=cropbox, 730.73pt x 298.1
+1375pt>
+File: img/DRFM_Intro-eps-converted-to.pdf Graphic file (type pdf)
+<use img/DRFM_Intro-eps-converted-to.pdf>
+Package pdftex.def Info: img/DRFM_Intro-eps-converted-to.pdf  used on input lin
+e 8. on input line 8.
+Package pdftex.def Info: Requested size: 201.60077pt x 82.24309pt on input line
  8.
 
 Overfull \hbox (106.19843pt too wide) in paragraph at lines 9--9
@@ -693,7 +704,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./img/DRFM_Intro.pdf>]
+ <./img/DRFM_Intro-eps-converted-to.pdf>]
 Overfull \hbox (106.19843pt too wide) in paragraph at lines 15--15
 [] [] 
  []
@@ -740,52 +751,58 @@ Underfull \hbox (badness 2173) in paragraph at lines 27--28
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
 
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 29--30
+Underfull \hbox (badness 2142) in paragraph at lines 29--31
 \OT1/ptm/m/n/10 The ma-jor con-sid-er-a-tion in the im-ple-men-ta-tion of this
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
 
  []
 
 
-Underfull \hbox (badness 3009) in paragraph at lines 29--30
+Underfull \hbox (badness 3009) in paragraph at lines 29--31
 \OT1/ptm/m/n/10 In or-der to de-scribe the sig-nal pro-cess-ing model the
  []
 
 [2 <./img/System_Overview-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 32--34
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
+ \OT1/ptm/m/it/10 2) Fre-quency shift-ing: [][][] \OT1/ptm/m/n/10 I OVER LOOKED
+ THE
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
@@ -803,7 +820,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 22.
  ) 
 Here is how much of TeX's memory you used:
  9949 strings out of 492990
- 153854 string characters out of 6135006
+ 153922 string characters out of 6135006
  375826 words of memory out of 5000000
  13314 multiletter control sequences out of 15000+600000
  42170 words of font info for 79 fonts, out of 8000000 for 9000
@@ -817,7 +834,7 @@ ype1/public/amsfonts/cm/cmsy10.pfb></home/misha/texmf/fonts/type1/urw/times/utm
 b8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmbi8a.pfb></home/misha/texmf
 /fonts/type1/urw/times/utmr8a.pfb></home/misha/texmf/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on DRFM_Paper.pdf (3 pages, 165361 bytes).
+Output written on DRFM_Paper.pdf (3 pages, 166206 bytes).
 PDF statistics:
  213 PDF objects out of 1000 (max. 8388607)
  196 compressed objects within 2 object streams
