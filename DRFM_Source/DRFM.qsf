@@ -396,25 +396,6 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
-set_global_assignment -name VERILOG_FILE Scaler.v
-set_global_assignment -name VERILOG_FILE Arbiter.v
-set_global_assignment -name VERILOG_FILE Adder.v
-set_global_assignment -name VERILOG_FILE NCO.v
-set_global_assignment -name VERILOG_FILE Frequency_Shifter.v
-set_global_assignment -name VERILOG_FILE Qsys/myQsys/synthesis/myQsys.v -library myQsys
-set_global_assignment -name QIP_FILE Qsys/myQsys/synthesis/myQsys.qip
-set_global_assignment -name QIP_FILE RAM/RAMRAMAM.qip
-set_global_assignment -name VERILOG_FILE VirtualJTAG_MM_Write.v
-set_global_assignment -name VERILOG_FILE Seven_Seg_Driver.v
-set_global_assignment -name VERILOG_FILE myQsys.v
-set_global_assignment -name VERILOG_FILE DRFM.v
-set_global_assignment -name VERILOG_FILE Controller.v
-set_global_assignment -name VERILOG_FILE PLL/PLL.v
-set_global_assignment -name CDF_FILE output_files/Chain1.cdf
-set_global_assignment -name SIGNALTAP_FILE stp1.stp
-set_global_assignment -name SDC_FILE DRFM.sdc
-set_global_assignment -name SOURCE_FILE DRFM.qsf
-set_global_assignment -name QIP_FILE ROM/Sine_LUT.qip
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
@@ -779,7 +760,6 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[170] -
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[171] -to "Controller:my_Controller|Read_ReadData[8]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[172] -to "Controller:my_Controller|Read_ReadData[9]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[173] -to "Controller:my_Controller|Read_WaitRequest" -section_id auto_signaltap_0
-set_global_assignment -name QIP_FILE FIFO/FIFO.qip
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[174] -to "Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|doppler_shift[0]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175] -to "Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|doppler_shift[10]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "Controller:my_Controller|VirtualJTAG_MM_Write:my_VirtualJTAG_MM_Write|doppler_shift[11]" -section_id auto_signaltap_0
@@ -923,5 +903,26 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE Scaler.v
+set_global_assignment -name VERILOG_FILE Arbiter.v
+set_global_assignment -name VERILOG_FILE Adder.v
+set_global_assignment -name VERILOG_FILE NCO.v
+set_global_assignment -name VERILOG_FILE Frequency_Shifter.v
+set_global_assignment -name VERILOG_FILE Qsys/myQsys/synthesis/myQsys.v -library myQsys
+set_global_assignment -name QIP_FILE Qsys/myQsys/synthesis/myQsys.qip
+set_global_assignment -name QIP_FILE RAM/RAMRAMAM.qip
+set_global_assignment -name VERILOG_FILE VirtualJTAG_MM_Write.v
+set_global_assignment -name VERILOG_FILE Seven_Seg_Driver.v
+set_global_assignment -name VERILOG_FILE myQsys.v
+set_global_assignment -name VERILOG_FILE DRFM.v
+set_global_assignment -name VERILOG_FILE Controller.v
+set_global_assignment -name VERILOG_FILE PLL/PLL.v
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SDC_FILE DRFM.sdc
+set_global_assignment -name SOURCE_FILE DRFM.qsf
+set_global_assignment -name QIP_FILE ROM/Sine_LUT.qip
+set_global_assignment -name QIP_FILE FIFO/FIFO.qip
+set_global_assignment -name QIP_FILE Complex_Multiplier/Complex_Multipler.qip
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

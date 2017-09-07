@@ -40,7 +40,7 @@ module Arbiter (
 
 	Frequency_Shifter my_Frequency_Shifter (M100CLK,reset,i,q,ready,cos,sin,q_shifted_val,i_shited_val);
 
-	Adder my_Adder(M100CLK,reset,i_shited_val,q_shifted_val, output_ready, sum);
+	Subtractor my_Subtractor(M100CLK,reset,i_shited_val,q_shifted_val, output_ready, sum);
 
 	assign u_q_shifted 	=  {~q_shifted_val[31], q_shifted_val[30:0]};
 	assign u_i_shited 	=  {~i_shited_val[31] , i_shited_val [30:0]};

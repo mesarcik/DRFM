@@ -2,7 +2,7 @@ close all;
 clear all;
 fs = 10000;
 f0 = 100;
-f_shift = 3e3;
+f_shift = 200;
 t = 0:1/fs:2*pi;
 
 % ---------------------------------------------------
@@ -23,7 +23,8 @@ t = 0:1/fs:2*pi;
 
 % ---------------------------------------------------
 %I/Q Data
-	[I,Q] = my_hilbert(y);
+	I = real(hilbert(y));
+	Q = imag(hilbert(y));
 
 	figure(2); subplot(2,2,1);
 	plot(real(I));
@@ -36,6 +37,13 @@ t = 0:1/fs:2*pi;
 	subplot(2,2,4);
 	plot(f,real((fftshift(fft(Q)))));
 
+	% y_shift
+
+	% y_shift_f = fft(y_shift);
+	% y_shift_real_f = [y_shift_f(1:length(y_shift_f)/2)  ,fliplr( y_shift_f(1:length(y_shift_f)/2)) ];
+	% y_shift_real = ifft(y_shift_real_f);
+	% figure(3); subplot(2,1,1);plot(real(y_shift_real)); title('Time y_shift'); subplot(2,1,2); plot(real(y_shift_real_f)); title('Freq y_shift');
+
 % ---------------------------------------------------
 % frequency shift.
 
@@ -45,13 +53,19 @@ t = 0:1/fs:2*pi;
 	% I_shift = (I.* cos(2*pi*f0*t));
 	% Q_shift = (Q.* sin(2*pi*f0*t));
 
-	I_shift = (I.*cos(2*pi*f_shift*t)+ (I.*(1j*sin(2*pi*f_shift*t)))) ; %
-	Q_shift = (Q.*cos(2*pi*f_shift*t)+ (Q.*(1j*sin(2*pi*f_shift*t)))) ; %
+	% I_shift = I.* (cos(2*pi*f_shift*t) -1j*sin(2*pi*f_shift*t));
+	% Q_shift = Q.* (cos(2*pi*f_shift*t) -1j*sin(2*pi*f_shift*t));
+
+	I_shift = I.* (cos(2*pi*f_shift*t) ) - ( Q.* (sin(2*pi*f_shift*t)) );
+	% Q_shift = Q.* (-1j*sin(2*pi*f_shift*t));
+
+	% I_shift = (I.*cos(2*pi*f_shift*t)- (I.*(1j*sin(2*pi*f_shift*t)))) ; %
+	% Q_shift = (Q.*cos(2*pi*f_shift*t)- (Q.*(1j*sin(2*pi*f_shift*t)))) ; %
 
 % ---------------------------------------------------
 % I/Q demod.
 
-	y_shift = I_shift+ Q_shift;
+	y_shift = I_shift;
 
 	f = fs/2*linspace(-1,1,length(y));
 	y_shift_f = fftshift((fft(y_shift)));

@@ -1,10 +1,8 @@
-function [I,Q] = my_hilbert(y)
+function [y,Q] = my_hilbert(y)
 
 
-	y_f = fftshift(fft(y));
-	Q =  ifft(fftshift([-y_f(1:length(y)/2),y_f(1+length(y)/2:length(y)) ]));
-	I = y;
-
+	y_f =  (fft(y));
+	Q   =  ifft(([y_f(1:length(y)/2),-y_f(1+length(y)/2:length(y)) ]));
 	% figure(66);
 	% subplot(2,1,1);
 	% plot(real(fft(I)));

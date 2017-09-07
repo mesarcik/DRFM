@@ -1,5 +1,5 @@
-IP Upgrade report for PWM
-Tue Jul 18 15:04:56 2017
+IP Upgrade report for DRFM
+Thu Sep 07 10:05:33 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -35,9 +35,9 @@ agreement for further details.
 +----------------------------------------------------------------------------+
 ; IP Upgrade Summary                                                         ;
 +------------------------------+---------------------------------------------+
-; IP Components Upgrade Status ; Failed - Tue Jul 18 15:04:56 2017           ;
+; IP Components Upgrade Status ; Failed - Thu Sep 07 10:05:33 2017           ;
 ; Quartus Prime Version        ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
-; Revision Name                ; PWM                                         ;
+; Revision Name                ; DRFM                                        ;
 ; Top-level Entity Name        ; PWM                                         ;
 ; Family                       ; MAX 10                                      ;
 +------------------------------+---------------------------------------------+
@@ -46,11 +46,11 @@ agreement for further details.
 +---------------------+
 ; IP Upgrade Messages ;
 +---------------------+
-Info (23030): Evaluation of Tcl script /opt/intelFPGA_lite/16.1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/16.1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1079 megabytes
-    Info: Processing ended: Tue Jul 18 15:04:56 2017
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Peak virtual memory: 672 megabytes
+    Info: Processing ended: Thu Sep 07 10:05:34 2017
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
 
 

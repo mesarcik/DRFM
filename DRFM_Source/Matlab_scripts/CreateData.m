@@ -85,48 +85,63 @@ clc;
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		fs = 100e6/2^8;
-		t = (0:2^25-1)/(fs);
-		% t = (0:1024)/(fs);
+		% t = (0:2^25-1)/(fs);
+		t = (0:2^16)/(fs);
 
 		rect = zeros(1,length(t));
 		rect(1:880) = 1;
 
-		I_Data = real(ifft(fft(cos(2*pi*100*t).*(2*cos(2*pi*100*t))).*rect ));
-		Q_Data = real(ifft(fft(sin(2*pi*100*t).*(2*sin(2*pi*100*t))).*rect ));
+		% I_Data = real(ifft(fft(cos(2*pi*100*t).*(2*cos(2*pi*100*t))).*rect ));
+		% Q_Data = real(ifft(fft(sin(2*pi*100*t).*(2*sin(2*pi*100*t))).*rect ));
+		y = cos(2*pi*10*t) + cos(2*pi*20*t)  + cos(2*pi*30*t) + cos(2*pi*40*t) +cos(2*pi*50*t);
+		I_Data = real(hilbert(y)); 
+		Q_Data = imag(hilbert(y));
+		figure(1); subplot(2,1,1); plot(I_Data); title('I');subplot(2,1,2); plot(real(Q_Data)); title('Q'); 
 
-		u16_I = uint16(round((I_Data/((2))+0.5)*(2^16-1)));
-		u16_Q = uint16(round((Q_Data/((2))+0.5)*(2^16-1)));
+
+		% u16_I = uint16(round((I_Data + 2/ ((7))+0.34576)*(2^16-1)));
+		% u16_Q = uint16(round((Q_Data + 16/((20)))*(2^16-1)));
+
+
+		u16_I = uint16(((I_Data + 2 *ones(1,length(I_Data)))/7)*(2^16 -1) );
+		u16_Q = uint16(((Q_Data + 16*ones(1,length(Q_Data)))/20)*(2^16 -1));
+
+		figure(2); subplot(2,1,1); plot(u16_I); title('u16_I');subplot(2,1,2); plot(real(u16_Q)); title('u16_Q'); 
 		
-
-		I_Shift_I = I_Data.*  cos(2*pi*100*t);
-		Q_Shift_I = Q_Data.*  sin(2*pi*100*t);
-		u16_I_Shift_I = uint16(round((I_Shift_I/((2))+0.5)*(2^16-1)));
-		u16_Q_Shift_I = uint16(round((Q_Shift_I/((2))+0.5)*(2^16-1)));
+		f_shift = 10e3;
+		I_shift = (I_Data.*cos(2*pi*f_shift*t)+ (I_Data.*(1j*sin(2*pi*f_shift*t)))) ; %
+		Q_shift = (1j*Q_Data.*cos(2*pi*f_shift*t)+ (1j*Q_Data.*(1j*sin(2*pi*f_shift*t)))) ; %
 
 
-		y_shift_I = I_Shift_I + Q_Shift_I;
-		y_shift_I = uint16(round((y_shift_I/(2*sqrt(2))+0.5)*(2^16-1)));
+		y_shift = I_Data + 1j*Q_Data;
+
+		% Real signal reconstruction
+		y_shift_f = fft(y_shift);
+		y_shift_real_f = [y_shift_f(1:length(y_shift_f)/2)  ,fliplr( y_shift_f(1:length(y_shift_f)/2)) ];
+		y_shift_real = ifft(y_shift_real_f);
+		figure(3); subplot(2,1,1);plot(real(y_shift_real)); title('Time y_shift'); subplot(2,1,2); plot(real(y_shift_real_f)); title('Freq y_shift');
+		% y_shift_I = uint16(round((y_shift_I/(2*sqrt(2))+0.5)*(2^16-1)));
 		
 		
-		% ExportData(y_shift_I, '100 Hz Sine (390 kSps)');
-		Data = [];
-		i_counter = 1;
-		q_counter = 1;
-		i_data  = [];
-		q_data = [];
+		% % ExportData(y_shift_I, '100 Hz Sine (390 kSps)');
+		% Data = [];
+		% i_counter = 1;
+		% q_counter = 1;
+		% i_data  = [];
+		% q_data = [];
 
-		for i = 1:length(t)
-			if(mod(i,2) == 0)
-				Data(i) = u16_I(i_counter);
-				i_data(i_counter) = u16_I(i_counter);
-				i_counter= i_counter+1;
-			else
-				Data(i) = u16_Q(q_counter);
-				q_data(q_counter) = u16_Q(q_counter);
-				q_counter = q_counter+1; 
-			end
-		end
-		ExportData([Data(1:length(Data)/4),uint16(zeros(1,length(Data)/4)),uint16((2^12) * ones(1,length(Data)/4)),uint16((2^15) * ones(1,length(Data)/4))], 'Inject');
+		% for i = 1:length(t)
+		% 	if(mod(i,2) == 0)
+		% 		Data(i) = u16_I(i_counter);
+		% 		i_data(i_counter) = u16_I(i_counter);
+		% 		i_counter= i_counter+1;
+		% 	else
+		% 		Data(i) = u16_Q(q_counter);
+		% 		q_data(q_counter) = u16_Q(q_counter);
+		% 		q_counter = q_counter+1; 
+		% 	end
+		% end
+		% ExportData([Data(1:length(Data)/4),uint16(zeros(1,length(Data)/4)),uint16((2^12) * ones(1,length(Data)/4)),uint16((2^15) * ones(1,length(Data)/4))], 'Inject');
 
 
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

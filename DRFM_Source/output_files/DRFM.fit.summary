@@ -1,18 +1,18 @@
-Fitter Status : Successful - Mon Sep  4 17:11:40 2017
+Fitter Status : Successful - Thu Sep 07 10:15:07 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : DRFM
 Top-level Entity Name : PWM
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 4,551 / 49,760 ( 9 % )
-    Total combinational functions : 2,103 / 49,760 ( 4 % )
-    Dedicated logic registers : 3,974 / 49,760 ( 8 % )
-Total registers : 4041
+Total logic elements : 4,643 / 49,760 ( 9 % )
+    Total combinational functions : 2,251 / 49,760 ( 5 % )
+    Dedicated logic registers : 3,943 / 49,760 ( 8 % )
+Total registers : 4010
 Total pins : 114 / 360 ( 32 % )
 Total virtual pins : 0
 Total memory bits : 350,208 / 1,677,312 ( 21 % )
-Embedded Multiplier 9-bit elements : 10 / 288 ( 3 % )
+Embedded Multiplier 9-bit elements : 18 / 288 ( 6 % )
 Total PLLs : 1 / 4 ( 25 % )
 UFM blocks : 0 / 1 ( 0 % )
 ADC blocks : 0 / 2 ( 0 % )
