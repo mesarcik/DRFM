@@ -1,0 +1,875 @@
+% Some common commands and resources used by the Frederiksberg beamer
+% theme .sty files.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009-2012
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+
+\ProvidesPackage{KUcommon}[2012/03/08]
+
+% Redefine ProcessOptionsBeamer to give warnings for unknown options:
+\let\KU@ProcessOptionsBeamer\ProcessOptionsBeamer
+\def\ProcessOptionsBeamer{%
+  \let\KU@orgkverrx\KV@errx
+  \def\KV@errx##1{\@latex@warning{Package \@currname, option ##1}}%
+  \KU@ProcessOptionsBeamer
+  \let\KV@errx\KU@orgkverrx
+}
+
+% Faculty and language
+\def\KU@LIFE{LIFE}
+\def\KU@NAT{NAT}
+\def\KU@SUND{SUND}
+\def\KU@SAMF{SAMF}
+\def\KU@KU{}
+\let\KU@faculty\KU@LIFE
+\def\KU@dk{dk}
+\def\KU@uk{uk}
+\let\KU@language\KU@uk
+
+% Temporary stuff
+\newlength{\KU@tmplen}
+\newlength{\KU@tmplenx}
+
+% Handling of unique resources
+\newif\ifKU@hasres
+\def\KU@checkres#1{%
+  \expandafter\ifx\csname KU@res@#1\endcsname\relax
+    \KU@hasresfalse
+  \else
+    \KU@hasrestrue
+  \fi
+}
+\def\KU@gotres#1{%
+  \expandafter\gdef\csname KU@res@#1\endcsname{#1}%
+}
+\def\KU@defres#1{%
+  \KU@checkres{#1}\ifKU@hasres\else\KU@gotres{#1}\fi
+}
+\newcommand{\KU@declareimage}[3][]{%
+  \KU@defres{image@#2}\ifKU@hasres\else
+    \pgfdeclareimage[#1]{#2}{#3}%
+  \fi
+}
+\newcommand{\KU@declareimage@}[2][]{%
+  \KU@declareimage[#1]{#2}{#2}%
+}
+
+% We need to be able to check whether beamer is just calculating head and
+% foot size or if this is being typeset...
+\newif\ifKU@justcalc
+\let\KU@beamer@calculateheadfoot\beamer@calculateheadfoot
+\def\beamer@calculateheadfoot{%
+  \KU@justcalctrue
+  \KU@beamer@calculateheadfoot
+  \KU@justcalcfalse
+}
+\KU@justcalcfalse
+
+% Check for pdf or ps output (adapted from old pgf.sty)
+\ifx\pdfoutput\@undefined \newcount\pdfoutput \fi
+\ifx\pdfoutput\relax \newcount\pdfoutput \fi
+\ifcase\pdfoutput
+  % not pdf
+  \def\KU@rawps#1{\special{ps::#1}}
+  \def\KU@pssetup#1{\special{!#1}}
+  \def\KU@dvipsheader#1{%
+    \ifKU@justcalc\else
+      \KU@defres{dvipshd@#1}\ifKU@hasres\else\special{header=#1.pro}\fi
+    \fi
+  }
+
+  % set up for specials
+  \begingroup
+    \catcode`\{=12
+    \catcode`\}=12
+    \catcode`\#=12
+    \catcode`\<=1
+    \catcode`\>=2
+    \gdef\KU@lb<{>
+    \gdef\KU@rb<}>
+    \gdef\KU@num<#>
+    \gdef\KU@sp< >
+  \endgroup
+\else
+  % pdf
+  \def\KU@dvipsheader#1{}
+  \def\KU@pssetup#1{}
+  \def\KU@rawps#1{}
+\fi
+
+% Overall look switches
+\def\KU@needheadinfo{
+  \newif\ifKU@instituteinhead
+  \KU@instituteinheadfalse
+  \let\KU@needheadinfo\relax
+}
+
+% Colour
+\def\KU@needcolors{
+  % Colours below from design manual
+  \definecolor{KULIFEbrown}{HTML}{541800}
+  \definecolor{KUNATgreen}{HTML}{325d3d}
+  \definecolor{KUSUNDblue}{HTML}{2a216a}
+  \definecolor{KUSAMForange}{HTML}{e13218}
+  \definecolor{KUFARMAblue}{HTML}{007c92}
+  \definecolor{KUred}{HTML}{901a1e}
+  \definecolor{KUgrey}{gray}{0.4}
+  % Background colour lifted from ppt template
+  \definecolor{KUbggrey}{HTML}{eceeec}
+  % Logo colours
+  \definecolor{KU@LIFElogo}{named}{KULIFEbrown}
+  \definecolor{KU@NATlogo}{named}{KUNATgreen}
+  \definecolor{KU@SUNDlogo}{named}{KUSUNDblue}
+  \definecolor{KU@SAMFlogo}{named}{KUSAMForange}
+  \definecolor{KU@logo}{named}{KUred}
+  % Top bar colours
+  \definecolor{KU@topbar}{named}{KUgrey}
+  \definecolor{KU@toptext}{named}{white}
+  \let\KU@needcolors\relax% only once
+}
+
+% Names
+\def\KU@neednames{
+  \def\KU@dkName{K\o{}benhavns\ Universitet}
+  \def\KU@LIFEdkName{Det\ Biovidenskabelige\ Fakultet}
+  \def\KU@NATdkName{Det\ Naturvidenskabelige\ Fakultet}
+  \def\KU@SUNDdkName{Det\ Sundhedsvidenskabelige\ Fakultet}
+  \def\KU@SAMFdkName{Det\ Samfundsvidenskabelige\ Fakultet}
+  \def\KU@ukName{University\ of\ Copenhagen}
+  \def\KU@LIFEukName{Faculty\ of\ Life\ Sciences}
+  \def\KU@NATukName{Faculty\ of\ Science}
+  \def\KU@SUNDukName{Faculty\ of\ Health\ Sciences}
+  \def\KU@SAMFukName{Faculty\ of\ Social\ Sciences}
+  \let\KU@neednames\relax% only once
+}
+
+% Background colour checking
+\newlength{\KU@rgbsum}
+\newlength{\KU@rgbsumx}
+\newcommand{\KU@colortest}[2][\KU@rgbsum]{%
+  \def\KU@rgbadd##1,##2,##3:{%
+    \setlength{#1}{##1in}%
+    \addtolength{#1}{##2in}%
+    \addtolength{#1}{##3in}%
+  }%
+  \extractcolorspec{#2}{\KU@tmp}%
+  \expandafter\convertcolorspec\KU@tmp{HTML}{\KU@html}%
+  \expandafter\convertcolorspec\KU@tmp{rgb}{\KU@tmp}%
+  \expandafter\KU@rgbadd\KU@tmp:%
+}
+\def\KU@bgcolortest{\KU@colortest{bg}}%
+
+% Logo
+\def\KU@needlogo{%
+  \def\KU@LogoVar{a}
+  \newcommand{\KUlogostyle}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{auto}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoVar{a}%
+    \else\def\KU@tempb{normal}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoVar{n}%
+    \else\def\KU@tempb{outlined}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoVar{o}%
+    \else\def\KU@tempb{none}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoVar{x}%
+    \else
+      \@latex@error{Unknown logo style: ##1}%
+    \fi\fi\fi
+  }
+  % Logo graphics file and drawing routine
+  \newcommand{\KU@setupLogo}{%
+    \if\KU@LogoVar x\else
+      \if\KU@LogoVar a%
+        \KU@bgcolortest
+        \ifdim\KU@rgbsum<1.5in% dark background
+          \def\KU@tempa{var}%
+        \else % light background
+          \def\KU@tempa{}%
+        \fi
+      \else\if\KU@LogoVar o%
+        \def\KU@tempa{var}%
+      \else
+        \def\KU@tempa{}%
+      \fi\fi
+      \KU@dvipsheader{KUcommon}%
+      \KU@dvipsheader{KU\KU@faculty Sigil}%
+      \KU@dvipsheader{KU\KU@faculty Logo\KU@tempa}%
+      \KU@declareimage@[height=.09\paperwidth]{KU\KU@faculty Logo\KU@tempa}%
+    \fi
+  }
+  \newcommand{\KU@doLogo}{%
+    \if\KU@LogoVar x%
+       \raisebox{0pt}[.09\paperwidth]{~}%
+    \else
+       \pgfuseimage{KU\KU@faculty Logo\KU@tempa}%
+    \fi
+  }
+  \newcommand{\KUlogo}{\KU@setupLogo\KU@doLogo}
+  \let\KU@needlogo\relax% only once
+}
+
+% Logo and logo line
+\def\KU@needlogoline{%
+  \KU@needlogo
+  \KU@needcolors
+  \def\KU@LogoPlace{r}
+  \def\KU@LogoLine{a}
+  \newif\ifKU@nologo
+  \KU@nologofalse
+  \newif\ifKU@noline
+  \KU@nolinefalse
+  \newcommand{\KUlogoline}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{auto}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoLine{a}%
+      \KU@nolinefalse
+    \else\def\KU@tempb{normal}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoLine{n}%
+      \KU@nolinefalse
+    \else\def\KU@tempb{white}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoLine{w}%
+      \KU@nolinefalse
+    \else\def\KU@tempb{none}\ifx\KU@tempb\KU@tempa
+      \KU@nolinetrue
+    \else
+      \@latex@error{Unknown logo line style: ##1}%
+    \fi\fi\fi
+  }
+  \newcommand{\KUlogoplace}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{right}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoPlace{r}%
+    \else\def\KU@tempb{left}\ifx\KU@tempb\KU@tempa
+      \def\KU@LogoPlace{l}%
+    \else
+      \@latex@error{Unknown logo placement: ##1}%
+    \fi\fi
+  }
+  \RequirePackage{MLsupportoldpgf}
+  \def\KU@line@seg##1##2##3{%
+    \color{##1}%
+    \pgfpathrectangle{\pgfpoint{##2}{-.0005\paperwidth}}{\pgfpoint{##3}{.0005\paperwidth}}%
+    \pgfusepathqfill
+  }
+  \newcommand{\KU@lineAndLogo}[1][\KU@LogoPlace]{%
+    \begin{pgfpicture}{0pt}{-.0005\paperwidth}{\paperwidth}{.0005\paperwidth}%
+      \ifKU@noline\else\begingroup
+        \def\KU@tempa{0pt}%
+        \setlength{\KU@tmplen}{\paperwidth}%
+        \if\KU@LogoLine a%
+          \KU@bgcolortest
+          \ifbeamer@plainframe\else
+            \ifdim\beamer@leftsidebar>0pt%
+              \usebeamercolor{sidebar}%
+              \KU@colortest[\KU@rgbsumx]{bg}%
+              \ifdim\KU@rgbsum<1.5in\ifdim\KU@rgbsumx<1.5in\else
+                \KU@line@seg{KU@\KU@faculty logo}{0pt}{\beamer@leftsidebar}%
+                \let\KU@tempa\beamer@leftsidebar
+                \addtolength{\KU@tmplen}{-\beamer@leftsidebar}%
+              \fi\else\ifdim\KU@rgbsumx<1.5in%
+                \KU@line@seg{white}{0pt}{\beamer@leftsidebar}%
+                \let\KU@tempa\beamer@leftsidebar
+                \addtolength{\KU@tmplen}{-\beamer@leftsidebar}%
+              \fi\fi
+            \fi
+            \ifdim\beamer@rightsidebar>0pt%
+              \setlength{\KU@tmplenx}{\paperwidth}%
+              \addtolength{\KU@tmplenx}{-\beamer@rightsidebar}%
+              \usebeamercolor{sidebar}%
+              \KU@colortest[\KU@rgbsumx]{bg}%
+              \ifdim\KU@rgbsum<1.5in\ifdim\KU@rgbsumx<1.5in\else
+                \KU@line@seg{KU@\KU@faculty logo}{\KU@tmplenx}{\beamer@rightsidebar}%
+                \addtolength{\KU@tmplen}{-\beamer@rightsidebar}%
+              \fi\else\ifdim\KU@rgbsumx<1.5in%
+                \KU@line@seg{white}{\KU@tmplenx}{\beamer@rightsidebar}%
+                \addtolength{\KU@tmplen}{-\beamer@rightsidebar}%
+              \fi\fi
+            \fi
+          \fi
+          % set the main line color
+          \ifdim\KU@rgbsum<1.5in% dark background
+            \def\KU@tempc{white}%
+          \else % light background
+            \def\KU@tempc{KU@\KU@faculty logo}%
+          \fi
+        \else\if\KU@LogoLine w%
+          \def\KU@tempc{white}%
+        \else
+          \def\KU@tempc{KU@\KU@faculty logo}%
+        \fi\fi
+        \KU@line@seg{\KU@tempc}{\KU@tempa}{\KU@tmplen}%
+      \endgroup\fi
+    \end{pgfpicture}%
+    \ifKU@nologo\else
+      \def\KU@tempa{background canvas}%
+      \if##1r%
+        \ifdim\beamer@rightsidebar>0pt%
+          \setlength{\KU@tmplen}{\beamer@rightsidebar}%
+          \ifbeamer@plainframe\else\def\KU@tempa{sidebar}\fi
+        \else
+          \setlength{\KU@tmplen}{\Gm@rmargin}%
+          \ifdim\KU@tmplen>0.13\paperwidth
+            \setlength{\KU@tmplen}{0.13\paperwidth}%
+          \fi
+        \fi
+        \ifdim\KU@tmplen<0.085\paperwidth
+          \setlength{\KU@tmplen}{0.085\paperwidth}%
+        \fi
+        \hskip-.5\KU@tmplen\hskip-.0325\paperwidth
+      \else
+        \ifdim\beamer@leftsidebar>0pt%
+          \setlength{\KU@tmplen}{\beamer@leftsidebar}%
+          \ifbeamer@plainframe\else\def\KU@tempa{sidebar}\fi
+        \else
+          \setlength{\KU@tmplen}{\Gm@lmargin}%
+          \ifdim\KU@tmplen>0.13\paperwidth
+            \setlength{\KU@tmplen}{0.13\paperwidth}%
+          \fi
+        \fi
+        \ifdim\KU@tmplen<0.085\paperwidth
+          \setlength{\KU@tmplen}{0.085\paperwidth}%
+        \fi
+        \hskip-\paperwidth\hskip.5\KU@tmplen\hskip-.0325\paperwidth
+      \fi%
+      \begingroup
+        \usebeamercolor{\KU@tempa}%
+        \KU@setupLogo
+        \raisebox{-.0055\paperwidth}{\KU@doLogo}%
+      \endgroup
+    \fi%
+  }%
+  \let\KU@needlogoline\relax% only once
+}
+
+% Watermark
+\def\KU@needwmark{%
+  \newif\ifKUwmark@omit
+  \def\KUwmark@color{auto}%
+  \def\KUwmark@variant{auto}%
+  \newcommand{\KUwmarkcolor}[1]{\def\KUwmark@color{##1}}%
+  \let\KUwmarkcolour\KUwmarkcolor
+  \newcommand{\KUwmarkvariant}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{auto}\ifx\KU@tempb\KU@tempa
+      \let\KUwmark@variant\KU@tempb
+    \else\def\KU@tempb{normal}\ifx\KU@tempb\KU@tempa
+      \let\KUwmark@variant\KU@tempb
+    \else\def\KU@tempb{inverse}\ifx\KU@tempb\KU@tempa
+      \let\KUwmark@variant\KU@tempb
+    \else
+      \@latex@error{Unknown water mark variant: ##1}%
+    \fi\fi\fi
+  }%
+
+  \def\KUwmark@initcolor{%
+    \def\KU@tmp{auto}\ifx\KUwmark@color\KU@tmp%
+      \KU@bgcolortest
+      \ifdim\KU@rgbsum<1.5in% dark background
+        \def\KU@tmpa{lighten}%
+      \else % light background
+        \def\KU@tmpa{darken}%
+      \fi
+    \else
+      \let\KU@tmpa\KUwmark@color
+    \fi
+    \def\KU@tmp{darken}\ifx\KU@tmpa\KU@tmp%
+      \def\KUwmark@usecolor{bg!96!black}%
+      \def\KUwmark@usevariant{}%
+    \else\def\KU@tmp{lighten}\ifx\KU@tmpa\KU@tmp%
+      \def\KUwmark@usecolor{bg!85!white}%
+      \def\KUwmark@usevariant{var}%
+    \else%
+      \edef\KUwmark@usecolor{\KU@tmpa}%
+      \KU@bgcolortest
+      \KU@colortest[\KU@rgbsumx]{\KUwmark@usecolor}%
+      \ifdim\KU@rgbsum<\KU@rgbsumx% darker background
+        \def\KUwmark@usevariant{var}%
+      \else
+        \def\KUwmark@usevariant{}%
+      \fi
+    \fi\fi%
+    \def\KU@tmp{inverse}\ifx\KUwmark@variant\KU@tmp%
+      \def\KUwmark@usevariant{var}%
+    \else\def\KU@tmp{normal}\ifx\KUwmark@variant\KU@tmp%
+      \def\KUwmark@usevariant{}%
+    \fi\fi
+    \usebeamercolor{background canvas}%
+    \ifcase\pdfoutput
+      % not pdf
+      \extractcolorspec{\KUwmark@usecolor}{\KU@tmp}%
+      \expandafter\convertcolorspec\KU@tmp{HTML}{\KU@html}%
+      \KU@rawps{SDict begin KU\KU@faculty wmark\KUwmark@usevariant
+                _setcolor_\KU@html\KU@sp load exec end}%
+      \expandafter\ifx\csname KU\KU@faculty @wmark@\KU@html\endcsname\relax
+         \KU@pssetup{/KU\KU@faculty wmark\KUwmark@usevariant
+                     _setcolor_\KU@html\KU@sp
+                     16\KU@num\KU@html\KU@sp KU\KU@faculty wmark\KUwmark@usevariant _colordef}%
+         \expandafter\gdef\csname KU\KU@faculty @wmark@\KU@html\endcsname{}%
+      \fi
+    \else
+       % pdf
+       \color{\KUwmark@usecolor}%
+    \fi
+  }
+  \def\KU@wmark{{%
+    \usebeamercolor{background canvas}%
+    \KUwmark@initcolor
+    \KU@dvipsheader{KUcommon}%
+    \KU@dvipsheader{KUcommonWmark}%
+    \KU@dvipsheader{KU\KU@faculty Sigil}%
+    \KU@dvipsheader{KU\KU@faculty Wmark\KUwmark@usevariant}%
+    \KU@declareimage@[height=\paperheight]{KU\KU@faculty Wmark\KUwmark@usevariant}%
+    \rlap{\hskip\paperwidth\llap{\pgfuseimage{KU\KU@faculty Wmark\KUwmark@usevariant}}}%
+  }}
+  \KUwmark@omitfalse
+  \def\KUwmarkOmitOnce{%
+    \ifx\beamer@howtotreatframe\beamer@donoframe\else
+      \global\KUwmark@omittrue
+    \fi
+  }
+  \let\KU@needwmark\relax% only once
+}
+
+% Footer text
+\def\KU@needfoot{%
+  \KU@needlogoline
+  \KU@needheadinfo
+  \newif\ifKUfoot@ontitlepage
+  \newif\ifKUfoot@showtot
+  \KUfoot@showtottrue
+  \newif\ifKUfoot@omitframeno
+  \newif\ifKUfoot@omitlogos
+  \newif\ifKUfoot@omitline
+  \let\KU@calculatefoot\relax
+  \AtBeginDocument{
+    \let\KU@calculatefoot\beamer@calculateheadfoot
+  }
+  \newcommand{\KUfootstyle}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{low}\ifx\KU@tempb\KU@tempa
+      \let\KUfoot@active\KUfoot@low
+    \else\def\KU@tempb{high}\ifx\KU@tempb\KU@tempa
+      \let\KUfoot@active\KUfoot@high
+    \else
+      \@latex@error{Unknown foot style: ##1}%
+    \fi\fi
+    \KU@calculatefoot
+  }
+  \newcommand{\KUtotalframes}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{show}\ifx\KU@tempb\KU@tempa
+      \KUfoot@showtottrue
+    \else\def\KU@tempb{hide}\ifx\KU@tempb\KU@tempa
+      \KUfoot@showtotfalse
+    \else
+      \@latex@error{Unknown totalframes option: ##1}%
+    \fi\fi
+  }
+  \def\KUfoot@sep{~---~}%
+  \newcommand{\KUfootsep}[1]{%
+    \def\KUfoot@sep{##1}%
+  }
+  \def\KUfoot@fnolabel{\ifx\KU@language\KU@dk Dias\else Slide\fi}%
+  \newcommand{\KUfootfnolabel}[1]{%
+    \def\KUfoot@fnolabel{##1}%
+  }
+  \newcommand{\KU@InsertFrameNumber}{%
+    \ifx\KUfoot@fnolabel\@empty\else\KUfoot@fnolabel~\fi
+    \insertframenumber
+    \ifKUfoot@showtot/\inserttotalframenumber\fi
+  }
+  \newcommand{\KUfoot@text}[3][n]{%
+    % ##1 = n or t (normal or titlepage)
+    % ##2 = l or r (KU logo placement, text is opposite)
+    % ##3 = h or l (high or low)
+    \def\KUfoot@dosep{%
+      \let\KUfoot@dosep\KUfoot@sep%
+    }%
+    \if##2r\if##3l\ifKUfoot@omitframeno\else
+      \KUfoot@dosep
+      {\usebeamercolor[fg]{page number in head/foot}%
+       \usebeamerfont{page number in head/foot}%
+       \KU@InsertFrameNumber}%
+    \fi\fi\fi
+    \if##1n%
+      % normal page
+      \ifdim\beamer@leftsidebar=0pt\ifdim\beamer@rightsidebar=0pt%
+        % no sidebar
+        \ifx\beamer@shortauthor\@empty
+          \ifKU@instituteinhead\else
+            \ifx\beamer@shortinstitute\@empty\else
+              \KUfoot@dosep
+              {\usebeamercolor[fg]{institute in head/foot}%
+               \usebeamerfont{institute in head/foot}\insertshortinstitute}%
+            \fi
+          \fi
+        \else
+          \KUfoot@dosep
+          {\usebeamercolor[fg]{author in head/foot}%
+           \usebeamerfont{author in head/foot}\insertshortauthor}%
+          \ifKU@instituteinhead\else
+            \ifx\beamer@shortinstitute\@empty\else
+              {\usebeamercolor[fg]{institute in head/foot}%
+               \usebeamerfont{institute in head/foot} (\insertshortinstitute)}%
+            \fi
+          \fi
+        \fi
+        \ifx\beamer@shorttitle\@empty\else
+          \KUfoot@dosep
+          {\usebeamercolor[fg]{title in head/foot}%
+           \usebeamerfont{title in head/foot}\insertshorttitle}%
+        \fi
+      \fi\fi
+      \ifx\beamer@shortdate\@empty\else
+        \KUfoot@dosep
+        {\usebeamercolor[fg]{date in head/foot}%
+         \usebeamerfont{date in head/foot}\insertshortdate}%
+      \fi
+    \else
+      % title page
+      \ifx\beamer@date\@empty\else
+        \KUfoot@dosep
+        {\usebeamercolor[fg]{date in head/foot}%
+         \usebeamerfont{date in head/foot}\insertdate}%
+      \fi
+    \fi
+    \if##2l\if##3l\ifKUfoot@omitframeno\else
+      \KUfoot@dosep
+      {\usebeamercolor[fg]{page number in head/foot}%
+       \usebeamerfont{page number in head/foot}%
+       \KU@InsertFrameNumber}%
+    \fi\fi\fi
+  }
+  \newcommand{\KU@insertlogo}[1][\KU@LogoPlace]{%
+    % Presentation defined logo - OPPOSITE side of that given in ##1
+    \begin{lrbox}{\@tempboxa}{\insertlogo}\end{lrbox}%
+    \@tempdima=\wd\@tempboxa%
+    \advance\@tempdima by .02\paperwidth% minimum needed space
+    \if##1l%
+      \ifdim\beamer@rightsidebar>0pt%
+        \setlength{\KU@tmplen}{\beamer@rightsidebar}%
+      \else
+        \setlength{\KU@tmplen}{\Gm@rmargin}%
+      \fi
+    \else
+      \ifdim\beamer@leftsidebar>0pt%
+        \setlength{\KU@tmplen}{\beamer@leftsidebar}%
+      \else
+        \setlength{\KU@tmplen}{\Gm@lmargin}%
+      \fi
+    \fi
+    \ifdim\KU@tmplen<\@tempdima
+      \setlength{\KU@tmplen}{\@tempdima}%
+    \fi
+    \rlap{\raisebox{0pt}[0pt][0pt]{%
+      \if##1l%
+        \hskip\paperwidth\hskip-\KU@tmplen
+      \fi
+      \parbox[b]{\KU@tmplen}{%
+        \hfill\usebox\@tempboxa\hfill\rule{0pt}{2pt}%
+        \vskip2pt%
+      }%
+    }}%
+  }
+  \newcommand{\KUfoot@low}[1][\KU@LogoPlace]{%
+    \begin{beamercolorbox}[wd=\paperwidth]{footline}%
+      \vbox{%
+        \setlength{\baselineskip}{0pt}%
+        \hbox{{%
+          \ifKUfoot@omitlogos
+            \KU@nologotrue
+          \else
+            \KU@insertlogo[##1]%
+          \fi
+          \ifKUfoot@omitline
+            \KU@nolinetrue
+          \fi
+          \raisebox{0pt}[0pt][0pt]{%
+            \usebeamercolor{background canvas}%
+            \KU@lineAndLogo[##1]%
+          }%
+        }}%
+        \vskip1.5pt%
+        \ifbeamer@plainframe\else%
+          \ifdim\beamer@leftsidebar>0pt%
+             \hskip\beamer@leftsidebar
+          \fi
+        \fi
+        \if##1l\hfill\fi
+        \hbox{%
+          \rlap{\phantom{%
+            {\usebeamerfont{title in head/foot}Xy}%
+            \ifKUfoot@ontitlepage
+              \KUfoot@text[n]{##1}{l}
+            \else
+              \KUfoot@text[t]{##1}{l}
+            \fi
+          }}%
+          \hskip1.5pt
+            \ifKUfoot@ontitlepage
+              \KUfoot@text[t]{##1}{l}
+            \else
+              \KUfoot@text[n]{##1}{l}
+            \fi
+          \hskip1.5pt
+        }%
+        \vskip1pt
+        \ifx\KU@navsymbols\@undefined\else\ifKUfoot@ontitlepage\else
+          \if##1r%
+            \hfill\raisebox{0pt}[0pt][0pt]{\llap{\KU@navsymbols}}%
+          \else
+            \ifdim\beamer@leftsidebar>0pt%
+              \hskip\beamer@leftsidebar
+            \fi
+            \raisebox{0pt}[0pt][0pt]{\rlap{\KU@navsymbols}}%
+          \fi
+        \fi\fi
+      }
+    \end{beamercolorbox}
+    \global\KUfoot@ontitlepagefalse
+    \global\KUfoot@omitframenofalse
+    \global\KUfoot@omitlogosfalse
+    \global\KUfoot@omitlinefalse
+  }
+  \newcommand{\KUfoot@high}[1][\KU@LogoPlace]{%
+    \begin{beamercolorbox}[wd=\paperwidth]{footline}%
+      \vbox{%
+        \setlength{\baselineskip}{0pt}%
+        \hbox{%
+          \rlap{\phantom{%
+            {\usebeamerfont{title in head/foot}Xy}%
+            \ifKUfoot@ontitlepage
+              \KUfoot@text[n]{##1}{h}
+            \else
+              \KUfoot@text[t]{##1}{h}
+            \fi
+          }}%
+          \hspace*{\Gm@lmargin}%
+          \ifKUfoot@ontitlepage%
+            \KUfoot@text[t]{##1}{h}%
+          \else
+            \KUfoot@text[n]{##1}{h}%
+          \fi
+        }%
+        \vskip2pt
+        \hbox{\hspace*{\Gm@lmargin}\usebeamerfont{page number in head/foot}%
+              \usebeamercolor[fg]{page number in head/foot}%
+              \ifKUfoot@omitframeno
+                \phantom{\KU@InsertFrameNumber}%
+              \else
+                \KU@InsertFrameNumber%
+              \fi}%
+        \vskip2pt
+        \hbox{{%
+          \ifKUfoot@omitlogos
+            \KU@nologotrue
+          \else
+            \KU@insertlogo[##1]%
+          \fi
+          \ifKUfoot@omitline
+            \KU@nolinetrue
+          \fi
+          \raisebox{0pt}[0pt][0pt]{%
+            \usebeamercolor{background canvas}%
+            \KU@lineAndLogo%
+          }%
+        }}%
+        \vskip.02\paperwidth
+        \ifx\KU@navsymbols\@undefined\else\ifKUfoot@ontitlepage\else
+          \if##1r%
+            \hfill\raisebox{0pt}[0pt][0pt]{\llap{\KU@navsymbols}}%
+          \else
+            \ifdim\beamer@leftsidebar>0pt%
+              \hfill\raisebox{0pt}[0pt][0pt]{\llap{\KU@navsymbols}}%
+            \else
+              \raisebox{0pt}[0pt][0pt]{\rlap{\KU@navsymbols}}%
+            \fi
+          \fi
+        \fi\fi
+      }
+    \end{beamercolorbox}
+    \global\KUfoot@ontitlepagefalse
+    \global\KUfoot@omitframenofalse
+    \global\KUfoot@omitlogosfalse
+    \global\KUfoot@omitlinefalse
+  }
+  \KUfoot@ontitlepagefalse
+  \def\KUfootOnTitlepage{%
+    \ifx\beamer@howtotreatframe\beamer@donoframe\else
+      \global\KUfoot@ontitlepagetrue
+    \fi
+  }
+  \KUfoot@omitframenofalse
+  \def\KUfootOmitFrameNo{%
+    \ifx\beamer@howtotreatframe\beamer@donoframe\else
+      \global\KUfoot@omitframenotrue
+    \fi
+  }
+  \KUfoot@omitlogosfalse
+  \def\KUfootOmitLogos{%
+    \ifx\beamer@howtotreatframe\beamer@donoframe\else
+      \global\KUfoot@omitlogostrue
+    \fi
+  }
+  \KUfoot@omitlinefalse
+  \def\KUfootOmitLine{%
+    \ifx\beamer@howtotreatframe\beamer@donoframe\else
+      \global\KUfoot@omitlinetrue
+    \fi
+  }
+  \let\KU@needfoot\relax% only once
+}
+
+% Header (top bar)
+\def\KU@needhead{%
+  \KU@needheadinfo
+  \KU@neednames
+  \KU@needcolors
+  \newif\ifKU@useugm
+  \KU@useugmfalse
+  \newcommand{\KUheadstyle}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{faculty}\ifx\KU@tempb\KU@tempa
+      \KU@instituteinheadfalse
+    \else\def\KU@tempb{institute}\ifx\KU@tempb\KU@tempa
+      \KU@instituteinheadtrue
+    \else
+      \@latex@error{Unknown head style: ##1}%
+    \fi\fi
+  }
+  \newcommand{\KUheadfont}[1]{%
+    \edef\KU@tempa{##1}%
+    \def\KU@tempb{ugm}\ifx\KU@tempb\KU@tempa
+      \KU@useugmtrue
+    \else\def\KU@tempb{standard}\ifx\KU@tempb\KU@tempa
+      \KU@useugmfalse
+    \else
+      \@latex@error{Unknown head font: ##1}%
+    \fi\fi
+  }
+  \def\KU@lctopchar##1{%
+    \def\tempb{##1}\ifx\tempb\@empty
+      \let\@next\KU@uctopchar
+    \else\ifx##1\@stopcode
+      \let\@next\relax
+    % start of hacks to handle danish characters in different encodings:
+    \else\ifx##1\IeC
+      \let\@next\KU@lctopchar
+    \else\def\tempa{\r A}\ifx\tempa\tempb
+      \def\@next{\@sp{\r a}\KU@lctopchar}%
+    \else\ifx##1\r
+      \def\@next####1{\@sp{\if####1A\r a\else\r ####1\fi}\KU@lctopchar}%
+    % end of hacks
+    \else
+      \let\@next\KU@lctopchar
+      \@sp{##1}%
+      \let\@prefix\@space
+    \fi\fi\fi\fi\fi
+    \@next
+  }
+  \def\KU@uctopchar##1{%
+    \def\tempb{##1}\ifx\tempb\@empty
+      \let\@next\KU@uctopchar
+    \else\ifx##1\@stopcode
+      \let\@next\relax
+    % start of hacks to handle danish characters in different encodings:
+    \else\ifx##1\IeC
+      \let\@next\KU@uctopchar
+    \else\def\tempa{\r a}\ifx\tempa\tempb
+      \def\@next{\@sp{\r A}\KU@uctopchar}%
+    \else\ifx##1\r
+      \def\@next####1{\@sp{\if####1a\r A\else\r ####1\fi}\KU@uctopchar}%
+    % end of hacks
+    \else
+      \let\@next\KU@uctopchar
+      \@sp{##1}%
+      \let\@prefix\@space
+    \fi\fi\fi\fi\fi
+    \@next
+  }
+  \def\KU@topword##1 {%
+    \def\tempb{##1}\ifx\tempb\@empty
+      \let\@nextw\KU@topword
+    \else\ifx##1\@stopcode
+      \let\@nextw\relax
+    \else
+      \let\@nextw\KU@topword
+      \expandafter\KU@topchar##1\@stopcode%
+      \def\@prefix{\@space\ \@space}%
+    \fi\fi
+    \@nextw
+  }
+  \def\KU@dotoptext##1{{%
+    \color{KU@toptext}%
+    \def\@stopcode{stopnu}\def\@prefix{}%
+    \let\IeC\relax \let\org@r\r \let\r\relax% hacks for danish characters
+    \ifKU@useugm
+      \fontencoding{T1}\fontfamily{ugm}\fontshape{n}\fontseries{bx}\fontsize{5.4}{5.4pt}\selectfont
+      \let\o\O \let\ae\AE% hacks for danish characters
+      \edef\KU@tmp{##1 }%
+      \let\r\org@r
+      \def\@space{\hspace*{.6ex}}%
+      \def\@sp####1{\edef\tmp{####1}\@prefix\expandafter\uppercase\expandafter{\tmp}}%
+      \let\KU@topchar\KU@uctopchar%
+      \expandafter\KU@topword\KU@tmp {\@stopcode} %
+    \else
+      \rmfamily\scshape\mdseries\fontsize{7.2}{7.2pt}\selectfont%
+      \let\O\o \let\AE\ae% hacks for danish characters
+      \edef\KU@tmp{##1 }%
+      \let\r\org@r
+      \def\@space{\hspace*{.38ex}}%
+      \def\@sp####1{\edef\tmp{####1}\@prefix\expandafter\lowercase\expandafter{\tmp}}%
+      \let\KU@topchar\KU@lctopchar%
+      \expandafter\KU@topword\KU@tmp {\@stopcode} %
+    \fi
+  }}
+  \def\KU@doheadleft{%
+    \ifKU@instituteinhead
+      \rlap{\raisebox{.0088\paperwidth}[0pt][0pt]{%
+              \hskip-.976\paperwidth%
+              \KU@dotoptext{\csname KU@\KU@language Name\endcsname}}}%
+    \else
+      \KU@dvipsheader{KUcommon}%
+      \KU@dvipsheader{KU\KU@language}%
+      \KU@declareimage@[height=.012\paperwidth]{KU\KU@language}%
+      \rlap{\raisebox{.0088\paperwidth}[0pt][0pt]{%
+              \hskip-.976\paperwidth\pgfuseimage{KU\KU@language}}}%
+    \fi
+  }
+  \def\KU@doheadright{%
+    \ifKU@instituteinhead
+      \ifx\beamer@shortinstitute\@empty\else
+        \llap{\raisebox{.0088\paperwidth}[0pt][0pt]{%
+                \KU@dotoptext{\beamer@shortinstitute}\hspace*{0.024\paperwidth}}}%
+      \fi
+    \else
+      \ifx\KU@faculty\KU@KU\else
+        \KU@dvipsheader{KUcommon}%
+        \KU@dvipsheader{KU\KU@faculty\KU@language}%
+        \KU@declareimage@[height=.012\paperwidth]{KU\KU@faculty\KU@language}%
+        \llap{\raisebox{.0088\paperwidth}[0pt][0pt]{%
+                \pgfuseimage{KU\KU@faculty\KU@language}%
+                \hspace*{0.024\paperwidth}}}%
+      \fi
+    \fi
+  }
+  \newcommand{\KU@head}[1][n]{%
+    % Set arg to t to get title page version (omit faculty name graphic)
+    {\color{KU@topbar}\vrule height.028\paperwidth width\paperwidth}%
+    \KU@doheadleft
+    \if##1t\else
+      \KU@doheadright
+    \fi
+  }
+  \newcommand{\KU@althead}[1][n]{%
+    % Set arg to t to get title page version (omit bar and uni name graphic)
+    \if##1t%
+      \phantom{\vrule height.028\paperwidth width\paperwidth}%
+    \else
+      {\color{KU@topbar}\vrule height.028\paperwidth width\paperwidth}%
+      \KU@doheadleft
+    \fi
+    \KU@doheadright
+  }
+  \let\KU@needhead\relax% only once
+}

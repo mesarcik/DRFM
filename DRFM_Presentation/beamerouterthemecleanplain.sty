@@ -1,0 +1,32 @@
+% Inner theme that removes the beamer default behaviour of cluttering plain
+% frames with navigation symbols.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+
+\ProvidesPackage{beamerouterthemecleanplain}[2009/02/18]
+
+\mode<presentation>
+
+% This below modified from beamer beamerbaseframecomponents.sty to remove
+% unwanted navigation symbols in plain frame.
+%
+\def\ps@empty{%
+  \let\@mkboth\@gobbletwo%
+  \def\@oddhead{\begingroup%
+    \setbox\beamer@tempbox=\hbox{\usebeamertemplate***{background canvas}\hyper@pagetransition\hyper@pageduration}%
+    \beamer@tempdim=\ht\beamer@tempbox%
+    \setbox\beamer@tempbox=\hbox{\lower\beamer@tempdim\hbox{\box\beamer@tempbox}}%
+    \wd\beamer@tempbox=0pt\ht\beamer@tempbox=0pt\dp\beamer@tempbox=0pt%
+    \setbox\@tempboxa=\hbox{\usebeamertemplate***{background}}%
+    \beamer@tempdim=\ht\@tempboxa%
+    \setbox\@tempboxa=\hbox{\lower\beamer@tempdim\hbox{\box\@tempboxa}}%
+    \wd\@tempboxa=0pt\ht\@tempboxa=0pt\dp\@tempboxa=0pt%
+    \vbox{\hbox{\hskip-\Gm@lmargin\raise\headheight\box\beamer@tempbox\box\@tempboxa}\hfil}%
+    \endgroup%
+  }
+  \def\@oddfoot{\hypertarget{Navigation\the\c@page}{}}
+  \let\@evenhead\@oddhead\let\@evenfoot\@oddfoot}
+
+\mode
+<all>

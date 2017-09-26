@@ -52,7 +52,7 @@ puts "\nSelect device: $test_device.\n";
 open_device -hardware_name $usbblaster_name -device_name $test_device
 
 puts "Reading data file..."
-set File [open "Inject.dat" "r"]
+set File [open "../Matlab_scripts/I-Q_Data.dat" "r"]
 set Data [read $File]
 close $File
 

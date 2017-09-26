@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DRFM
-Thu Sep 07 10:15:24 2017
+Fri Sep 15 16:05:37 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -93,14 +93,14 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.71        ;
+; Average used               ; 1.91        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  25.4%      ;
-;     Processor 3            ;  23.2%      ;
-;     Processor 4            ;  22.8%      ;
+;     Processor 2            ;  32.3%      ;
+;     Processor 3            ;  29.7%      ;
+;     Processor 4            ;  29.1%      ;
 +----------------------------+-------------+
 
 
@@ -109,8 +109,8 @@ agreement for further details.
 +--------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                ; Status ; Read at                  ;
 +--------------------------------------------------------------+--------+--------------------------+
-; Qsys/myQsys/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Thu Sep 07 10:15:18 2017 ;
-; DRFM.sdc                                                     ; OK     ; Thu Sep 07 10:15:18 2017 ;
+; Qsys/myQsys/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Fri Sep 15 16:05:30 2017 ;
+; DRFM.sdc                                                     ; OK     ; Fri Sep 15 16:05:30 2017 ;
 +--------------------------------------------------------------+--------+--------------------------+
 
 
@@ -128,14 +128,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+-----------+----------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-------------------------------------------------------------------------------+------------------------------------------------------+--------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                                                                 ;
-+-----------+-----------------+-------------------------------------------------------------------------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name                                                                    ; Note ;
-+-----------+-----------------+-------------------------------------------------------------------------------+------+
-; 15.44 MHz ; 15.44 MHz       ; altera_reserved_tck                                                           ;      ;
-; 74.23 MHz ; 74.23 MHz       ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
-+-----------+-----------------+-------------------------------------------------------------------------------+------+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                  ;
++------------+-----------------+-------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                    ; Note ;
++------------+-----------------+-------------------------------------------------------------------------------+------+
+; 15.88 MHz  ; 15.88 MHz       ; altera_reserved_tck                                                           ;      ;
+; 107.01 MHz ; 107.01 MHz      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
++------------+-----------------+-------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -144,9 +144,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; -3.472 ; -199.806      ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.655  ; 0.000         ;
 ; DRAM_CLK                                                                      ; 3.725  ; 0.000         ;
-; altera_reserved_tck                                                           ; 17.608 ; 0.000         ;
+; altera_reserved_tck                                                           ; 18.516 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -155,8 +155,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                           ; 0.223 ; 0.000         ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.340 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.328 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.341 ; 0.000         ;
 ; DRAM_CLK                                                                      ; 2.288 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
@@ -166,8 +166,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 5.761  ; 0.000         ;
-; altera_reserved_tck                                                           ; 95.096 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 6.366  ; 0.000         ;
+; altera_reserved_tck                                                           ; 95.150 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -176,8 +176,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.975 ; 0.000         ;
-; altera_reserved_tck                                                           ; 1.353 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.903 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.978 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -190,7 +190,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; DRAM_CLK                                                                      ; 4.918  ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; 4.918  ; 0.000         ;
 ; CLK                                                                           ; 9.801  ; 0.000         ;
-; altera_reserved_tck                                                           ; 49.512 ; 0.000         ;
+; altera_reserved_tck                                                           ; 49.510 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -200,14 +200,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                                  ;
-+-----------+-----------------+-------------------------------------------------------------------------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name                                                                    ; Note ;
-+-----------+-----------------+-------------------------------------------------------------------------------+------+
-; 15.83 MHz ; 15.83 MHz       ; altera_reserved_tck                                                           ;      ;
-; 81.54 MHz ; 81.54 MHz       ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
-+-----------+-----------------+-------------------------------------------------------------------------------+------+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                   ;
++------------+-----------------+-------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                    ; Note ;
++------------+-----------------+-------------------------------------------------------------------------------+------+
+; 16.22 MHz  ; 16.22 MHz       ; altera_reserved_tck                                                           ;      ;
+; 117.81 MHz ; 117.81 MHz      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;      ;
++------------+-----------------+-------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -216,9 +216,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; -2.264 ; -122.707      ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 1.512  ; 0.000         ;
 ; DRAM_CLK                                                                      ; 3.884  ; 0.000         ;
-; altera_reserved_tck                                                           ; 18.413 ; 0.000         ;
+; altera_reserved_tck                                                           ; 19.168 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -227,8 +227,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                           ; 0.225 ; 0.000         ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.305 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.305 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.306 ; 0.000         ;
 ; DRAM_CLK                                                                      ; 2.153 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
@@ -238,8 +238,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 6.072  ; 0.000         ;
-; altera_reserved_tck                                                           ; 95.553 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 6.691  ; 0.000         ;
+; altera_reserved_tck                                                           ; 95.578 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -248,8 +248,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.899 ; 0.000         ;
-; altera_reserved_tck                                                           ; 1.249 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.827 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.903 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -279,7 +279,7 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+--------+---------------+
 ; DRAM_CLK                                                                      ; 3.855  ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 3.919  ; 0.000         ;
-; altera_reserved_tck                                                           ; 23.654 ; 0.000         ;
+; altera_reserved_tck                                                           ; 24.150 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -288,8 +288,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                           ; 0.068 ; 0.000         ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.143 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.134 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.141 ; 0.000         ;
 ; DRAM_CLK                                                                      ; 1.832 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
@@ -299,8 +299,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 8.048  ; 0.000         ;
-; altera_reserved_tck                                                           ; 97.537 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 8.387  ; 0.000         ;
+; altera_reserved_tck                                                           ; 97.569 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -309,8 +309,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.427 ; 0.000         ;
-; altera_reserved_tck                                                           ; 0.598 ; 0.000         ;
+; altera_reserved_tck                                                           ; 0.404 ; 0.000         ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.428 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -323,7 +323,7 @@ No synchronizer chains to report.
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; 1.156  ; 0.000         ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 4.711  ; 0.000         ;
 ; CLK                                                                           ; 9.523  ; 0.000         ;
-; altera_reserved_tck                                                           ; 49.381 ; 0.000         ;
+; altera_reserved_tck                                                           ; 49.380 ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -333,24 +333,24 @@ No synchronizer chains to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                                                          ;
-+--------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Clock                                                                          ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+--------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                               ; -3.472   ; 0.068 ; 5.761    ; 0.427   ; 1.156               ;
-;  CLK                                                                           ; N/A      ; N/A   ; N/A      ; N/A     ; 9.523               ;
-;  DRAM_CLK                                                                      ; 3.725    ; 1.832 ; N/A      ; N/A     ; 1.156               ;
-;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; -3.472   ; 0.143 ; 5.761    ; 0.427   ; 4.582               ;
-;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; N/A      ; N/A   ; N/A      ; N/A     ; 1.156               ;
-;  altera_reserved_tck                                                           ; 17.608   ; 0.068 ; 95.096   ; 0.598   ; 49.381              ;
-; Design-wide TNS                                                                ; -199.806 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
-;  CLK                                                                           ; N/A      ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  DRAM_CLK                                                                      ; 0.000    ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; -199.806 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
-;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; N/A      ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  altera_reserved_tck                                                           ; 0.000    ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
-+--------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                        ;
++--------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
+; Clock                                                                          ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack                                                               ; 0.655  ; 0.134 ; 6.366    ; 0.404   ; 1.156               ;
+;  CLK                                                                           ; N/A    ; N/A   ; N/A      ; N/A     ; 9.523               ;
+;  DRAM_CLK                                                                      ; 3.725  ; 1.832 ; N/A      ; N/A     ; 1.156               ;
+;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.655  ; 0.141 ; 6.366    ; 0.428   ; 4.582               ;
+;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; N/A    ; N/A   ; N/A      ; N/A     ; 1.156               ;
+;  altera_reserved_tck                                                           ; 18.516 ; 0.134 ; 95.150   ; 0.404   ; 49.380              ;
+; Design-wide TNS                                                                ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLK                                                                           ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  DRAM_CLK                                                                      ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
+;  PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  altera_reserved_tck                                                           ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++--------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -599,19 +599,19 @@ No synchronizer chains to report.
 ; Arduino_IO[2]                 ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
 ; TDO                           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
 ; BP_DRAM_Data[0]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00185 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00185 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[1]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[1]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[2]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00185 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00185 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[3]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[4]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[3]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[4]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[5]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00185 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00185 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[6]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00185 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00185 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[7]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[8]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[9]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[7]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[8]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[9]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[10]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00185 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00185 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[11]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[12]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[13]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00189 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00189 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[11]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[12]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[13]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00186 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.24e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00186 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.24e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[14]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00185 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00185 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[15]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.09 V              ; -0.00185 V          ; 0.112 V                              ; 0.013 V                              ; 8.52e-10 s                  ; 9.25e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-08 V                  ; 3.09 V             ; -0.00185 V         ; 0.112 V                             ; 0.013 V                             ; 8.52e-10 s                 ; 9.25e-10 s                 ; Yes                       ; Yes                       ;
 ; altera_reserved_tdo           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.39e-08 V                   ; 2.39 V              ; -0.0409 V           ; 0.21 V                               ; 0.121 V                              ; 4.7e-10 s                   ; 5.93e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.39e-08 V                  ; 2.39 V             ; -0.0409 V          ; 0.21 V                              ; 0.121 V                             ; 4.7e-10 s                  ; 5.93e-10 s                 ; No                        ; Yes                       ;
@@ -709,22 +709,22 @@ No synchronizer chains to report.
 ; Arduino_IO[1]                 ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
 ; Arduino_IO[2]                 ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
 ; TDO                           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[0]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000213 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000213 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[0]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000208 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000208 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[1]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[2]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000213 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000213 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[2]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000208 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000208 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[3]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[4]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[5]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000213 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000213 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[6]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000213 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000213 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[5]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000208 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000208 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[6]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000208 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000208 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[7]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[8]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[9]               ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[10]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000213 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000213 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[10]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000208 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000208 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[11]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[12]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; BP_DRAM_Data[13]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000206 V         ; 0.245 V                              ; 0.062 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000206 V        ; 0.245 V                             ; 0.062 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[14]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000213 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000213 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
-; BP_DRAM_Data[15]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000213 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000213 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[14]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000208 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000208 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
+; BP_DRAM_Data[15]              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.09 V              ; -0.000208 V         ; 0.244 V                              ; 0.063 V                              ; 9.48e-10 s                  ; 1.31e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.41e-06 V                  ; 3.09 V             ; -0.000208 V        ; 0.244 V                             ; 0.063 V                             ; 9.48e-10 s                 ; 1.31e-09 s                 ; Yes                       ; Yes                       ;
 ; altera_reserved_tdo           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0173 V           ; 0.144 V                              ; 0.094 V                              ; 6.44e-10 s                  ; 7.2e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0173 V          ; 0.144 V                             ; 0.094 V                             ; 6.44e-10 s                 ; 7.2e-10 s                  ; No                        ; Yes                       ;
 +-------------------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -845,12 +845,12 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths   ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 13190      ; 1          ; 96       ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 22018      ; 1          ; 96       ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; altera_reserved_tck                                                           ; false path ; 0          ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; DRAM_CLK                                                                      ; 51         ; 0          ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; false path ; 0        ; 0        ;
 ; DRAM_CLK                                                                      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 16         ; 0          ; 0        ; 0        ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 5654307    ; 0          ; 0        ; 0        ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 141358     ; 0          ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -860,12 +860,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths   ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 13190      ; 1          ; 96       ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 22018      ; 1          ; 96       ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; altera_reserved_tck                                                           ; false path ; 0          ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; DRAM_CLK                                                                      ; 51         ; 0          ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; false path ; 0        ; 0        ;
 ; DRAM_CLK                                                                      ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 16         ; 0          ; 0        ; 0        ;
-; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 5654307    ; 0          ; 0        ; 0        ;
+; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 141358     ; 0          ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+------------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -875,7 +875,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 1068       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 2164       ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; 0        ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 144        ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
@@ -887,7 +887,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 1068       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck                                                           ; altera_reserved_tck                                                           ; 2164       ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                           ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; false path ; 0        ; 0        ; 0        ;
 ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; 144        ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------+----------+----------+----------+
@@ -1055,7 +1055,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Sep 07 10:15:17 2017
+    Info: Processing started: Fri Sep 15 16:05:28 2017
 Info: Command: quartus_sta DRFM -c DRFM
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1069,12 +1069,12 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Info (332104): Reading SDC File: 'Qsys/myQsys/synthesis/submodules/altera_reset_controller.sdc'
 Info (332104): Reading SDC File: 'DRFM.sdc'
-Warning (332174): Ignored filter at DRFM.sdc(3): Switch* could not be matched with a port File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 3
-Warning (332049): Ignored set_false_path at DRFM.sdc(3): Argument <from> is an empty collection File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 3
-    Info (332050): set_false_path -to * -from [get_ports Switch*] File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 3
-Warning (332174): Ignored filter at DRFM.sdc(4): Button* could not be matched with a port File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 4
-Warning (332049): Ignored set_false_path at DRFM.sdc(4): Argument <from> is an empty collection File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 4
-    Info (332050): set_false_path -to * -from [get_ports Button*] File: C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/DRFM.sdc Line: 4
+Warning (332174): Ignored filter at DRFM.sdc(3): Switch* could not be matched with a port File: C:/Users/user/Documents/DRFM/DRFM_Source/DRFM.sdc Line: 3
+Warning (332049): Ignored set_false_path at DRFM.sdc(3): Argument <from> is an empty collection File: C:/Users/user/Documents/DRFM/DRFM_Source/DRFM.sdc Line: 3
+    Info (332050): set_false_path -to * -from [get_ports Switch*] File: C:/Users/user/Documents/DRFM/DRFM_Source/DRFM.sdc Line: 3
+Warning (332174): Ignored filter at DRFM.sdc(4): Button* could not be matched with a port File: C:/Users/user/Documents/DRFM/DRFM_Source/DRFM.sdc Line: 4
+Warning (332049): Ignored set_false_path at DRFM.sdc(4): Argument <from> is an empty collection File: C:/Users/user/Documents/DRFM/DRFM_Source/DRFM.sdc Line: 4
+    Info (332050): set_false_path -to * -from [get_ports Button*] File: C:/Users/user/Documents/DRFM/DRFM_Source/DRFM.sdc Line: 4
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {my_PLL|altpll_component|auto_generated|pll1|inclk[0]} -multiply_by 2 -duty_cycle 50.00 -name {PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0]} {my_PLL|altpll_component|auto_generated|pll1|clk[0]}
     Info (332110): create_generated_clock -source {my_PLL|altpll_component|auto_generated|pll1|inclk[0]} -multiply_by 2 -phase -90.00 -duty_cycle 50.00 -name {PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1]} {my_PLL|altpll_component|auto_generated|pll1|clk[1]}
@@ -1088,29 +1088,28 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.472
+Info (332146): Worst-case setup slack is 0.655
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.472            -199.806 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     0.655               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     3.725               0.000 DRAM_CLK 
-    Info (332119):    17.608               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.223
+    Info (332119):    18.516               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.328
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.223               0.000 altera_reserved_tck 
-    Info (332119):     0.340               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     0.328               0.000 altera_reserved_tck 
+    Info (332119):     0.341               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     2.288               0.000 DRAM_CLK 
-Info (332146): Worst-case recovery slack is 5.761
+Info (332146): Worst-case recovery slack is 6.366
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     5.761               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    95.096               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.975
+    Info (332119):     6.366               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):    95.150               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.903
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.975               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):     1.353               0.000 altera_reserved_tck 
+    Info (332119):     0.903               0.000 altera_reserved_tck 
+    Info (332119):     0.978               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
 Info (332146): Worst-case minimum pulse width slack is 4.582
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1118,7 +1117,7 @@ Info (332146): Worst-case minimum pulse width slack is 4.582
     Info (332119):     4.918               0.000 DRAM_CLK 
     Info (332119):     4.918               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] 
     Info (332119):     9.801               0.000 CLK 
-    Info (332119):    49.512               0.000 altera_reserved_tck 
+    Info (332119):    49.510               0.000 altera_reserved_tck 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1127,29 +1126,28 @@ Warning (332060): Node: Controller:my_Controller|MasterSelect was determined to 
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.264
+Info (332146): Worst-case setup slack is 1.512
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.264            -122.707 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     1.512               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     3.884               0.000 DRAM_CLK 
-    Info (332119):    18.413               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.225
+    Info (332119):    19.168               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.305
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.225               0.000 altera_reserved_tck 
-    Info (332119):     0.305               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     0.305               0.000 altera_reserved_tck 
+    Info (332119):     0.306               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     2.153               0.000 DRAM_CLK 
-Info (332146): Worst-case recovery slack is 6.072
+Info (332146): Worst-case recovery slack is 6.691
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     6.072               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    95.553               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.899
+    Info (332119):     6.691               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):    95.578               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.827
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.899               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):     1.249               0.000 altera_reserved_tck 
+    Info (332119):     0.827               0.000 altera_reserved_tck 
+    Info (332119):     0.903               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
 Info (332146): Worst-case minimum pulse width slack is 4.602
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1169,23 +1167,23 @@ Info (332146): Worst-case setup slack is 3.855
     Info (332119): ========= =================== =====================
     Info (332119):     3.855               0.000 DRAM_CLK 
     Info (332119):     3.919               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    23.654               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.068
+    Info (332119):    24.150               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.134
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.068               0.000 altera_reserved_tck 
-    Info (332119):     0.143               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):     0.134               0.000 altera_reserved_tck 
+    Info (332119):     0.141               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     1.832               0.000 DRAM_CLK 
-Info (332146): Worst-case recovery slack is 8.048
+Info (332146): Worst-case recovery slack is 8.387
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.048               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):    97.537               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.427
+    Info (332119):     8.387               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
+    Info (332119):    97.569               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.404
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.427               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
-    Info (332119):     0.598               0.000 altera_reserved_tck 
+    Info (332119):     0.404               0.000 altera_reserved_tck 
+    Info (332119):     0.428               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
 Info (332146): Worst-case minimum pulse width slack is 1.156
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1193,13 +1191,13 @@ Info (332146): Worst-case minimum pulse width slack is 1.156
     Info (332119):     1.156               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[1] 
     Info (332119):     4.711               0.000 PLL:my_PLL|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] 
     Info (332119):     9.523               0.000 CLK 
-    Info (332119):    49.381               0.000 altera_reserved_tck 
+    Info (332119):    49.380               0.000 altera_reserved_tck 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 733 megabytes
-    Info: Processing ended: Thu Sep 07 10:15:24 2017
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:11
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 767 megabytes
+    Info: Processing ended: Fri Sep 15 16:05:37 2017
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:15
 
 

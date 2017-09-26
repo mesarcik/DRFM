@@ -1,0 +1,21 @@
+% KU slide navigation symbols (Beamer outer theme).
+%
+% Morten Larsen <ml@life.ku.dk>, 2009
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+%
+% Just defines the command \KU@navsymbols which inserts navigation symbols
+% scaled down to fit in the KU slide footers. If this command exists, the
+% KU slide footers will use it (and thus insert navigation symbols).
+
+\ProvidesPackage{beamerouterthemeKUnavsymbols}[2009/07/28]
+
+\mode<presentation>
+\useoutertheme{scalenavigationsymbols}
+
+\def\KU@navsymbols{{%
+  \scalenavigationsymbols{.7}%
+  \usebeamertemplate***{navigation symbols}%
+}}
+
+\mode
+<all>

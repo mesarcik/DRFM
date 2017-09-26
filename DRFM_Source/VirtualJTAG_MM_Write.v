@@ -1,3 +1,10 @@
+//Misha Mesarcik
+//15/09/17
+//DRFM Project
+
+/*  
+  Added some changed for real time control to John-Philip Taylor code.
+
 //==============================================================================
 // Copyright (C) John-Philip Taylor
 // jpt13653903@gmail.com
@@ -17,6 +24,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>
 //============================================================================== 
+*/
 
 module VirtualJTAG_MM_Write(
  input Clk, Reset,
@@ -170,9 +178,9 @@ always @(posedge TCK) begin
     if(write) begin
         case(1'b1)
             Capture: begin
-            WrAddress <= 0;
-            JTAG_Busy <= 1'b1;
-          end
+              WrAddress <= 0;
+              JTAG_Busy <= 1'b1;
+            end
 
           Shift: begin
             WrAddress <= WrAddress + 1'b1;

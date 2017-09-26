@@ -1,0 +1,111 @@
+% Beamer colour theme for KU slides.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+
+\ProvidesPackage{beamercolorthemeKUhorse}[2009/07/28]
+
+\RequirePackage{KUcommon}
+\KU@needcolors
+
+\newif\ifKUhorse@colourful
+\newif\ifKUhorse@greybg
+\newif\ifKUhorse@greytext
+\newif\ifKUhorse@greyfoot
+\newif\ifKUhorse@greyauthor
+\KUhorse@colourfulfalse
+\KUhorse@greybgfalse
+\KUhorse@greytextfalse
+\KUhorse@greyfootfalse
+\KUhorse@greyauthorfalse
+
+\DeclareOptionBeamer{colourful}[]{\KUhorse@colourfultrue}
+\DeclareOptionBeamer{colorful}[]{\ExecuteOptionsBeamer{colourful}}
+\DeclareOptionBeamer{greybg}[]{\KUhorse@greybgtrue}
+\DeclareOptionBeamer{graybg}[]{\ExecuteOptionsBeamer{greybg}}
+\DeclareOptionBeamer{greytext}[]{\KUhorse@greytexttrue}
+\DeclareOptionBeamer{graytext}[]{\ExecuteOptionsBeamer{greytext}}
+\DeclareOptionBeamer{greyfoot}[]{\KUhorse@greyfoottrue}
+\DeclareOptionBeamer{grayfoot}[]{\ExecuteOptionsBeamer{greyfoot}}
+\DeclareOptionBeamer{greyauthor}[]{\KUhorse@greyauthortrue}
+\DeclareOptionBeamer{grayauthor}[]{\ExecuteOptionsBeamer{greyauthor}}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\ifKUhorse@greybg
+  \setbeamercolor{background canvas}{bg=KUbggrey}
+  \setbeamercolor{sidebar}{bg=KU@\KU@faculty logo!20!white}
+\else
+  \setbeamercolor{background canvas}{bg=white}
+  \setbeamercolor{sidebar}{bg=KUbggrey}
+\fi
+\setbeamercolor{structure}{fg=KU@\KU@faculty logo}
+\setbeamercolor{titlelike}{parent=structure}
+\ifKUhorse@colourful
+  \setbeamercolor{sidebar}{bg=KU@\KU@faculty logo!20!white}
+  \setbeamercolor{normal text}{fg=black}
+  \setbeamercolor{local structure}{fg=red!75!black}
+  \setbeamercolor{subitem}{fg=green!75!black}
+  \setbeamercolor{subsubitem}{fg=blue!75!black}
+  \setbeamercolor{example text}{fg=green!70!black}
+  \setbeamercolor{button}{bg=blue!60!green!75!black}
+\else
+  \setbeamercolor{example text}{fg=KUgrey!25!green}
+  \setbeamercolor{button}{bg=KU@\KU@faculty logo}
+  \ifKUhorse@greytext
+    \setbeamercolor{local structure}{fg=KUgrey}
+    \setbeamercolor{normal text}{fg=KUgrey}
+  \else
+    \setbeamercolor{normal text}{fg=black}
+    \setbeamercolor{subitem}{use=item,fg=item.fg!85!white}
+    \setbeamercolor{subsubitem}{use=item,fg=item.fg!70!white}
+  \fi
+\fi
+\setbeamercolor{subitem projected}{use=subitem,fg=white,bg=subitem.fg}
+\setbeamercolor{subsubitem projected}{use=subsubitem,fg=white,bg=subsubitem.fg}
+\setbeamercolor{description item}{parent=item}
+
+\ifKUhorse@greyauthor
+  \setbeamercolor{author}{fg=KUgrey}
+\fi
+\setbeamercolor{institute}{parent=author}
+\setbeamercolor{date}{parent=author}
+
+\ifKUhorse@greyfoot
+  \setbeamercolor{footline}{fg=KUgrey}
+\else
+  \setbeamercolor{footline}{use={normal text},fg=normal text.fg}
+\fi
+\setbeamercolor{page number in head/foot}{parent={footline},fg=fg}
+\setbeamercolor{title in head/foot}{parent={footline},fg=fg}
+\setbeamercolor{section in head/foot}{parent={title in head/foot}}
+\setbeamercolor{subsection in head/foot}{parent={section in head/foot}}
+\setbeamercolor{subsubsection in head/foot}{parent={subsection in head/foot}}
+\setbeamercolor{author in head/foot}{parent={footline},fg=fg}
+\setbeamercolor{institute in head/foot}{parent={author in head/foot}}
+\setbeamercolor{date in head/foot}{parent={page number in head/foot}}
+
+\setbeamercolor{palette sidebar primary}{fg=black}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg!50!black}
+\setbeamercolor{palette sidebar tertiary}{use=structure,fg=structure.fg!70!black}
+\setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+
+\setbeamercolor*{separation line}{fg=KU@\KU@faculty logo}
+\setbeamercolor*{fine separation line}{fg=KUgrey}
+\setbeamercolor{logo}{use=background canvas,bg=background canvas.bg,fg=KU@\KU@faculty logo}
+
+\ifKUhorse@colourful
+\setbeamercolor{block title}{fg=white,bg=blue!70!green}
+\else
+\setbeamercolor{block title}{fg=white,bg=KU@\KU@faculty logo}
+\fi
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!15!white}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!15!white}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!15!white}
+
+\mode
+<all>

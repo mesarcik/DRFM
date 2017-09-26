@@ -1,0 +1,112 @@
+% KU slides with sidebar (Beamer outer theme).
+%
+% Morten Larsen <ml@life.ku.dk>, 2009
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+%
+% Based on original beamer beamerouterthemesidebar.sty by Till Tantau
+
+\ProvidesPackage{beamerouterthemeKUsidebar}[2009/08/03]
+
+\newdimen\KU@sidebarwidth
+\KU@sidebarwidth=0.2\paperwidth
+
+\DeclareOptionBeamer{hideothersubsections}[]{\beamer@nav@subsectionstyle{show/show/hide}}
+\DeclareOptionBeamer{hideallsubsections}[]{\beamer@nav@subsectionstyle{hide}}
+
+\DeclareOptionBeamer{width}{\KU@sidebarwidth=#1}
+\ProcessOptionsBeamer
+
+
+\mode<presentation>
+
+\def\KU@sidebarformat#1#2#3{%
+  \begin{beamercolorbox}[wd=\KU@sidebarwidth,leftskip=#1,rightskip=1ex plus1fil,vmode]{#2}
+    \vbox{}%
+    #3\par%
+    \vbox{}%
+    \vskip-1.5ex%
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{section in sidebar}{KU}
+{%
+  \vbox{%
+    \vskip1ex%
+    \KU@sidebarformat{3pt}{section in sidebar}{\insertsectionhead}%
+  }%
+}
+
+\defbeamertemplate*{section in sidebar shaded}{KU}
+{%
+  \vbox{%
+    \vskip1ex%
+    \KU@sidebarformat{3pt}{section in sidebar shaded}{\insertsectionhead}%
+  }%
+}
+
+\defbeamertemplate*{subsection in sidebar}{KU}
+{%
+  \KU@sidebarformat{5pt}{subsection in sidebar}{\insertsubsectionhead}%
+}
+
+\defbeamertemplate*{subsection in sidebar shaded}{KU}
+{%
+  \KU@sidebarformat{5pt}{subsection in sidebar shaded}{\insertsubsectionhead}%
+}
+
+\defbeamertemplate*{subsubsection in sidebar}{KU}
+{%
+  \KU@sidebarformat{7pt}{subsubsection in sidebar}{\insertsubsubsectionhead}%
+}
+
+\defbeamertemplate*{subsubsection in sidebar shaded}{KU}
+{%
+  \KU@sidebarformat{7pt}{subsubsection in sidebar shaded}{\insertsubsubsectionhead}%
+}
+
+
+\ifdim\KU@sidebarwidth>0pt
+  % Sidebar
+  \setbeamersize{sidebar width left=\KU@sidebarwidth}
+  \defbeamertemplate*{sidebar left}{KU}
+  {
+    \beamer@tempdim=\KU@sidebarwidth%
+    \advance\beamer@tempdim by -6pt%
+    \ifx\beamer@shorttitle\@empty\else{%
+      \usebeamerfont{title in sidebar}%
+      \vskip1.5em%
+      \hskip3pt%
+      \usebeamercolor[fg]{title in sidebar}%
+      \insertshorttitle[width=\beamer@tempdim,center,respectlinebreaks]\par%
+      \vskip1.25em%
+    }\fi
+    \ifx\beamer@shortauthor\@empty\else{%
+      \hskip3pt%
+      \usebeamercolor[fg]{author in sidebar}%
+      \usebeamerfont{author in sidebar}%
+      \insertshortauthor[width=\beamer@tempdim,center,respectlinebreaks]\par%
+      \vskip1.25em%
+    }\fi
+    \ifKU@instituteinhead\else\ifx\beamer@shortinstitute\@empty\else{%
+      \hskip3pt%
+      \usebeamercolor[fg]{institute in sidebar}%
+      \usebeamerfont{institute in sidebar}%
+      \insertshortinstitute[width=\beamer@tempdim,center,respectlinebreaks]\par%
+      \vskip1.25em%
+    }\fi\fi
+    \insertverticalnavigation{\KU@sidebarwidth}%
+    \vfill
+    \ifbeamercolorempty[bg]{sidebar}{}{%
+      \raisebox{-\footheight}[0pt][0pt]{%
+         \usebeamercolor[bg]{sidebar}%
+         \vrule height\footheight width\KU@sidebarwidth%
+      }%
+    }%
+  }%
+  % Margins
+  \setbeamersize{text margin left=5pt,
+                 text margin right=5pt}
+\fi
+
+\mode
+<all>

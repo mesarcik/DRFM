@@ -1,16 +1,16 @@
-Analysis & Synthesis Status : Successful - Thu Sep 07 10:14:25 2017
+Analysis & Synthesis Status : Successful - Fri Sep 15 16:04:18 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : DRFM
 Top-level Entity Name : PWM
 Family : MAX 10
-Total logic elements : 4,954
-    Total combinational functions : 2,247
-    Dedicated logic registers : 3,992
-Total registers : 3992
+Total logic elements : 8,820
+    Total combinational functions : 3,187
+    Dedicated logic registers : 7,574
+Total registers : 7574
 Total pins : 114
 Total virtual pins : 0
-Total memory bits : 350,208
-Embedded Multiplier 9-bit elements : 18
+Total memory bits : 630,784
+Embedded Multiplier 9-bit elements : 16
 Total PLLs : 1
 UFM blocks : 0
 ADC blocks : 0

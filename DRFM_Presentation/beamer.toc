@@ -1,0 +1,6 @@
+\select@language {UKenglish}
+\beamer@sectionintoc {1}{Project Description}{3}{0}{1}
+\beamer@sectionintoc {2}{System Overview}{10}{0}{2}
+\beamer@sectionintoc {3}{Detailed Design}{32}{0}{3}
+\beamer@sectionintoc {4}{Results}{55}{0}{4}
+\beamer@sectionintoc {5}{Recommendations}{61}{0}{5}

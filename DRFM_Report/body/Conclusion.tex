@@ -1,5 +1,21 @@
-\section{Conclusions and Future Work}
+\section{Conclusions}
+\noindent From the results, the following conclusions can be drawn.
+\subsection{Increased Delay Functionality}
+\noindent As shown in the results, the delay function of the DRFM system was clearly working. However, it would be preferable to allow for a longer delay so that the output of the delay could be seen visually when probing with a oscilloscope. This could be achieved by creating a larger RAM block and have a longer delay control word. 
+\subsection{Improved Frequency Measurement}
+\noindent It can be seen that the output of Fig.~\ref{fig:2freq} is incredibly noisy. This may be attributable to both the fact that the PWM output has some harmonic components and in order to enable a 8 bit output, the 32 bit output vector had to be concatenated. This meant that the concatenation operation, may have resulted in unforeseen harmonic components being captured. \\ \newline This problem could be solved by either performing noise shaping to get a higher resolution PWM output, or by allowing for 2 way JTAG communication so that data could be streamed back to a PC to be analysed more accurately. 
 
-\subsection{Future Work}
--- Streaming to file.
--- DAC for sensing.
+\subsection{Integration into a RF Front-end}
+\noindent In order to effectively prove that the DRFM system is functional it should be properly integrated into a RF front-end such as the one shown in Fig.~\ref{fig:DRFM_Intro}. This would allow for the system to be tested more thoroughly, thereby giving a practical measure of its feasibility.
+
+\subsection{Extension to Multiple Targets}
+\noindent Finally, a simple way to extend the DRFM system would be to accommodate for multiple targets. This could be a achieved by duplicating the DSP subsystem so that false targets could be synthesized at multiple time delays and frequency shifts. 
+
+
+
+
+%-- Streaming to file.
+%-- DAC for sensing.
+%-- Noise Shaping for higher resolution output.
+%-- multiple targets.
+%-- clean up output

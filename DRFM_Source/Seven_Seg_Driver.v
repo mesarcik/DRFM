@@ -1,3 +1,12 @@
+//Misha Mesarcik
+//15/09/17
+//DRFM Project
+
+/* 	
+   Seven Segment Driver Module: Just did the mappings for seven segment displays based on the control
+   information recieved by the UI.
+*/
+
 module Seven_Seg_Driver (
 	input [3:0] 	state,
 

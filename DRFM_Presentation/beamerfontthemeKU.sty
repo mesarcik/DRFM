@@ -1,0 +1,26 @@
+% Beamer font theme for KU slides.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009, 2010
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+
+\ProvidesPackage{beamerfontthemeKU}[2010/10/07]
+
+\newif\ifKUfont@seriftitles
+\KUfont@seriftitlesfalse
+
+\DeclareOptionBeamer{seriftitles}[]{\KUfont@seriftitlestrue}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\setbeamerfont{footline}{size=\Tiny}
+\setbeamerfont{description item}{series=\bfseries,parent={normal text}}
+\ifKUfont@seriftitles
+  \setbeamerfont{frametitle}{family=\rmfamily,series=\bfseries,size=\LARGE}
+  \setbeamerfont{framesubtitle}{size=\large,parent={frametitle}}
+  \setbeamerfont{title}{size=,parent={frametitle}}
+  \setbeamerfont{subtitle}{size=,parent={framesubtitle}}
+\fi
+
+\mode
+<all>

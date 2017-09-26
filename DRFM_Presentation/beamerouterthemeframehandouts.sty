@@ -1,0 +1,63 @@
+% Beamer outer theme to frame slides in handout mode, to make frame
+% borders visible even if the background is white.
+% In "smart" mode the frame will only be drawn in case the background canvas
+% bg colour is either white or empty.
+% In "force" mode (default) the frame will always be drawn.
+%
+% Works by adding to the start of the "background canvas" beamer template,
+% which will be done at document start.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+
+\ProvidesPackage{beamerouterthemeframehandouts}[2009/08/13]
+
+\def\forceHOFr@mes{force}
+\def\smartHOFr@mes{smart}
+
+\DeclareOptionBeamer{mode}[force]{\def\HOFr@meMode{#1}}
+\ExecuteOptionsBeamer{mode}
+\ProcessOptionsBeamer
+
+\mode
+<handout>
+
+\RequirePackage{MLsupportoldpgf}
+
+\def\Fr@meHO{%
+  \rlap{%
+  \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\paperheight}%
+    \color{black}%
+    \pgfsetlinewidth{0.003\paperwidth}%
+    \pgfpathrectangle{\pgfpoint{-0.0015\paperwidth}{-0.0015\paperwidth}}{\pgfpoint{1.003\paperwidth}{1.004\paperheight}}%
+    \pgfusepathqstroke%
+  \end{pgfpicture}%
+  }%
+}
+
+\AtBeginDocument{
+  \ifx\HOFr@meMode\smartHOFr@mes
+    \addtobeamertemplate{background canvas}{{%
+      % based on beamercolorempty:
+      \beamer@thc@prepcolor
+      \beamer@thc@docolor{background canvas}%
+      \ifx\beamer@thc@bg\@empty
+        \Fr@meHO
+      \else
+        \extractcolorspec{\beamer@thc@bg}{\@tempa}%
+        \expandafter\convertcolorspec\@tempa{HTML}{\@html}%
+        \convertcolorspec{named}{white}{HTML}{\@white}%
+        \ifx\@html\@white
+          \Fr@meHO
+        \fi
+      \fi
+    }}{}
+  \fi
+  \ifx\HOFr@meMode\forceHOFr@mes
+    \addtobeamertemplate{background canvas}{\Fr@meHO}{}
+  \fi
+}
+
+\mode
+<all>
+

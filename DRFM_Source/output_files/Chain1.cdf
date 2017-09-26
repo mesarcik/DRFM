@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("/home/misha/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/output_files/") File("DRFM.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/user/Google Drive/Masters/EEE5132Z -- FPGA/Workspace/DRFM/DRFM_Source/output_files/") File("DRFM.pof") MfrSpec(OpMask(7) Child_OpMask(2 7 7));
 
 ChainEnd;
 

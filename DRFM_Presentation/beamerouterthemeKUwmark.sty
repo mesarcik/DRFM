@@ -1,0 +1,43 @@
+% Beamer outer theme to put a KU faculty sigil on the background canvas as
+% watermark.
+% The colour of the sigil is by default a 4% grey, which goes well with both
+% the normal white background and the KU grey background.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+
+\ProvidesPackage{beamerouterthemeKUwmark}[2009/08/25]
+
+\RequirePackage{KUcommon}
+\KU@needwmark
+
+\newif\ifKUwmark@defonly
+\KUwmark@defonlyfalse
+
+\DeclareOptionBeamer{colour}[auto]{\AtBeginDocument{\KUwmarkcolor{#1}}}
+\DeclareOptionBeamer{color}[auto]{\ExecuteOptionsBeamer{colour=#1}}
+\DeclareOptionBeamer{variant}[auto]{\AtBeginDocument{\KUwmarkvariant{#1}}}
+\DeclareOptionBeamer{defonly}{\KUwmark@defonlytrue}
+
+\ProcessOptionsBeamer
+
+\mode
+<presentation>
+
+\defbeamertemplate{background canvas}{KU wmark}{%
+  \ifbeamercolorempty[bg]{background canvas}{}{%
+    \rlap{\color{bg}\vrule width\paperwidth height\paperheight}%
+  }%
+  \ifKUwmark@omit
+    \global\KUwmark@omitfalse % omit once
+  \else
+    \KU@wmark
+  \fi
+}
+\ifKUwmark@defonly\else
+  \setbeamertemplate{background canvas}[KU wmark]
+\fi
+
+\mode
+<all>
+

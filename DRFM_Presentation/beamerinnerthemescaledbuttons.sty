@@ -1,0 +1,189 @@
+% Scale the beamer buttons according to button font size.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+%
+% Scale "auto" for symbols will scale according to font size and autofactor,
+% with autofactor 1 being about equal to standard symbol size in a 12pt
+% beamer presentation. By default the symbols are 22% "oversized" relative
+% to beamer standard (i.e. the default autofactor is 1.22).
+%
+% Scale different from "auto" will scale the symbols absolutely, with 1
+% corresponding to no scaling (beamer default symbol size).
+%
+% Package options:
+%   scale=<number or auto>
+%     Symbol scaling, both x and y (default: auto)
+%   xscale=<number or auto>
+%     Symbol scaling, x (default: auto)
+%   yscale=<number or auto>
+%     Symbol scaling, y (default: auto)
+%   autofactor=<number>
+%     Automatic symbol scaling factor (default: 1.22)
+
+\ProvidesPackage{beamerinnerthemescaledbuttons}[2009/02/19]
+\RequirePackage{MLsupportoldpgf}
+
+\DeclareOptionBeamer{xscale}[auto]{
+  \def\scalebtn@xscale{#1}
+}
+\DeclareOptionBeamer{yscale}[auto]{
+  \def\scalebtn@yscale{#1}
+}
+\DeclareOptionBeamer{scale}[auto]{
+  \ExecuteOptionsBeamer{xscale=#1}
+  \ExecuteOptionsBeamer{yscale=#1}
+}
+\DeclareOptionBeamer{autofactor}[1.22]{
+  \def\scalebtn@autofactor{#1}
+}
+\ExecuteOptionsBeamer{scale}
+\ExecuteOptionsBeamer{autofactor}
+\ProcessOptionsBeamer
+
+\newlength{\scalebtn@xpt}
+\newlength{\scalebtn@ypt}
+
+\newcommand{\scalebuttonsymbols}[2][\scalebtn@yscale]{%
+  \def\scalebtn@yscale{#2}%
+  \def\scalebtn@xscale{#1}%
+}
+
+\newcommand{\buttonsymbolsautofactor}[1]{%
+  \def\scalebtn@autofactor{#1}%
+}
+
+\mode<presentation>
+
+\def\scalebtn@auto{auto}
+
+\newdimen\scalebtn@tempdim%
+\newcount\scalebtn@tempcount%
+
+\def\scalebtn@compscale{%
+  \scalebtn@tempdim=\scalebtn@autofactor ex%
+  \scalebtn@tempcount=\scalebtn@tempdim%
+  \multiply\scalebtn@tempcount by 1000 %
+  \scalebtn@tempdim=3.137pt% gives standard symbols at factor 1 (12 pt fonts)
+  \divide\scalebtn@tempcount by\scalebtn@tempdim%
+  \beamer@tempcount=\scalebtn@tempcount\divide\beamer@tempcount by 1000 %
+  \edef\scalebtn@scale{\the\beamer@tempcount}%
+  \multiply\beamer@tempcount by -1000
+  \advance\scalebtn@tempcount by\beamer@tempcount
+  \ifnum\scalebtn@tempcount>0
+    \edef\scalebtn@scale{\scalebtn@scale.}%
+    \ifnum\scalebtn@tempcount<100
+      \edef\scalebtn@scale{\scalebtn@scale0}%
+      \ifnum\scalebtn@tempcount<10
+        \edef\scalebtn@scale{\scalebtn@scale0}%
+    \fi\fi
+    \edef\scalebtn@scale{\scalebtn@scale\the\scalebtn@tempcount}%
+  \fi
+}
+
+\def\scalebtn@setscale{%
+  \ifx\scalebtn@xscale\scalebtn@auto
+     \scalebtn@compscale
+     \edef\scalebtn@xscale{\scalebtn@scale}%
+     \ifx\scalebtn@yscale\scalebtn@auto
+       \edef\scalebtn@yscale{\scalebtn@scale}%
+     \fi
+  \else
+     \ifx\scalebtn@yscale\scalebtn@auto
+       \scalebtn@compscale
+       \edef\scalebtn@yscale{\scalebtn@scale}%
+     \fi
+  \fi
+  \setlength{\scalebtn@xpt}{\scalebtn@xscale pt}%
+  \setlength{\scalebtn@ypt}{\scalebtn@yscale pt}%
+}
+
+\def\scalebtn@doscale{%
+  \pgfsys@transformxyscale{\scalebtn@xscale}{\scalebtn@yscale}%
+}
+
+% Code below based on original code from beamerbasebutton.sty v. 3.07
+
+\def\insertgotosymbol{%
+  \scalebtn@setscale
+  \begin{pgfpicture}{1\scalebtn@xpt}{0.5\scalebtn@ypt}{6\scalebtn@xpt}{3.5\scalebtn@ypt}
+    \scalebtn@doscale
+    \pgfuseobject{beamergotosymbol}%
+  \end{pgfpicture}}
+
+\def\insertskipsymbol{%
+  \scalebtn@setscale
+  \begin{pgfpicture}{1\scalebtn@xpt}{0.5\scalebtn@ypt}{8\scalebtn@xpt}{3.5\scalebtn@ypt}
+    \scalebtn@doscale
+    \pgfuseobject{beamerskipsymbol}%
+  \end{pgfpicture}}
+
+\def\insertreturnsymbol{%
+  \scalebtn@setscale
+  \begin{pgfpicture}{1\scalebtn@xpt}{0.5\scalebtn@ypt}{6\scalebtn@xpt}{3.5\scalebtn@ypt}
+    \scalebtn@doscale
+    \pgfuseobject{beamerreturnsymbol}%
+  \end{pgfpicture}}
+
+\def\scalebtn@cbox#1#2{%
+  \setbox\@tempboxa=\hbox{#1}%
+  \setbox\beamer@tempbox=\hbox{#2}%
+  \beamer@tempdim=\ht\@tempboxa%
+  \advance\beamer@tempdim by-\ht\beamer@tempbox%
+  \ifdim\beamer@tempdim>0pt%
+    \box\@tempboxa\raisebox{.5\beamer@tempdim}{\box\beamer@tempbox}%
+  \else
+    \raisebox{-.5\beamer@tempdim}{\box\@tempboxa}\box\beamer@tempbox%
+  \fi
+}
+\def\beamergotobutton#1{\beamerbutton{\scalebtn@cbox{\insertgotosymbol}{#1}}}
+\def\beamerskipbutton#1{\beamerbutton{\scalebtn@cbox{\insertskipsymbol}{#1}}}
+\def\beamerreturnbutton#1{\beamerbutton{\scalebtn@cbox{\insertreturnsymbol}{#1}}}
+
+% Replacing the fixed size default buttons, code originally based on template
+% from beamerinnerthemedefault.sty, beamer version 3.07
+
+\defbeamertemplate*{button}{scaled}
+{%
+  \setbox\beamer@tempbox=\hbox{Cp}%
+  \beamer@tempdim=\dp\beamer@tempbox%
+  \setbox\beamer@tempbox=\hbox{{\insertbuttontext}}%
+  \dp\beamer@tempbox=\beamer@tempdim%
+  \advance\beamer@tempdim by \ht\beamer@tempbox%
+  \ht\beamer@tempbox=\beamer@tempdim%
+  \setbox\beamer@tempbox=\vbox{\vskip.75pt\box\beamer@tempbox\vskip.75pt}%
+  \beamer@tempdim=\wd\beamer@tempbox%
+  \scalebtn@tempdim=\ht\beamer@tempbox%
+  \beamer@dima=\beamer@tempdim\advance\beamer@dima by.275\scalebtn@tempdim
+  \beamer@dimb=\beamer@tempdim\advance\beamer@dimb by.5\scalebtn@tempdim
+  \def\buttonpath{
+    \pgfpathqmoveto{0pt}{0pt}
+    \pgfpathqcurveto{-.275\scalebtn@tempdim}{0pt}{-.5\scalebtn@tempdim}{.225\scalebtn@tempdim}{-.5\scalebtn@tempdim}{.5\scalebtn@tempdim}
+    \pgfpathqcurveto{-.5\scalebtn@tempdim}{.775\scalebtn@tempdim}{-.275\scalebtn@tempdim}{\scalebtn@tempdim}{0pt}{\scalebtn@tempdim}
+    \pgfpathlineto{\pgfpoint{\beamer@tempdim}{\scalebtn@tempdim}}
+    \pgfpathcurveto%
+    {\pgfpoint{\beamer@dima}{\scalebtn@tempdim}}%
+    {\pgfpoint{\beamer@dimb}{.775\scalebtn@tempdim}}%
+    {\pgfpoint{\beamer@dimb}{.5\scalebtn@tempdim}}
+    \pgfpathcurveto%
+    {\pgfpoint{\beamer@dimb}{.225\scalebtn@tempdim}}%
+    {\pgfpoint{\beamer@dima}{0pt}}%
+    {\pgfpoint{\beamer@tempdim}{0pt}}
+    \pgfpathclose
+  }%
+  \begin{pgfpicture}{-.5\scalebtn@tempdim}{0pt}{\beamer@tempdim}{\scalebtn@tempdim}
+    \color{bg}
+    \pgfsetlinewidth{0.8pt}
+    \buttonpath
+    \pgfusepathqfill
+    \colorlet{bg}{parent.bg}
+    \usebeamercolor[fg]{button border}
+    \buttonpath
+    \pgfusepathqstroke
+  \end{pgfpicture}%
+  \hskip-\beamer@tempdim%
+  \box\beamer@tempbox%
+  \kern4pt%
+}
+\mode
+<all>

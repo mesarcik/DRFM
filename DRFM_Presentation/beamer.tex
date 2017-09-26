@@ -1,0 +1,197 @@
+% Beamer theme to be used by LIP6 teams.
+\documentclass{beamer}
+
+%% Beamer theme to be used by LIP6 teams.
+%% This is a skeleton file demonstrating
+%% the use of the theme Frederiksberg version 2.2
+%% with the UPMC visual guidelines applied.
+%%
+%% Version 1.1
+%% May 19, 2012
+%% by Sï¿½bastien Heymann <sebastien.heymann@lip6.fr>, http://sebastien.pro/
+%% from LIP6 ComplexNetworks
+%%
+%% REQUIREMENTS:
+%% - compile with pdflatex (tested on Windows7 with Texmaker 3.2)
+%% - install http://matdat.life.ku.dk/LaTeX/Frederiksberg
+%%
+%% WARNINGS:
+%% - load this file in ISO-8859-1 and keep using this encoding
+
+%%*************************************************************************
+%% Legal Notice:
+%% Copyright (c) 2012 Sï¿½bastien Heymann <sebastien.heymann@lip6.fr>
+%% 
+%% Permission is hereby granted, free of charge, to any person obtaining a copy of 
+%% this software and associated documentation files (the "Software"), to deal in the 
+%% Software without restriction, including without limitation the rights to use, copy, 
+%% modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+%% and to permit persons to whom the Software is furnished to do so, subject to the 
+%% following conditions:
+%% 
+%% The above copyright notice and this permission notice shall be included in all 
+%% copies or substantial portions of the Software.
+%% 
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+%% INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+%% PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+%% HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+%% OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+%% SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%%*************************************************************************
+
+
+
+% *** COMPILATION ***
+% Use pdflatex.
+%
+% Use one of these document classes while working on the presentation:
+% Commment these lines below once the presentation
+% is ready to export in various formats:
+%\documentclass{beamer}
+%\documentclass[handout]{beamer} % no overlay
+%
+% Once done, export the presentation, handout and printable handout files using:
+% beamer.tex ; handout.tex ; print.tex
+
+
+
+% *** PACKAGES ***
+%
+\usepackage[latin1]{inputenc}
+\usepackage[cyr]{aeguill} % support French guillemets
+\usepackage[UKenglish]{babel} % support French language
+\usepackage{hyperref} % support PDF bookmarks
+\usepackage{url}
+\usepackage[UKenglish]{datetime}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\newcommand{\R}{{\rm I\!R}}
+\newcommand{\I}{{\rm I\!I}}
+\newcommand{\hil}{{\rm I\!H}}
+%\usepackage{adjustbox}
+
+%\usepackage{media9}
+%\addmediapath{./videos/}
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+% declare the path(s) where your graphic files are
+\graphicspath{{img/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+% no figure caption label
+%\captionsetup[figure]{labelformat=empty}
+
+
+% *** ABSOLUTE POSITIONNING PACKAGE ***
+%
+\usepackage[absolute,overlay]{textpos}
+
+
+
+% *** COLORS ***
+%
+% Official colors defined in the visual guidelines on
+% http://www.upmc.fr/fr/espace_des_personnels/pour_votre_laboratoire/communiquer2/logos_et_chartes.html
+\usepackage{color}
+\definecolor{UPMCEngagementBlueA}   {RGB}{140,184,198}
+\definecolor{UPMCEngagementBlueB}   {RGB}{92,127,146}
+\definecolor{UPMCEngagementBlueC}   {RGB}{75,146,219}
+\definecolor{UPMCEngagementBlueD}   {RGB}{33,49,77}
+\definecolor{UPMCEngagementYellowA} {RGB}{254,209,0}
+\definecolor{UPMCEngagementYellowB} {RGB}{198,172,0}
+\definecolor{UPMCEngagementGreen}   {RGB}{64,74,41}
+\definecolor{UPMCCorporateGreen}    {RGB}{182,191,0}
+\definecolor{UPMCExcellenceOrangeA} {RGB}{224,82,6}
+\definecolor{UPMCExcellenceOrangeB} {RGB}{225,160,47}
+\definecolor{UPMCCorporateMarron}   {RGB}{145,120,91}
+\definecolor{UPMCInnovationCoolGray}{RGB}{97,99,101}
+
+\colorlet{BgTransition}{UPMCInnovationCoolGray}
+
+
+
+% *** THEME ***
+% Based on the theme Frederiksberg version 2.2
+% March 9, 2012
+% by Morten Larsen <ml@life.ku.dk>
+% See the user guide at http://matdat.life.ku.dk/LaTeX/Frederiksberg
+% for more info about the options and additional features like sidebar.
+%
+
+
+\usetheme[not@ku={Department Of Electrical Engineering}, wide, TPomitframeno, FTalign=center, greyfoot, seriftitles, fnolabel=, basecolour=UPMCEngagementBlueB,  topbarcolour=UPMCEngagementBlueA]{Frederiksberg}
+\setbeamercolor{block title}{fg=white}
+\setbeamercolor{block body}{bg=white}
+\setbeamercolor{block title example}{bg=UPMCCorporateGreen}
+\setbeamercolor{block title alerted}{bg=UPMCExcellenceOrangeA}
+\setbeamercolor{alerted text}{fg=UPMCExcellenceOrangeA}
+
+% Removes header and footer in handout mode
+\mode<handout>{
+	\setbeamertemplate{headline}{}
+	\setbeamertemplate{footline}[page number]{}
+}
+
+
+
+% *** PDF SETUP ***
+%
+\hypersetup{pagebackref,  
+	%pdfpagemode=FullScreen, % open PDF in fullscreen
+	pdfnonfullscreenpagemode=UseThumbs, % show thumbnails on exiting full-screen mode; other option: UseOutlines
+	colorlinks=false}
+
+
+
+% *** META ***
+%
+
+
+\title[Low Cost FPGA based Implementation of a DRFM System]{\huge Low Cost FPGA based Implementation of a DRFM System}
+%\author{{\tiny Author} \newline \textbf {MISHA MESARCIK} \newline {\small %MSRMIC004@myuct.ac.za} \newline {\tiny Supervisor } \newline \textbf{AJ WILKINSON} %\newline {\small andrew.wilkinson@uct.ac.za} }
+\institute{Univeristy of Cape Town }
+\date{\today}
+
+
+
+
+% *** SPECIAL COMMANDS ***
+%
+\newcommand{\SlideTransition}[2][]{
+	% Change background color
+	\mode<all> {
+		\setbeamercolor{background canvas}{bg=BgTransition}
+	}
+	
+	% Use [plain] mode to get a slide without header nor footer.
+	% Use <handout:0> to hide the slide on the handout.
+	\begin{frame}<handout:0>[plain]
+		%  \only<1| handout:0>{  
+		%  \begin{textblock*}{\paperwidth}(-5cm,0pt)
+		%    \raggedleft \includegraphics[scale=0.3]{bg}
+		%\end{textblock*}
+		%  }
+		\vspace{3.5cm}
+		\begin{flushright}
+			{\Huge \rmfamily \slshape \textcolor{white}{#2}} \linebreak
+			#1
+		\end{flushright}
+	\end{frame}
+	
+	% Reset background color
+	\mode<all> {
+		\setbeamercolor{background canvas}{bg=white}
+	}
+}
+
+
+
+
+\input{main}

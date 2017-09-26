@@ -1,0 +1,47 @@
+% Option interface to setting up faculty and language in Frederiksberg and its
+% various sub-themes. If you use only some of the sub-themes you will
+% have to use this theme to set up faculty and language.
+%
+% Morten Larsen <ml@life.ku.dk>, 2009, 2010
+% http://matdat.life.ku.dk/LaTeX/Frederiksberg
+
+\ProvidesPackage{beamerthemeKUsetup}[2010/10/12]
+
+\RequirePackage{KUcommon}
+\KU@needheadinfo
+
+\DeclareOptionBeamer{dk}{\let\KU@language\KU@dk}
+\DeclareOptionBeamer{uk}{\let\KU@language\KU@uk}
+\DeclareOptionBeamer{life}{\let\KU@faculty\KU@LIFE}
+\DeclareOptionBeamer{nat}{\let\KU@faculty\KU@NAT}
+\DeclareOptionBeamer{sund}{\let\KU@faculty\KU@SUND}
+\DeclareOptionBeamer{samf}{\let\KU@faculty\KU@SAMF}
+\DeclareOptionBeamer{ku}{\KU@instituteinheadtrue\let\KU@faculty\KU@KU}
+\ProcessOptionsBeamer
+
+\newcommand{\KUfaculty}[1]{%
+  \edef\KU@tempa{#1}%
+  \def\KU@tempb{ku}\ifx\KU@tempb\KU@tempa
+    \let\KU@faculty\KU@KU
+  \else\def\KU@tempb{life}\ifx\KU@tempb\KU@tempa
+    \let\KU@faculty\KU@LIFE
+  \else\def\KU@tempb{nat}\ifx\KU@tempb\KU@tempa
+    \let\KU@faculty\KU@NAT
+  \else\def\KU@tempb{sund}\ifx\KU@tempb\KU@tempa
+    \let\KU@faculty\KU@SUND
+  \else\def\KU@tempb{samf}\ifx\KU@tempb\KU@tempa
+    \let\KU@faculty\KU@SAMF
+  \else
+    \@latex@error{Unknown faculty: #1}%
+  \fi\fi\fi\fi\fi
+}
+\newcommand{\KUlanguage}[1]{%
+  \edef\KU@tempa{#1}%
+  \def\KU@tempb{dk}\ifx\KU@tempb\KU@tempa
+    \let\KU@language\KU@dk
+  \else\def\KU@tempb{uk}\ifx\KU@tempb\KU@tempa
+    \let\KU@language\KU@uk
+  \else
+    \@latex@error{Unknown language: #1}%
+  \fi\fi
+}
