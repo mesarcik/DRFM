@@ -8,6 +8,5 @@ Digital Radio Frequency Memory (DRFM) is a technique used to record an incoming 
 This project makes use of the Terasic DE10-lite development board.
 
 ## Software Dependancies 
-PyQt and Quartus Prime 16.1
+PyQt4 and Quartus Prime 16.1
 
-## Paper Published at RadarConf19
